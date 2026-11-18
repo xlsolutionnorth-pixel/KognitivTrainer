@@ -1,6 +1,6 @@
 {
   "name": "kognitivtrainer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Kognitive Test- und Trainings-App mit 500 Aufgaben",
   "dependencies": {

@@ -509,7 +509,7 @@ def flaechen(n=30):
 
     def quadrat_rueck():
         s = R.randint(3, 15)
-        return 2, f"Ein Quadrat hat die Fläche {s*s} cm². Wie lang ist eine Seite (cm)?", s, f"Seite = √{s*s} = {s} cm, denn {s} × {s} = {s*s}.", {"shape": "rect", "a": s, "b": s}
+        return 2, f"Ein Quadrat hat die Fläche {s*s} cm². Wie lang ist eine Seite (cm)?", s, f"Seite = √{s*s} = {s} cm, denn {s} × {s} = {s*s}.", {"shape": "rect", "a": s, "b": s, "hide": True, "area": s * s}
 
     gens = [rechteck, dreieck, quadrat_rueck, kreis, trapez]
     made = 0
@@ -587,7 +587,8 @@ def pythagoras(n=12):
             q = f"Ein rechtwinkliges Dreieck hat die Hypotenuse {c} cm und eine Kathete {a} cm. Wie lang ist die andere Kathete (cm)?"
             ans, ex = b, f"b² = c² − a² = {c*c} − {a*a} = {b*b}  →  b = {b} cm."
         o, k = num_opts(ans, spread=4)
-        add_mc(G, 2 if c < 20 else 3, "Pythagoras", q, o, k, ex, {"fig": {"shape": "right", "a": a, "b": b}})
+        fig = {"shape": "right", "a": a, "b": b} if i % 2 == 0 else {"shape": "right", "a": a, "b": "?", "c": c}
+        add_mc(G, 2 if c < 20 else 3, "Pythagoras", q, o, k, ex, {"fig": fig})
 
 
 def koerper(n=13):

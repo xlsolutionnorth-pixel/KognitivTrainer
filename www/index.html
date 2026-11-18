@@ -337,12 +337,12 @@ function figSVG(f){
   const W=260,H=170, st=`stroke="#9b8cff" stroke-width="3" fill="rgba(155,140,255,.15)"`, tx=`fill="#eef0ff" font-size="15" text-anchor="middle"`;
   let s="";
   if(f.shape==="rect"){ const sc=Math.min(200/f.a,120/f.b), w=f.a*sc, hh=f.b*sc, x=(W-w)/2, y=(H-hh)/2;
-    s=`<rect x="${x}" y="${y}" width="${w}" height="${hh}" ${st}/><text x="${W/2}" y="${y+hh+18}" ${tx}>${f.a} cm</text><text x="${x-8}" y="${H/2+5}" ${tx} text-anchor="end">${f.b}</text>`;}
+    s=`<rect x="${x}" y="${y}" width="${w}" height="${hh}" ${st}/><text x="${W/2}" y="${y+hh+18}" ${tx}>${f.hide?"?":f.a+" cm"}</text><text x="${x-8}" y="${H/2+5}" ${tx} text-anchor="end">${f.hide?"?":f.b}</text>${f.area?`<text x="${W/2}" y="${H/2+5}" ${tx}>A = ${f.area} cm²</text>`:""}`;}
   else if(f.shape==="tri"){ s=`<polygon points="30,140 230,140 100,30" ${st}/><line x1="100" y1="30" x2="100" y2="140" stroke="#ffc04d" stroke-dasharray="5 4" stroke-width="2"/>
     <text x="130" y="160" ${tx}>g = ${f.g} cm</text><text x="${118}" y="95" ${tx}>h = ${f.h}</text>`;}
   else if(f.shape==="circle"){ s=`<circle cx="130" cy="85" r="65" ${st}/><line x1="130" y1="85" x2="195" y2="85" stroke="#ffc04d" stroke-width="2"/><circle cx="130" cy="85" r="3" fill="#ffc04d"/><text x="162" y="78" ${tx}>r = ${f.r}</text>`;}
   else if(f.shape==="angles"){ s=`<polygon points="30,140 230,140 120,30" ${st}/><text x="58" y="132" ${tx}>${f.a}°</text><text x="200" y="132" ${tx}>${f.b}°</text><text x="120" y="60" ${tx}>?</text>`;}
-  else if(f.shape==="right"){ s=`<polygon points="40,140 220,140 40,30" ${st}/><rect x="40" y="124" width="16" height="16" fill="none" stroke="#ffc04d" stroke-width="2"/><text x="130" y="160" ${tx}>${f.b}</text><text x="25" y="90" ${tx}>${f.a}</text><text x="142" y="78" ${tx}>?</text>`;}
+  else if(f.shape==="right"){ s=`<polygon points="40,140 220,140 40,30" ${st}/><rect x="40" y="124" width="16" height="16" fill="none" stroke="#ffc04d" stroke-width="2"/><text x="130" y="160" ${tx}>${f.b}</text><text x="25" y="90" ${tx}>${f.a}</text><text x="142" y="78" ${tx}>${f.c||"?"}</text>`;}
   else if(f.shape==="clock"){ const cx=130,cy=85,R=70, ha=(f.h%12*30+f.m*.5-90)*Math.PI/180, ma=(f.m*6-90)*Math.PI/180;
     let ticks=""; for(let i=0;i<12;i++){ const a=i*30*Math.PI/180; ticks+=`<line x1="${cx+Math.cos(a)*(R-8)}" y1="${cy+Math.sin(a)*(R-8)}" x2="${cx+Math.cos(a)*R}" y2="${cy+Math.sin(a)*R}" stroke="#9aa0c8" stroke-width="2"/>`; }
     s=`<circle cx="${cx}" cy="${cy}" r="${R}" ${st}/>${ticks}<line x1="${cx}" y1="${cy}" x2="${cx+Math.cos(ha)*38}" y2="${cy+Math.sin(ha)*38}" stroke="#eef0ff" stroke-width="5" stroke-linecap="round"/>
