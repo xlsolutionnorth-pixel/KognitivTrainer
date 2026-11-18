@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#14162b">
+<title>KognitivTrainer</title>
+<style>
+:root{
+  --bg:#14162b; --card:#1f2240; --card2:#282c52; --text:#eef0ff; --muted:#9aa0c8; --line:#343869;
+  --ok:#3ccf8e; --bad:#ff6b6b; --warn:#ffc04d;
+  --c-rechnen:#5b8cff; --c-geometrie:#b27cff; --c-gedaechtnis:#ff8a5b; --c-reaktion:#2fd3c7;
+  --r:18px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--text);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:17px;
+  user-select:none;-webkit-user-select:none;overscroll-behavior:none}
+#app{max-width:640px;margin:0 auto;min-height:100%;padding:calc(env(safe-area-inset-top) + 14px) 16px calc(env(safe-area-inset-bottom) + 24px)}
+h1{font-size:26px;margin:4px 0 2px} h2{font-size:21px;margin:0 0 12px} h3{font-size:17px;margin:0 0 8px}
+.muted{color:var(--muted)} .small{font-size:14px}
+.top{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.top .grow{flex:1;min-width:0}
+.iconbtn{width:44px;height:44px;border-radius:14px;border:0;background:var(--card);color:var(--text);font-size:22px;display:grid;place-items:center}
+.card{background:var(--card);border-radius:var(--r);padding:16px;margin-bottom:12px}
+.btn{display:block;width:100%;border:0;border-radius:14px;padding:15px 16px;font-size:17px;font-weight:600;
+  background:var(--card2);color:var(--text);margin-top:10px;text-align:center}
+.btn.primary{background:linear-gradient(135deg,#6a7dff,#9b5cff)}
+.btn.ok{background:var(--ok);color:#06281a} .btn.ghost{background:transparent;border:1px solid var(--line)}
+.btn:active,.opt:active,.tile:active,.pad:active{transform:scale(.97)}
+.row{display:flex;gap:10px} .row>*{flex:1}
+.catgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cat{border-radius:var(--r);padding:16px;min-height:128px;color:#fff;border:0;text-align:left;font-size:16px;position:relative;overflow:hidden}
+.cat b{display:block;font-size:18px;margin:6px 0 4px} .cat .ico{font-size:30px}
+.cat .bar{position:absolute;left:0;bottom:0;height:5px;background:rgba(255,255,255,.85)}
+.bg-rechnen{background:linear-gradient(140deg,#4a6cf0,#6d9bff)} .bg-geometrie{background:linear-gradient(140deg,#8b56e8,#c08cff)}
+.bg-gedaechtnis{background:linear-gradient(140deg,#f06a3c,#ffa36e)} .bg-reaktion{background:linear-gradient(140deg,#16a89f,#3fe0d3)}
+.daily{background:linear-gradient(135deg,#2c2f6b,#3b2c6b);}
+.daily .big{font-size:34px;font-weight:800}
+.pill{display:inline-block;padding:4px 10px;border-radius:99px;background:var(--card2);font-size:13px;margin-right:6px}
+.tabs{display:flex;gap:6px;margin-bottom:12px} .tabs button{flex:1;border:0;border-radius:12px;padding:10px 4px;background:var(--card);color:var(--muted);font-size:14px;font-weight:600}
+.tabs button.on{background:var(--card2);color:var(--text)}
+.tiles{display:grid;grid-template-columns:repeat(6,1fr);gap:7px}
+.tile{aspect-ratio:1;border:0;border-radius:12px;background:var(--card);color:var(--muted);font-size:14px;font-weight:700;display:grid;place-items:center;position:relative}
+.tile.ok{background:rgba(60,207,142,.22);color:var(--ok)} .tile.bad{background:rgba(255,107,107,.18);color:var(--bad)}
+.tile i{position:absolute;top:3px;right:5px;font-style:normal;font-size:9px;opacity:.7}
+.qhead{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.qhead .grow{flex:1}
+.progress{height:6px;background:var(--card);border-radius:9px;overflow:hidden;margin-bottom:14px}
+.progress>div{height:100%;background:linear-gradient(90deg,#6a7dff,#9b5cff);transition:width .3s}
+.timer{height:5px;background:var(--card);border-radius:9px;overflow:hidden;margin:-6px 0 14px}
+.timer>div{height:100%;background:var(--warn);width:100%}
+.question{font-size:21px;line-height:1.4;font-weight:600;margin:6px 0 16px;user-select:text}
+.opts{display:grid;gap:10px}
+.opts.grid2{grid-template-columns:1fr 1fr}
+.opt{border:2px solid transparent;border-radius:14px;padding:16px;background:var(--card);color:var(--text);font-size:19px;font-weight:600;text-align:center;min-height:58px}
+.opt.right{border-color:var(--ok);background:rgba(60,207,142,.18)} .opt.wrong{border-color:var(--bad);background:rgba(255,107,107,.16)}
+.opt svg{display:block;margin:auto}
+.fig{display:flex;justify-content:center;margin:0 0 14px}
+.fig svg{background:var(--card);border-radius:14px}
+.result{border-radius:var(--r);padding:16px;margin-top:14px;animation:pop .25s}
+.result.ok{background:rgba(60,207,142,.15);border:1px solid rgba(60,207,142,.5)}
+.result.bad{background:rgba(255,107,107,.12);border:1px solid rgba(255,107,107,.45)}
+.result h3{margin-bottom:6px} .result p{margin:6px 0;line-height:1.45;user-select:text}
+@keyframes pop{from{transform:scale(.96);opacity:0}to{transform:none;opacity:1}}
+.stage{min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.bigdigit{font-size:84px;font-weight:800;letter-spacing:2px;min-height:110px}
+.entry{font-size:34px;font-weight:700;letter-spacing:6px;min-height:50px;margin:10px 0;font-variant-numeric:tabular-nums}
+.keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;width:100%;max-width:360px}
+.keypad button{border:0;border-radius:14px;padding:16px 0;font-size:24px;font-weight:700;background:var(--card);color:var(--text)}
+.pads{display:grid;grid-template-columns:1fr 1fr;gap:14px;width:100%;max-width:340px}
+.pad{aspect-ratio:1;border:0;border-radius:22px;opacity:.35;transition:opacity .12s, transform .12s}
+.pad.lit{opacity:1;transform:scale(1.04);box-shadow:0 0 30px currentColor}
+.board{display:grid;gap:7px;width:100%;max-width:380px}
+.cell{aspect-ratio:1;border:0;border-radius:10px;background:var(--card);color:var(--text);font-size:22px;font-weight:700;display:grid;place-items:center;padding:0}
+.cell.lit{background:#ffc04d} .cell.sel{background:#6a7dff} .cell.right{background:var(--ok)} .cell.wrong{background:var(--bad)} .cell.miss{outline:3px solid var(--warn)}
+.cell.done{opacity:.25}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.chip{border:2px solid var(--line);background:var(--card);color:var(--text);border-radius:99px;padding:10px 14px;font-size:17px}
+.chip.sel{border-color:#6a7dff;background:rgba(106,125,255,.25)} .chip.right{border-color:var(--ok)} .chip.wrong{border-color:var(--bad)} .chip.miss{border-style:dashed;border-color:var(--warn)}
+.zone{width:100%;height:340px;border-radius:22px;border:0;font-size:24px;font-weight:700;color:#fff;display:grid;place-items:center}
+.word{font-size:52px;font-weight:900;letter-spacing:1px;min-height:80px}
+.colorbtns{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;max-width:380px;margin-top:18px}
+.colorbtns button{border:0;border-radius:14px;padding:18px;font-size:18px;font-weight:700;color:#fff}
+.arrows{font-size:54px;letter-spacing:6px;min-height:80px;font-family:monospace}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%}
+.two button{border:0;border-radius:18px;background:var(--card);color:var(--text);font-size:30px;font-weight:800;min-height:130px}
+.field{position:relative;width:100%;height:420px;background:var(--card);border-radius:22px;overflow:hidden}
+.dot{position:absolute;border-radius:50%;border:0;background:radial-gradient(circle at 35% 35%,#7ff7ee,#16a89f);animation:grow .2s}
+@keyframes grow{from{transform:scale(.3)}to{transform:none}}
+.statgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{background:var(--card);border-radius:16px;padding:14px}
+.stat b{display:block;font-size:26px}
+.barrow{display:flex;align-items:center;gap:10px;margin:10px 0}
+.barrow .lbl{width:110px;font-size:14px}
+.barrow .track{flex:1;height:10px;background:var(--card2);border-radius:9px;overflow:hidden}
+.barrow .track>div{height:100%}
+.week{display:flex;align-items:flex-end;gap:5px;height:110px;margin-top:8px}
+.week>div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;font-size:11px;color:var(--muted)}
+.week span{width:100%;background:linear-gradient(#9b5cff,#6a7dff);border-radius:6px 6px 2px 2px;min-height:2px;margin-bottom:4px}
+.switch{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line)}
+.switch input{width:24px;height:24px}
+.toast{position:fixed;left:50%;bottom:30px;transform:translateX(-50%);background:#000c;padding:10px 16px;border-radius:12px;font-size:15px;z-index:9}
+.center{text-align:center}
+.score{font-size:56px;font-weight:900;margin:8px 0}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script src="tasks.js"></script>
+<script>
+"use strict";
+/* =========================================================================
+   KognitivTrainer – 500 Aufgaben, alles offline, Speicherung im Gerät
+   ========================================================================= */
+const CATS = {
+  rechnen:     {name:"Rechnen & Logik",          ico:"🧮", desc:"Kopfrechnen, Zahlenreihen, Logikrätsel"},
+  geometrie:   {name:"Geometrie & Raum",         ico:"📐", desc:"Flächen, Winkel, Rotation, Spiegelung"},
+  gedaechtnis: {name:"Gedächtnis & Aufmerksamkeit", ico:"🧠", desc:"Merken, Stroop, Suchen, Zählen"},
+  reaktion:    {name:"Reaktion & Tempo",         ico:"⚡", desc:"Reaktionszeit, Impulskontrolle, Speed"}
+};
+const LVL = {1:"Leicht",2:"Mittel",3:"Schwer"};
+const TIME_LIMIT = {1:40, 2:60, 3:90};       // Sekunden für Wissens-Aufgaben
+const BY_ID = {}; TASKS.forEach(t => BY_ID[t.id] = t);
+
+/* ---------- Speicher ---------- */
+const KEY = "kognitivtrainer_v1";
+let S;
+function load(){
+  try{ S = JSON.parse(localStorage.getItem(KEY)) || {}; }catch(e){ S = {}; }
+  S.res = S.res || {}; S.days = S.days || {}; S.react = S.react || [];
+  S.set = Object.assign({timer:true, haptic:true, explain:true}, S.set || {});
+}
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
+function today(d){ d = d || new Date(); return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+function record(t, ok, metric){
+  const r = S.res[t.id] || {n:0, ok:0};
+  r.n++; if(ok) r.ok++; r.last = ok ? 1 : 0; r.t = Date.now();
+  if(metric != null){
+    if(metric.lowerBetter){ if(r.best == null || metric.v < r.best) r.best = metric.v; }
+    else { if(r.best == null || metric.v > r.best) r.best = metric.v; }
+    r.unit = metric.unit;
+  }
+  S.res[t.id] = r;
+  const d = S.days[today()] || {n:0, ok:0};
+  d.n++; if(ok) d.ok++; S.days[today()] = d;
+  save();
+}
+function solvedCount(cat){ return TASKS.filter(t => (!cat || t.cat === cat) && S.res[t.id] && S.res[t.id].ok > 0).length; }
+function streak(){
+  let n = 0; const d = new Date();
+  if(!(S.days[today(d)] && S.days[today(d)].daily)) d.setDate(d.getDate()-1);
+  while(S.days[today(d)] && S.days[today(d)].daily){ n++; d.setDate(d.getDate()-1); }
+  return n;
+}
+
+/* ---------- Hilfen ---------- */
+const $app = document.getElementById("app");
+const rnd = (a,b) => a + Math.floor(Math.random()*(b-a+1));
+const pick = a => a[Math.floor(Math.random()*a.length)];
+function shuffle(a){ a = a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function esc(s){ return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+function h(html){ $app.innerHTML = html; window.scrollTo(0,0); }
+function el(sel){ return $app.querySelector(sel); }
+function els(sel){ return [...$app.querySelectorAll(sel)]; }
+function toast(m){ const t=document.createElement("div"); t.className="toast"; t.textContent=m; document.body.appendChild(t); setTimeout(()=>t.remove(),1800); }
+function buzz(kind){
+  if(!S.set.haptic) return;
+  try{
+    const H = window.Capacitor && Capacitor.Plugins && Capacitor.Plugins.Haptics;
+    if(H){ kind === "bad" ? H.notification({type:"ERROR"}) : H.impact({style:"LIGHT"}); }
+    else if(navigator.vibrate) navigator.vibrate(kind === "bad" ? [40,60,40] : 20);
+  }catch(e){}
+}
+// Alle Zeitgeber einer Aufgabe zentral verwalten, damit beim Verlassen nichts weiterläuft
+const T = { ids:[], set(f,ms){ const id=setTimeout(f,ms); this.ids.push(id); return id; },
+            every(f,ms){ const id=setInterval(f,ms); this.ids.push(id); return id; },
+            clear(){ this.ids.forEach(i => { clearTimeout(i); clearInterval(i); }); this.ids = []; } };
+const now = () => performance.now();
+
+/* ---------- Navigation (inkl. Android-Zurück-Taste) ---------- */
+let NAV = [];
+function go(fn, ...args){ T.clear(); NAV.push([fn,args]); fn(...args); }
+function back(){
+  T.clear();
+  if(NAV.length > 1){ NAV.pop(); const [fn,args] = NAV[NAV.length-1]; fn(...args); return true; }
+  return false;
+}
+function home(){ T.clear(); NAV = [[homeView,[]]]; homeView(); }
+function topbar(title, sub){
+  return `<div class="top"><button class="iconbtn" onclick="back()">‹</button>
+  <div class="grow"><h2 style="margin:0">${title}</h2>${sub?`<div class="muted small">${sub}</div>`:""}</div></div>`;
+}
+
+/* ---------- Startseite ---------- */
+function dailyTasks(dateStr){
+  // fester Zufall pro Tag: jeden Tag eine andere, aber stabile Auswahl
+  let seed = 0; for(const c of dateStr) seed = (seed*31 + c.charCodeAt(0)) >>> 0;
+  const rand = () => { seed = (seed*1664525 + 1013904223) >>> 0; return seed/4294967296; };
+  const plan = {rechnen:3, geometrie:2, gedaechtnis:3, reaktion:2};
+  const out = [];
+  for(const cat in plan){
+    let pool = TASKS.filter(t => t.cat === cat);
+    const open = pool.filter(t => !(S.res[t.id] && S.res[t.id].ok));
+    if(open.length >= plan[cat]) pool = open;
+    const taken = new Set();
+    while(taken.size < plan[cat]) taken.add(pool[Math.floor(rand()*pool.length)].id);
+    out.push(...taken);
+  }
+  return out;
+}
+function homeView(){
+  const d = S.days[today()] || {};
+  const total = solvedCount();
+  const st = streak();
+  h(`
+  <div class="top"><div class="grow"><h1>KognitivTrainer</h1><div class="muted small">500 Aufgaben für Kopf & Reaktion</div></div>
+    <button class="iconbtn" onclick="go(statsView)">📊</button><button class="iconbtn" onclick="go(settingsView)">⚙️</button></div>
+  <div class="card daily">
+    <div class="row" style="align-items:center">
+      <div><div class="muted small">Tägliches Training</div><div class="big">${d.daily ? "✅ Erledigt" : "10 Aufgaben"}</div>
+      <div class="small muted">🔥 Serie: ${st} ${st===1?"Tag":"Tage"} · heute ${d.n||0} gelöst</div></div>
+    </div>
+    <button class="btn primary" onclick="startDaily()">${d.daily ? "Nochmal trainieren" : "Training starten"}</button>
+  </div>
+  <div class="catgrid">
+    ${Object.keys(CATS).map(c => {
+      const n = TASKS.filter(t=>t.cat===c).length, s = solvedCount(c);
+      return `<button class="cat bg-${c}" onclick="go(catView,'${c}',0)"><span class="ico">${CATS[c].ico}</span>
+      <b>${CATS[c].name}</b><span class="small">${s} / ${n} gelöst</span><span class="bar" style="width:${s/n*100}%"></span></button>`;
+    }).join("")}
+  </div>
+  <div class="card" style="margin-top:12px">
+    <div class="row" style="align-items:center"><div><h3>Fortschritt gesamt</h3><div class="muted small">${total} von ${TASKS.length} Aufgaben gelöst</div></div>
+    <div style="flex:0;font-size:26px;font-weight:800">${Math.round(total/TASKS.length*100)}%</div></div>
+    <div class="progress" style="margin:10px 0 0"><div style="width:${total/TASKS.length*100}%"></div></div>
+    <div class="row"><button class="btn" onclick="startMix()">🎲 Zufallsmix</button><button class="btn" onclick="startWeak()">🎯 Schwächen üben</button></div>
+  </div>`);
+}
+function startDaily(){ go(playView, {ids: dailyTasks(today()), i:0, name:"Tägliches Training", daily:true, log:[]}); }
+function startMix(){ go(playView, {ids: shuffle(TASKS).slice(0,10).map(t=>t.id), i:0, name:"Zufallsmix", log:[]}); }
+function startWeak(){
+  let ids = TASKS.filter(t => S.res[t.id] && S.res[t.id].last === 0).map(t=>t.id);
+  if(!ids.length){ toast("Keine falsch gelösten Aufgaben – stark! Hier ein Mix."); return startMix(); }
+  go(playView, {ids: shuffle(ids).slice(0,10), i:0, name:"Schwächen üben", log:[]});
+}
+
+/* ---------- Kategorie ---------- */
+function catView(cat, lvl){
+  const list = TASKS.filter(t => t.cat === cat && (!lvl || t.lvl === lvl));
+  const s = solvedCount(cat), n = TASKS.filter(t=>t.cat===cat).length;
+  h(`${topbar(CATS[cat].ico+" "+CATS[cat].name, CATS[cat].desc+" · "+s+"/"+n+" gelöst")}
+  <div class="tabs">${[0,1,2,3].map(l => `<button class="${l===lvl?"on":""}" onclick="NAV[NAV.length-1][1][1]=${l};catView('${cat}',${l})">${l?LVL[l]:"Alle"}</button>`).join("")}</div>
+  <div class="row" style="margin-bottom:14px">
+    <button class="btn primary" onclick="playOpen('${cat}',${lvl})">▶ Nächste offene</button>
+    <button class="btn" onclick="playRandom('${cat}',${lvl})">🎲 10 zufällige</button></div>
+  <div class="tiles">${list.map(t => {
+    const r = S.res[t.id]; const cls = r ? (r.last ? "ok" : (r.ok ? "ok" : "bad")) : "";
+    return `<button class="tile ${cls}" onclick="playFrom('${cat}',${lvl},${t.id})"><i>${"•".repeat(t.lvl)}</i>${t.id}</button>`;
+  }).join("")}</div>
+  <p class="muted small center">Punkte oben rechts = Schwierigkeit · grün = gelöst · rot = zuletzt falsch</p>`);
+}
+function catList(cat,lvl){ return TASKS.filter(t => t.cat===cat && (!lvl || t.lvl===lvl)).map(t=>t.id); }
+function playFrom(cat,lvl,id){ const ids = catList(cat,lvl); go(playView,{ids, i:ids.indexOf(id), name:CATS[cat].name, log:[], endless:true}); }
+function playOpen(cat,lvl){
+  const ids = catList(cat,lvl); const i = ids.findIndex(id => !(S.res[id] && S.res[id].ok));
+  if(i < 0){ toast("Alles gelöst! 🎉 Du kannst jede Aufgabe wiederholen."); return; }
+  go(playView,{ids, i, name:CATS[cat].name, log:[], endless:true});
+}
+function playRandom(cat,lvl){ go(playView,{ids: shuffle(catList(cat,lvl)).slice(0,10), i:0, name:CATS[cat].name, log:[]}); }
+
+/* ---------- Aufgaben-Spieler ---------- */
+let SESSION = null, DONE = false;
+function playView(sess){
+  T.clear(); SESSION = sess; DONE = false;
+  if(sess.i >= sess.ids.length) return summaryView(sess);
+  const t = BY_ID[sess.ids[sess.i]];
+  const pr = sess.endless ? "" : `<div class="progress"><div style="width:${sess.i/sess.ids.length*100}%"></div></div>`;
+  h(`<div class="qhead"><button class="iconbtn" onclick="back()">✕</button>
+    <div class="grow"><div class="small muted">${esc(sess.name)} · ${sess.endless?("Aufgabe "+t.id):( (sess.i+1)+" / "+sess.ids.length)}</div>
+    <b>${esc(t.title)}</b> <span class="pill" style="background:var(--c-${t.cat});color:#fff">${LVL[t.lvl]}</span></div></div>
+    ${pr}<div id="timer"></div><div id="body"></div><div id="res"></div>`);
+  (PLAYERS[t.type] || PLAYERS.mc)(t, el("#body"));
+}
+// Wird von jedem Aufgabentyp genau einmal aufgerufen
+function finish(t, ok, info){
+  if(DONE) return; DONE = true; T.clear();
+  info = info || {};
+  record(t, ok, info.metric);
+  SESSION.log.push({id:t.id, ok});
+  buzz(ok ? "ok" : "bad");
+  const tm = el("#timer"); if(tm) tm.innerHTML = "";
+  const last = !SESSION.endless && SESSION.i + 1 >= SESSION.ids.length;
+  el("#res").innerHTML = `<div class="result ${ok?"ok":"bad"}">
+    <h3>${ok ? "✅ Richtig!" : (info.timeout ? "⏰ Zeit abgelaufen" : "❌ Leider nicht")}</h3>
+    ${info.msg ? `<p><b>${info.msg}</b></p>` : ""}
+    ${S.set.explain ? `<p>${esc(t.expl)}</p>` : ""}
+  </div>
+  <div class="row"><button class="btn ghost" onclick="retry()">↻ Nochmal</button>
+  <button class="btn primary" onclick="nextTask()">${last ? "Ergebnis ansehen" : "Weiter →"}</button></div>`;
+  setTimeout(() => { const r = el("#res"); if(r) r.scrollIntoView({behavior:"smooth", block:"nearest"}); }, 50);
+}
+function nextTask(){
+  SESSION.i++;
+  if(SESSION.endless && SESSION.i >= SESSION.ids.length){ toast("Ende der Liste erreicht"); return back(); }
+  NAV[NAV.length-1] = [playView,[SESSION]]; playView(SESSION);
+}
+function retry(){ SESSION.log.pop(); playView(SESSION); }
+function summaryView(sess){
+  const ok = sess.log.filter(x=>x.ok).length, n = sess.log.length;
+  if(sess.daily){ const d = S.days[today()] || {n:0,ok:0}; d.daily = true; S.days[today()] = d; save(); }
+  const pct = n ? Math.round(ok/n*100) : 0;
+  h(`<div class="stage" style="min-height:60vh">
+    <div style="font-size:60px">${pct>=80?"🏆":pct>=50?"💪":"🌱"}</div>
+    <h2>${esc(sess.name)} abgeschlossen</h2>
+    <div class="score">${ok} / ${n}</div>
+    <div class="muted">${pct>=80?"Hervorragend!":pct>=50?"Gut gemacht – weiter so!":"Jeder Versuch trainiert dein Gehirn."}</div>
+    ${sess.daily?`<p>🔥 Serie: ${streak()} ${streak()===1?"Tag":"Tage"}</p>`:""}
+    <button class="btn primary" onclick="home()">Zur Startseite</button>
+    <button class="btn" onclick="go(statsView)">Statistik ansehen</button></div>`);
+}
+// Zeitlimit für Wissensaufgaben
+function startTimer(t, onTimeout){
+  if(!S.set.timer) return;
+  const total = TIME_LIMIT[t.lvl]*1000, t0 = now();
+  el("#timer").innerHTML = `<div class="timer"><div id="tbar"></div></div>`;
+  const bar = el("#tbar");
+  T.every(() => {
+    const left = Math.max(0, 1 - (now()-t0)/total);
+    if(bar) { bar.style.width = (left*100)+"%"; if(left < .25) bar.style.background = "var(--bad)"; }
+    if(left <= 0) onTimeout();
+  }, 200);
+}
+
+/* ---------- Abbildungen für Geometrie ---------- */
+function figSVG(f){
+  const W=260,H=170, st=`stroke="#9b8cff" stroke-width="3" fill="rgba(155,140,255,.15)"`, tx=`fill="#eef0ff" font-size="15" text-anchor="middle"`;
+  let s="";
+  if(f.shape==="rect"){ const sc=Math.min(200/f.a,120/f.b), w=f.a*sc, hh=f.b*sc, x=(W-w)/2, y=(H-hh)/2;
+    s=`<rect x="${x}" y="${y}" width="${w}" height="${hh}" ${st}/><text x="${W/2}" y="${y+hh+18}" ${tx}>${f.a} cm</text><text x="${x-8}" y="${H/2+5}" ${tx} text-anchor="end">${f.b}</text>`;}
+  else if(f.shape==="tri"){ s=`<polygon points="30,140 230,140 100,30" ${st}/><line x1="100" y1="30" x2="100" y2="140" stroke="#ffc04d" stroke-dasharray="5 4" stroke-width="2"/>
+    <text x="130" y="160" ${tx}>g = ${f.g} cm</text><text x="${118}" y="95" ${tx}>h = ${f.h}</text>`;}
+  else if(f.shape==="circle"){ s=`<circle cx="130" cy="85" r="65" ${st}/><line x1="130" y1="85" x2="195" y2="85" stroke="#ffc04d" stroke-width="2"/><circle cx="130" cy="85" r="3" fill="#ffc04d"/><text x="162" y="78" ${tx}>r = ${f.r}</text>`;}
+  else if(f.shape==="angles"){ s=`<polygon points="30,140 230,140 120,30" ${st}/><text x="58" y="132" ${tx}>${f.a}°</text><text x="200" y="132" ${tx}>${f.b}°</text><text x="120" y="60" ${tx}>?</text>`;}
+  else if(f.shape==="right"){ s=`<polygon points="40,140 220,140 40,30" ${st}/><rect x="40" y="124" width="16" height="16" fill="none" stroke="#ffc04d" stroke-width="2"/><text x="130" y="160" ${tx}>${f.b}</text><text x="25" y="90" ${tx}>${f.a}</text><text x="142" y="78" ${tx}>?</text>`;}
+  else if(f.shape==="clock"){ const cx=130,cy=85,R=70, ha=(f.h%12*30+f.m*.5-90)*Math.PI/180, ma=(f.m*6-90)*Math.PI/180;
+    let ticks=""; for(let i=0;i<12;i++){ const a=i*30*Math.PI/180; ticks+=`<line x1="${cx+Math.cos(a)*(R-8)}" y1="${cy+Math.sin(a)*(R-8)}" x2="${cx+Math.cos(a)*R}" y2="${cy+Math.sin(a)*R}" stroke="#9aa0c8" stroke-width="2"/>`; }
+    s=`<circle cx="${cx}" cy="${cy}" r="${R}" ${st}/>${ticks}<line x1="${cx}" y1="${cy}" x2="${cx+Math.cos(ha)*38}" y2="${cy+Math.sin(ha)*38}" stroke="#eef0ff" stroke-width="5" stroke-linecap="round"/>
+    <line x1="${cx}" y1="${cy}" x2="${cx+Math.cos(ma)*58}" y2="${cy+Math.sin(ma)*58}" stroke="#ffc04d" stroke-width="3" stroke-linecap="round"/>`;}
+  else if(f.shape==="poly"){ let p=[]; for(let i=0;i<f.k;i++){ const a=(i/f.k*2*Math.PI)-Math.PI/2; p.push((130+Math.cos(a)*68).toFixed(1)+","+(85+Math.sin(a)*68).toFixed(1)); } s=`<polygon points="${p.join(" ")}" ${st}/>`;}
+  return `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${s}</svg>`;
+}
+function polySVG(cells, size, color){
+  const mx=Math.max(...cells.map(c=>c[0]))+1, my=Math.max(...cells.map(c=>c[1]))+1, n=Math.max(mx,my), u=size/(n+1);
+  const ox=(size-mx*u)/2, oy=(size-my*u)/2;
+  return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">${cells.map(([x,y])=>`<rect x="${ox+x*u}" y="${oy+y*u}" width="${u-2}" height="${u-2}" rx="3" fill="${color}"/>`).join("")}</svg>`;
+}
+
+/* ---------- Aufgabentypen ---------- */
+const COLORS = [["Rot","#ff4d5e"],["Blau","#4d7cff"],["Grün","#2bc96f"],["Gelb","#ffc400"]];
+const PLAYERS = {
+  /* Multiple Choice */
+  mc(t, body){
+    const long = t.opts.some(o => String(o).length > 14);
+    body.innerHTML = `${t.fig?`<div class="fig">${figSVG(t.fig)}</div>`:""}<div class="question">${esc(t.q)}</div>
+      <div class="opts ${long?"":"grid2"}">${t.opts.map((o,i)=>`<button class="opt" data-i="${i}">${esc(o)}</button>`).join("")}</div>`;
+    const reveal = (chosen) => { els(".opt").forEach(b => { const i=+b.dataset.i; b.disabled=true; if(i===t.ans) b.classList.add("right"); else if(i===chosen) b.classList.add("wrong"); }); };
+    els(".opt").forEach(b => b.onclick = () => { const i=+b.dataset.i; reveal(i); finish(t, i===t.ans, {msg: i===t.ans?"":"Richtig wäre: "+t.opts[t.ans]}); });
+    startTimer(t, () => { reveal(-1); finish(t, false, {timeout:true, msg:"Richtig wäre: "+t.opts[t.ans]}); });
+  },
+  /* Rotation / Spiegelbild */
+  shape(t, body){
+    body.innerHTML = `<div class="question">${esc(t.q)}</div><div class="fig">${polySVG(t.p.base,170,"#ffc04d")}</div>
+      <div class="opts grid2">${t.p.opts.map((o,i)=>`<button class="opt" data-i="${i}">${polySVG(o,120,"#9b8cff")}</button>`).join("")}</div>`;
+    const reveal = (c) => els(".opt").forEach(b => { const i=+b.dataset.i; b.disabled=true; if(i===t.ans) b.classList.add("right"); else if(i===c) b.classList.add("wrong"); });
+    els(".opt").forEach(b => b.onclick = () => { const i=+b.dataset.i; reveal(i); finish(t, i===t.ans); });
+    startTimer(t, () => { reveal(-1); finish(t, false, {timeout:true}); });
+  },
+  /* Ziffernspanne */
+  span(t, body){
+    const p = t.p, digits = []; while(digits.length < p.len){ const d = rnd(0,9); if(digits[digits.length-1] !== d) digits.push(d); }
+    body.innerHTML = `<div class="question">${esc(t.q)}</div><div class="stage"><button class="btn primary" id="go">Start</button></div>`;
+    el("#go").onclick = () => {
+      const st = el(".stage"); st.innerHTML = `<div class="bigdigit" id="dg"></div><div class="muted">Gut merken …</div>`;
+      let i = 0;
+      const show = () => {
+        if(i >= digits.length){ el("#dg").textContent = ""; return T.set(input, 400); }
+        el("#dg").textContent = digits[i++]; T.set(() => { el("#dg").textContent=""; T.set(show, 180); }, p.ms);
+      };
+      T.set(show, 500);
+    };
+    const target = (p.rev ? digits.slice().reverse() : digits).join("");
+    function input(){
+      let v = "";
+      el(".stage").innerHTML = `<div class="muted">${p.rev?"Rückwärts":"In derselben Reihenfolge"} eingeben</div><div class="entry" id="en">&nbsp;</div>
+      <div class="keypad">${[1,2,3,4,5,6,7,8,9,"⌫",0,"✓"].map(k=>`<button data-k="${k}">${k}</button>`).join("")}</div>`;
+      els(".keypad button").forEach(b => b.onclick = () => {
+        const k = b.dataset.k;
+        if(k==="⌫") v = v.slice(0,-1); else if(k==="✓") return check(); else if(v.length < p.len) v += k;
+        el("#en").innerHTML = v || "&nbsp;";
+        if(v.length === p.len) T.set(check, 250);
+      });
+      function check(){ if(DONE) return; finish(t, v === target, {msg: "Richtig war: " + target + (v!==target ? "  ·  deine Eingabe: " + (v||"–") : "")}); }
+    }
+  },
+  /* Farbfolge (Simon) */
+  simon(t, body){
+    const p = t.p, seq = Array.from({length:p.len}, () => rnd(0,3));
+    body.innerHTML = `<div class="question">${esc(t.q)}</div><div class="stage"><div class="pads">${COLORS.map((c,i)=>`<button class="pad" data-i="${i}" style="background:${c[1]};color:${c[1]}" disabled></button>`).join("")}</div>
+      <div class="muted" id="hint" style="margin-top:14px">Schau genau hin …</div></div>`;
+    const pads = els(".pad");
+    let i = 0;
+    const flash = () => {
+      if(i >= seq.length){ el("#hint").textContent = "Jetzt du! Tippe die Folge nach."; pads.forEach(b=>b.disabled=false); return; }
+      const b = pads[seq[i++]]; b.classList.add("lit");
+      T.set(() => { b.classList.remove("lit"); T.set(flash, 220); }, p.ms);
+    };
+    T.set(flash, 900);
+    let pos = 0;
+    pads.forEach(b => b.onclick = () => {
+      const k = +b.dataset.i; b.classList.add("lit"); setTimeout(()=>b.classList.remove("lit"),160);
+      if(k !== seq[pos]){ pads.forEach(x=>x.disabled=true); return finish(t, false, {msg:`Fehler bei Schritt ${pos+1} von ${seq.length}. Richtig: ${seq.map(s=>COLORS[s][0]).join(" → ")}`}); }
+      pos++; if(pos === seq.length){ pads.forEach(x=>x.disabled=true); finish(t, true, {msg:`Alle ${seq.length} Schritte richtig!`}); }
+    });
+  },
+  /* Wörter merken */
+  words(t, body){
+    const p = t.p;
+    body.innerHTML = `<div class="question">${esc(t.q)}</div><div class="stage"><button class="btn primary" id="go">Start</button></div>`;
+    el("#go").onclick = () => {
+      el(".stage").innerHTML = `<div class="word" id="w"></div><div class="muted" id="c"></div>`;
+      let i = 0;
+      const show = () => {
+        if(i >= p.words.length) return T.set(ask, 300);
+        el("#w").textContent = p.words[i]; el("#c").textContent = (i+1)+" / "+p.words.length; i++;
+        T.set(() => { el("#w").textContent = ""; T.set(show, 250); }, p.ms);
+      };
+      show();
+    };
+    function ask(){
+      const all = shuffle(p.words.concat(p.distract)); const sel = new Set();
+      el(".stage").innerHTML = `<div class="muted" style="margin-bottom:12px">Tippe alle ${p.words.length} Wörter an, die du gesehen hast.</div>
+        <div class="chips">${all.map(w=>`<button class="chip" data-w="${esc(w)}">${esc(w)}</button>`).join("")}</div>
+        <button class="btn primary" id="ok">Fertig</button>`;
+      els(".chip").forEach(c => c.onclick = () => { const w=c.dataset.w; sel.has(w)?sel.delete(w):sel.add(w); c.classList.toggle("sel"); });
+      el("#ok").onclick = () => {
+        let hits=0, fa=0;
+        els(".chip").forEach(c => { const w=c.dataset.w, inL=p.words.includes(w), s=sel.has(w); c.disabled=true;
+          if(s&&inL){hits++; c.classList.add("right");} else if(s){fa++; c.classList.add("wrong");} else if(inL) c.classList.add("miss"); });
+        el("#ok").remove();
+        const err = (p.words.length-hits)+fa;
+        finish(t, err <= (t.lvl===1?0:1), {msg:`${hits} von ${p.words.length} erkannt, ${fa} falsch gewählt.`, metric:{v:hits, unit:"Wörter"}});
+      };
+    }
+  },
+  /* Positionen merken */
+  grid(t, body){
+    const p = t.p, n = p.size*p.size, lit = new Set(shuffle([...Array(n).keys()]).slice(0,p.k)), sel = new Set();
+    body.innerHTML = `<div class="question">${esc(t.q)}</div><div class="stage"><div class="board" style="grid-template-columns:repeat(${p.size},1fr)">
+      ${[...Array(n).keys()].map(i=>`<button class="cell" data-i="${i}" disabled></button>`).join("")}</div><div class="muted" id="hint" style="margin-top:14px">Gleich geht's los …</div></div>`;
+    const cells = els(".cell");
+    T.set(() => { cells.forEach((c,i)=>{ if(lit.has(i)) c.classList.add("lit"); }); el("#hint").textContent="Merken!";
+      T.set(() => { cells.forEach(c=>{c.classList.remove("lit"); c.disabled=false;}); el("#hint").textContent=`Tippe die ${p.k} Felder an`; }, p.ms);
+    }, 700);
+    cells.forEach(c => c.onclick = () => {
+      const i = +c.dataset.i; if(sel.has(i)) return; sel.add(i); c.classList.add("sel");
+      if(sel.size === p.k){
+        let hit=0; cells.forEach((x,j)=>{ x.disabled=true; x.classList.remove("sel");
+          if(sel.has(j)&&lit.has(j)){hit++; x.classList.add("right");} else if(sel.has(j)) x.classList.add("wrong"); else if(lit.has(j)) x.classList.add("miss"); });
+        finish(t, hit===p.k, {msg:`${hit} von ${p.k} Feldern richtig.`, metric:{v:hit, unit:"Felder"}});
+      }
+    });
+  },
+  /* Stroop */
+  stroop(t, body){
+    const p = t.p; let k=0, right=0, times=[], t0=0, cur=null;
+    body.innerHTML = `<div class="question">${esc(t.q)}</div><div class="stage"><div class="muted" id="cnt"></div><div class="word" id="w"></div>
+      <div class="colorbtns">${COLORS.map((c,i)=>`<button data-i="${i}" style="background:${c[1]}">${c[0]}</button>`).join("")}</div></div>`;
+    const btns = els(".colorbtns button"); btns.forEach(b=>b.disabled=true);
+    function next(){
+      if(k >= p.trials) return done();
+      const word = rnd(0,3); let ink = word;
+      if(Math.random() < p.incong) while(ink === word) ink = rnd(0,3);
+      cur = ink; el("#cnt").textContent = (k+1)+" / "+p.trials;
+      const w = el("#w"); w.textContent = COLORS[word][0].toUpperCase(); w.style.color = COLORS[ink][1];
+      btns.forEach(b=>b.disabled=false); t0 = now();
+      T.set(() => answer(-1), p.limit);
+    }
+    function answer(i){
+      T.clear(); btns.forEach(b=>b.disabled=true);
+      if(i === cur){ right++; times.push(now()-t0); }
+      k++; el("#w").textContent = i===cur ? "✓" : "✗"; el("#w").style.color = i===cur?"var(--ok)":"var(--bad)";
+      T.set(next, 350);
+    }
+    btns.forEach(b => b.onclick = () => answer(+b.dataset.i));
+    function done(){ const avg = times.length ? Math.round(times.reduce((a,b)=>a+b,0)/times.length) : 0; addReact(avg);
+      finish(t, right/p.trials >= .8, {msg:`${right} von ${p.trials} richtig · Ø ${avg} ms`, metric:{v:avg||9999, unit:"ms", lowerBetter:true}}); }
+    T.set(next, 800);
+  },
+  /* Finde das Andere */
+  odd(t, body){
+    const p = t.p, n = p.size*p.size; let round=0, err=0, t0=0, total=0;
+    body.innerHTML = `<div class="question">${esc(t.q)}</div><div class="stage"><div class="muted" id="cnt"></div>
+      <div class="board" id="bd" style="grid-template-columns:repeat(${p.size},1fr);margin-top:10px"></div></div>`;
+    function next(){
+      if(round >= p.rounds) return done();
+      const swap = Math.random() < .5, A = swap?p.b:p.a, B = swap?p.a:p.b, odd = rnd(0,n-1);
+      el("#cnt").textContent = `Runde ${round+1} / ${p.rounds}`;
+      el("#bd").innerHTML = [...Array(n).keys()].map(i=>`<button class="cell" data-i="${i}" style="font-size:${p.size>6?18:24}px">${esc(i===odd?B:A)}</button>`).join("");
+      t0 = now();
+      els("#bd .cell").forEach(c => c.onclick = () => {
+        if(+c.dataset.i === odd){ total += now()-t0; round++; c.classList.add("right"); T.set(next, 250); }
+        else { err++; c.classList.add("wrong"); buzz("bad"); }
+      });
+    }
+    function done(){ const avg = Math.round(total/p.rounds);
+      finish(t, err <= 1, {msg:`Ø ${(avg/1000).toFixed(1).replace(".",",")} s pro Runde · ${err} Fehlgriffe`, metric:{v:avg, unit:"ms", lowerBetter:true}}); }
+    next();
+  },
+  /* Symbole zählen */
+  count(t, body){
+    const p = t.p, pool = ["★","●","▲","■","◆","♥","♣","✿","✚","☾"].filter(s=>s!==p.target);
+    const kinds = [p.target, ...shuffle(pool).slice(0, p.kinds-1)];
+    const n = p.size*p.size, cells = Array.from({length:n}, () => pick(kinds));
+    const ans = cells.filter(c=>c===p.target).length;
+    const o = new Set([ans]); while(o.size<4){ const v = ans + pick([-3,-2,-1,1,2,3]); if(v>=0) o.add(v); }
+    const opts = shuffle([...o]);
+    body.innerHTML = `<div class="question">Wie oft kommt <span style="color:var(--warn);font-size:28px">${p.target}</span> vor?</div>
+      <div class="board" style="grid-template-columns:repeat(${p.size},1fr);margin:0 auto 14px;gap:3px">${cells.map(c=>`<div class="cell" style="font-size:${p.size>7?16:20}px;background:transparent">${c}</div>`).join("")}</div>
+      <div class="opts grid2">${opts.map(v=>`<button class="opt" data-v="${v}">${v}</button>`).join("")}</div>`;
+    const reveal = c => els(".opt").forEach(b => { const v=+b.dataset.v; b.disabled=true; if(v===ans) b.classList.add("right"); else if(v===c) b.classList.add("wrong"); });
+    els(".opt").forEach(b => b.onclick = () => { const v=+b.dataset.v; reveal(v); finish(t, v===ans, {msg:`Es waren ${ans}.`}); });
+    startTimer(t, () => { reveal(-1); finish(t, false, {timeout:true, msg:`Es waren ${ans}.`}); });
+  },
+  /* Einfache Reaktion */
+  react(t, body){
+    const p = t.p; let k=0, times=[], early=0, state="idle", t0=0;
+    body.innerHTML = `<div class="question">${esc(t.q)}</div><button class="zone" id="z" style="background:var(--card2)">Tippen zum Starten</button>
+      <div class="center muted" id="info" style="margin-top:10px">${p.trials} Versuche · Ziel: Ø unter ${p.goal} ms</div>`;
+    const z = el("#z");
+    const wait = () => { state="wait"; z.style.background="#c2364a"; z.textContent="Warten …";
+      T.set(() => { state="go"; z.style.background="#2bc96f"; z.textContent="JETZT!"; t0=now(); }, rnd(p.min, p.max)); };
+    z.addEventListener("pointerdown", () => {
+      if(DONE) return;
+      if(state==="idle") return wait();
+      if(state==="wait"){ T.clear(); early++; state="idle"; z.style.background="var(--card2)"; z.textContent="Zu früh! Tippen für neuen Versuch"; buzz("bad"); return; }
+      if(state==="go"){ const ms=Math.round(now()-t0); times.push(ms); k++; state="idle";
+        z.style.background="var(--card2)"; z.textContent=`${ms} ms – ${k<p.trials?"tippen für nächsten":"fertig"}`;
+        el("#info").textContent = "Bisher: " + times.join(" · ") + " ms";
+        if(k>=p.trials){ const avg=Math.round(times.reduce((a,b)=>a+b,0)/times.length); addReact(avg);
+          finish(t, avg<=p.goal && early<=1, {msg:`Ø ${avg} ms · bester ${Math.min(...times)} ms · ${early}× zu früh`, metric:{v:avg, unit:"ms", lowerBetter:true}}); }
+      }
+    });
+  },
+  /* Go / No-Go */
+  gonogo(t, body){
+    const p = t.p; let k=0, hit=0, miss=0, fa=0, isGo=false, tapped=false, t0=0, times=[];
+    body.innerHTML = `<div class="question">${esc(t.q)}</div><button class="zone" id="z" style="background:var(--card)"></button><div class="center muted" id="cnt" style="margin-top:10px"></div>`;
+    const z = el("#z");
+    function next(){
+      if(k >= p.trials) return done();
+      isGo = Math.random() > p.nogo; tapped=false; k++;
+      el("#cnt").textContent = k+" / "+p.trials;
+      z.innerHTML = `<span style="display:block;width:150px;height:150px;border-radius:50%;background:${isGo?"#2bc96f":"#ff4d5e"}"></span>`; t0=now();
+      T.set(() => { if(isGo && !tapped) miss++; z.innerHTML=""; T.set(next, rnd(350,800)); }, p.show);
+    }
+    z.addEventListener("pointerdown", () => {
+      if(DONE || tapped || !z.innerHTML) return; tapped = true;
+      if(isGo){ hit++; times.push(now()-t0); z.innerHTML = `<span style="font-size:60px">✓</span>`; } else { fa++; buzz("bad"); z.innerHTML = `<span style="font-size:60px;color:var(--bad)">✗</span>`; }
+    });
+    function done(){ const acc = (k - miss - fa)/k, avg = times.length?Math.round(times.reduce((a,b)=>a+b,0)/times.length):0;
+      finish(t, acc >= .85, {msg:`Treffer ${hit} · verpasst ${miss} · falsch getippt ${fa} · Ø ${avg} ms`, metric:{v:Math.round(acc*100), unit:"%"}}); }
+    T.set(next, 900);
+  },
+  /* Flanker-Pfeile */
+  arrows(t, body){
+    const p = t.p; let k=0, right=0, cur=0, t0=0, times=[];
+    body.innerHTML = `<div class="question">${esc(t.q)}</div><div class="stage"><div class="muted" id="cnt"></div><div class="arrows" id="a"></div>
+      <div class="two" style="margin-top:20px"><button data-d="0">◀</button><button data-d="1">▶</button></div></div>`;
+    const btns = els(".two button");
+    function next(){
+      if(k >= p.trials) return done();
+      cur = rnd(0,1); const fl = Math.random() < p.incong ? 1-cur : cur, A = ["←","→"];
+      el("#a").textContent = A[fl]+A[fl]+A[cur]+A[fl]+A[fl]; el("#cnt").textContent = (k+1)+" / "+p.trials; t0=now();
+      btns.forEach(b=>b.disabled=false);
+      T.set(() => answer(-1), p.limit);
+    }
+    function answer(d){ T.clear(); btns.forEach(b=>b.disabled=true); if(d===cur){ right++; times.push(now()-t0); } else buzz("bad"); k++;
+      el("#a").textContent = d===cur?"✓":"✗"; T.set(next, 300); }
+    btns.forEach(b => b.onclick = () => answer(+b.dataset.d));
+    function done(){ const avg = times.length?Math.round(times.reduce((a,b)=>a+b,0)/times.length):0; addReact(avg);
+      finish(t, right/p.trials >= .85, {msg:`${right} von ${p.trials} richtig · Ø ${avg} ms`, metric:{v:avg||9999, unit:"ms", lowerBetter:true}}); }
+    T.set(next, 700);
+  },
+  /* Schneller Vergleich (30 s) */
+  compare(t, body){
+    const p = t.p; let right=0, wrong=0, L=0, Rv=0, end=0;
+    body.innerHTML = `<div class="question">${esc(t.q)}</div><div class="stage"><div class="entry" id="clock">${p.secs}</div>
+      <div class="two"><button data-s="0" id="l"></button><button data-s="1" id="r"></button></div><div class="muted" id="sc" style="margin-top:12px">Ziel: ${p.goal} richtig</div></div>`;
+    function term(){ const a=rnd(2,p.range/2|0), b=rnd(2,12), op=pick(["+","−","×"]); return op==="+"?[`${a}+${b}`,a+b]:op==="−"?[`${a+b}−${b}`,a]:[`${Math.min(a,12)}×${b}`,Math.min(a,12)*b]; }
+    function next(){
+      let a,b; do{ if(p.mode==="term"){ a=term(); b=term(); } else { a=rnd(1,p.range); b=rnd(1,p.range); a=[String(a),a]; b=[String(b),b]; } } while(a[1]===b[1]);
+      L=a[1]; Rv=b[1]; el("#l").textContent=a[0]; el("#r").textContent=b[0];
+    }
+    els(".two button").forEach(b => b.onclick = () => { if(DONE) return; const s=+b.dataset.s; if((s===0)===(L>Rv)){ right++; buzz("ok"); } else { wrong++; buzz("bad"); }
+      el("#sc").textContent = `✓ ${right}  ✗ ${wrong}  · Ziel ${p.goal}`; next(); });
+    next(); end = now() + p.secs*1000;
+    T.every(() => { const left = Math.max(0, Math.ceil((end-now())/1000)); el("#clock").textContent = left;
+      if(left<=0){ els(".two button").forEach(b=>b.disabled=true); finish(t, right>=p.goal && wrong<=Math.max(2,right/5), {msg:`${right} richtig, ${wrong} falsch`, metric:{v:right, unit:"richtig"}}); } }, 200);
+  },
+  /* Schulte-Tabelle */
+  schulte(t, body){
+    const p = t.p, n = p.size*p.size, nums = shuffle([...Array(n).keys()].map(i=>i+1)); let want=1, t0=0, err=0;
+    body.innerHTML = `<div class="question">${esc(t.q)}</div><div class="stage"><div class="entry" id="clock">0,0 s</div>
+      <div class="board" style="grid-template-columns:repeat(${p.size},1fr)">${nums.map(v=>`<button class="cell" data-v="${v}">${v}</button>`).join("")}</div>
+      <div class="muted" style="margin-top:10px">Ziel: unter ${p.goal} s · gesucht: <b id="want">1</b></div></div>`;
+    els(".cell").forEach(c => c.onclick = () => {
+      if(DONE) return;
+      if(!t0){ t0 = now(); T.every(()=>{ el("#clock").textContent = ((now()-t0)/1000).toFixed(1).replace(".",",")+" s"; }, 100); }
+      if(+c.dataset.v === want){ c.classList.add("done"); want++; el("#want").textContent = Math.min(want,n);
+        if(want > n){ const s = (now()-t0)/1000; finish(t, s <= p.goal, {msg:`Zeit: ${s.toFixed(1).replace(".",",")} s · ${err} Fehlgriffe`, metric:{v:Math.round(s*10)/10, unit:"s", lowerBetter:true}}); } }
+      else { err++; c.classList.add("wrong"); setTimeout(()=>c.classList.remove("wrong"),200); }
+    });
+  },
+  /* Ziele treffen */
+  targets(t, body){
+    const p = t.p; let k=0, hit=0;
+    body.innerHTML = `<div class="question">${esc(t.q)}</div><div class="field" id="f"></div><div class="center muted" id="cnt" style="margin-top:10px">Gleich geht's los …</div>`;
+    const f = el("#f");
+    function next(){
+      f.innerHTML = ""; if(k >= p.count) return done();
+      k++; el("#cnt").textContent = `${k} / ${p.count} · Treffer ${hit}`;
+      const W=f.clientWidth, H=f.clientHeight, s=p.size;
+      const d = document.createElement("button"); d.className="dot"; d.style.width=d.style.height=s+"px";
+      d.style.left = rnd(4, W-s-4)+"px"; d.style.top = rnd(4, H-s-4)+"px";
+      d.addEventListener("pointerdown", e => { e.stopPropagation(); hit++; buzz("ok"); T.clear(); f.innerHTML=""; T.set(next, rnd(250,600)); });
+      f.appendChild(d);
+      T.set(() => { f.innerHTML=""; T.set(next, rnd(250,600)); }, p.life);
+    }
+    function done(){ finish(t, hit/p.count >= .8, {msg:`${hit} von ${p.count} getroffen`, metric:{v:hit, unit:"Treffer"}}); }
+    T.set(next, 900);
+  },
+  /* Rechen-Sprint */
+  sprint(t, body){
+    const p = t.p; let right=0, wrong=0, ans=0, v="", end=0;
+    body.innerHTML = `<div class="question">${esc(t.q)}</div><div class="stage"><div class="muted" id="clock">${p.secs} s</div>
+      <div class="entry" id="task"></div><div class="entry" id="en" style="color:var(--warn)">&nbsp;</div>
+      <div class="keypad">${[1,2,3,4,5,6,7,8,9,"⌫",0,"✓"].map(k=>`<button data-k="${k}">${k}</button>`).join("")}</div>
+      <div class="muted" id="sc" style="margin-top:10px">Ziel: ${p.goal} richtig</div></div>`;
+    function next(){
+      const op = pick(p.ops.split("")); let a,b;
+      if(op==="+"){ a=rnd(2,p.max); b=rnd(2,p.max); ans=a+b; }
+      else if(op==="-"){ a=rnd(2,p.max); b=rnd(1,a); ans=a-b; }
+      else if(op==="×"){ a=rnd(2,Math.min(12,2+p.max/6|0)); b=rnd(2,10); ans=a*b; }
+      else { b=rnd(2,10); ans=rnd(2,10); a=ans*b; }
+      el("#task").textContent = `${a} ${op==="-"?"−":op} ${b} =`; v=""; el("#en").innerHTML="&nbsp;";
+    }
+    function check(){ if(+v===ans){ right++; buzz("ok"); } else { wrong++; buzz("bad"); } el("#sc").textContent=`✓ ${right}  ✗ ${wrong} · Ziel ${p.goal}`; next(); }
+    els(".keypad button").forEach(b => b.onclick = () => { if(DONE) return; const k=b.dataset.k;
+      if(k==="⌫") v=v.slice(0,-1); else if(k==="✓"){ if(v) check(); return; } else if(v.length<4) v+=k;
+      el("#en").innerHTML = v || "&nbsp;"; if(v.length === String(ans).length && +v===ans) T.set(()=>{ if(!DONE && +v===ans) check(); }, 120); });
+    next(); end = now()+p.secs*1000;
+    T.every(() => { const left = Math.max(0, Math.ceil((end-now())/1000)); el("#clock").textContent = left+" s";
+      if(left<=0) finish(t, right>=p.goal, {msg:`${right} richtig, ${wrong} falsch in ${p.secs} s`, metric:{v:right, unit:"richtig"}}); }, 200);
+  }
+};
+function addReact(ms){ if(!ms) return; S.react.push({d:today(), ms}); if(S.react.length>200) S.react.shift(); save(); }
+
+/* ---------- Statistik ---------- */
+function statsView(){
+  const tried = Object.keys(S.res).length, all = Object.values(S.res);
+  const n = all.reduce((a,r)=>a+r.n,0), ok = all.reduce((a,r)=>a+r.ok,0);
+  const rs = TASKS.filter(t=>t.type==="react" && S.res[t.id] && S.res[t.id].best).map(t=>S.res[t.id].best);
+  const bestReact = rs.length ? Math.min(...rs) : null;
+  const days = []; for(let i=13;i>=0;i--){ const d=new Date(); d.setDate(d.getDate()-i); days.push([d, S.days[today(d)]||{n:0}]); }
+  const mx = Math.max(5, ...days.map(x=>x[1].n));
+  const catStats = Object.keys(CATS).map(c => {
+    const ts = TASKS.filter(t=>t.cat===c), rr = ts.map(t=>S.res[t.id]).filter(Boolean);
+    const nn = rr.reduce((a,r)=>a+r.n,0), oo = rr.reduce((a,r)=>a+r.ok,0);
+    return {c, solved: solvedCount(c), total: ts.length, acc: nn? Math.round(oo/nn*100) : null};
+  });
+  const tried2 = catStats.filter(x=>x.acc!=null).sort((a,b)=>b.acc-a.acc);
+  const WD = ["So","Mo","Di","Mi","Do","Fr","Sa"];
+  h(`${topbar("📊 Statistik")}
+  <div class="statgrid">
+    <div class="stat"><span class="muted small">Gelöst</span><b>${solvedCount()} / ${TASKS.length}</b></div>
+    <div class="stat"><span class="muted small">Trefferquote</span><b>${n?Math.round(ok/n*100)+" %":"–"}</b></div>
+    <div class="stat"><span class="muted small">🔥 Serie</span><b>${streak()} Tage</b></div>
+    <div class="stat"><span class="muted small">Beste Reaktion (Ø)</span><b>${bestReact?bestReact+" ms":"–"}</b></div>
+  </div>
+  <div class="card" style="margin-top:12px"><h3>Letzte 14 Tage</h3>
+    <div class="week">${days.map(([d,v])=>`<div><span style="height:${v.n/mx*85}%"></span>${WD[d.getDay()]}${v.daily?"🔥":""}</div>`).join("")}</div></div>
+  <div class="card"><h3>Nach Bereich</h3>
+    ${catStats.map(x=>`<div class="barrow"><div class="lbl">${CATS[x.c].ico} ${CATS[x.c].name.split(" ")[0]}</div>
+      <div class="track"><div style="width:${x.solved/x.total*100}%;background:var(--c-${x.c})"></div></div>
+      <div class="small" style="width:76px;text-align:right">${x.solved}/${x.total}<br><span class="muted">${x.acc!=null?x.acc+" %":"–"}</span></div></div>`).join("")}
+  </div>
+  ${tried2.length>1 && tried2[0].acc>tried2[tried2.length-1].acc?`<div class="card"><h3>Stärken & Schwächen</h3>
+    <p>💪 Am stärksten: <b>${CATS[tried2[0].c].name}</b> (${tried2[0].acc} %)</p>
+    <p>🎯 Ausbaufähig: <b>${CATS[tried2[tried2.length-1].c].name}</b> (${tried2[tried2.length-1].acc} %)</p>
+    <button class="btn" onclick="go(catView,'${tried2[tried2.length-1].c}',0)">Jetzt üben</button></div>`:""}
+  <div class="card"><h3>Gesamt</h3><p class="muted">${n} Versuche bei ${tried} verschiedenen Aufgaben.</p></div>`);
+}
+
+/* ---------- Einstellungen ---------- */
+function settingsView(){
+  h(`${topbar("⚙️ Einstellungen")}
+  <div class="card">
+    <label class="switch"><span>Zeitlimit bei Wissensaufgaben<br><span class="muted small">Leicht ${TIME_LIMIT[1]} s · Mittel ${TIME_LIMIT[2]} s · Schwer ${TIME_LIMIT[3]} s</span></span><input type="checkbox" data-k="timer" ${S.set.timer?"checked":""}></label>
+    <label class="switch"><span>Erklärung nach jeder Aufgabe</span><input type="checkbox" data-k="explain" ${S.set.explain?"checked":""}></label>
+    <label class="switch" style="border:0"><span>Vibration</span><input type="checkbox" data-k="haptic" ${S.set.haptic?"checked":""}></label>
+  </div>
+  <div class="card"><h3>Daten</h3><p class="muted small">Alle Ergebnisse werden nur auf diesem Gerät gespeichert.</p>
+    <button class="btn ghost" style="color:var(--bad)" onclick="resetAll()">Fortschritt zurücksetzen</button></div>
+  <div class="card"><h3>Über die App</h3><p class="muted small">500 Aufgaben in 4 Bereichen. Kognitives Training kann Arbeitsgedächtnis, Tempo und Aufmerksamkeit bei den geübten Aufgaben verbessern – am meisten bringt es regelmäßig, ein paar Minuten am Tag, zusammen mit Schlaf, Bewegung und Neuem lernen.</p></div>`);
+  els("input[data-k]").forEach(i => i.onchange = () => { S.set[i.dataset.k] = i.checked; save(); });
+}
+function resetAll(){ if(confirm("Wirklich alle Ergebnisse löschen?")){ S = {}; load(); save(); toast("Zurückgesetzt"); home(); } }
+
+/* ---------- Start ---------- */
+load();
+home();
+try{
+  const A = window.Capacitor && Capacitor.Plugins && Capacitor.Plugins.App;
+  if(A) A.addListener("backButton", () => { if(!back()) { if(NAV.length<=1) A.exitApp(); } });
+}catch(e){}
+</script>
+</body>
+</html>

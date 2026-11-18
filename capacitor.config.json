@@ -1,0 +1,6 @@
+{
+  "appId": "de.kognitivtrainer.app",
+  "appName": "KognitivTrainer",
+  "webDir": "www",
+  "android": { "backgroundColor": "#14162b" }
+}
