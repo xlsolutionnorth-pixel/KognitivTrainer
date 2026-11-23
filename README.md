@@ -25,6 +25,7 @@ Jede Aufgabe hat eine Stufe (leicht / mittel / schwer) und eine Erklärung, die 
 ## Funktionen
 
 - **Tägliches Training**: jeden Tag 10 Aufgaben aus allen Bereichen, mit Serie (🔥)
+- **Pro Bereich zwei Zufallsknöpfe**: „Zufall endlos“ (alle Aufgaben, gemischte Arten und Stufen, nie dieselbe direkt hintereinander) und „Offene zufällig“ (nur noch nicht gelöste Aufgaben, bis alle geschafft sind)
 - **Zufallsmix** und **Schwächen üben** (zuletzt falsch gelöste Aufgaben)
 - **Zeitlimit** bei Wissensaufgaben (abschaltbar)
 - **Statistik**: gelöste Aufgaben, Trefferquote, beste Reaktionszeit, letzte 14 Tage, Stärken und Schwächen

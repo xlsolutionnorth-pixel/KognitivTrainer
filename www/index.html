@@ -265,9 +265,10 @@ function catView(cat, lvl, topic){
   h(`${topbar(CATS[cat].ico+" "+CATS[cat].name, CATS[cat].desc+" · "+s+"/"+n+" gelöst")}
   <div class="tabs">${[0,1,2,3].map(l => `<button class="${l===lvl?"on":""}" onclick="NAV[NAV.length-1][1][1]=${l};catView('${cat}',${l},'${topic}')">${l?LVL[l]:"Alle"}</button>`).join("")}</div>
   ${topics.length?`<div class="topics">${["",...topics].map(x=>`<button class="${x===topic?"on":""}" onclick="${setT(x)}">${esc(x||"Alle Themen")}</button>`).join("")}</div>`:""}
-  <div class="row" style="margin-bottom:14px">
-    <button class="btn primary" onclick="playOpen('${cat}',${lvl},'${topic}')">▶ Nächste offene</button>
-    <button class="btn" onclick="playRandom('${cat}',${lvl},'${topic}')">🎲 10 zufällige</button></div>
+  <div class="row" style="margin-bottom:6px">
+    <button class="btn primary" onclick="startGen('${cat}',false)">🎲 Zufall endlos</button>
+    <button class="btn ok" onclick="startGen('${cat}',true)">🎯 Offene zufällig<br><span class="small">${n-s} von ${n} übrig</span></button></div>
+  <p class="muted small center" style="margin:4px 0 14px">Gemischte Arten und Stufen, nie dieselbe Aufgabe direkt hintereinander</p>
   <div class="tiles">${list.map(t => {
     const r = S.res[t.id]; const cls = r ? (r.last ? "ok" : (r.ok ? "ok" : "bad")) : "";
     return `<button class="tile ${cls}" onclick="playFrom('${cat}',${lvl},${t.id},'${topic}')"><i>${"•".repeat(t.lvl)}</i>${t.id}</button>`;
@@ -283,6 +284,74 @@ function playOpen(cat,lvl,topic){
 }
 function playRandom(cat,lvl,topic){ go(playView,{ids: shuffle(catList(cat,lvl,topic)).slice(0,10), i:0, name:CATS[cat].name, log:[]}); }
 
+/* ---------- Zufallsreihen pro Kategorie ----------
+   open=false: endlos zufällig aus allen Aufgaben der Kategorie
+   open=true : nur Aufgaben, die noch nie richtig gelöst wurden – bis alle geschafft sind
+   Beide wechseln reihum durch alle Aufgabenarten und Stufen und wiederholen keine
+   Aufgabe direkt (und möglichst lange nicht). */
+function isSolved(id){ return !!(S.res[id] && S.res[id].ok > 0); }
+function genPool(g){ return TASKS.filter(t => t.cat === g.cat && (!g.open || !isSolved(t.id))); }
+function refill(q, items, avoidFirst){
+  let a = shuffle(items);
+  if(a.length > 1 && a[0] === avoidFirst){ const j = 1 + Math.floor(Math.random()*(a.length-1)); [a[0],a[j]] = [a[j],a[0]]; }
+  q.push(...a);
+}
+function pickNext(g){
+  let pool = genPool(g);
+  if(!pool.length) return null;
+  // nie dieselbe Aufgabe direkt hintereinander (außer es ist wirklich nur noch eine übrig)
+  if(pool.length > 1) pool = pool.filter(t => t.id !== g.lastId);
+  // möglichst lange keine Wiederholung: zuletzt gespielte Aufgaben meiden
+  const keep = Math.min(g.recent.length, Math.max(0, pool.length - 1), 60);
+  const recent = new Set(g.recent.slice(-keep));
+  let fresh = pool.filter(t => !recent.has(t.id)); if(!fresh.length) fresh = pool;
+  // Aufgabenart reihum (gemischt), nicht zweimal dieselbe Art nacheinander
+  const types = [...new Set(fresh.map(t => t.title))];
+  let type = null;
+  for(let guard = 0; guard < 3 * types.length + 3 && !type; guard++){
+    if(!g.typeQ.length) refill(g.typeQ, [...new Set(genPool(g).map(t => t.title))], g.lastType);
+    const cand = g.typeQ.shift();
+    if(types.includes(cand) && (cand !== g.lastType || types.length === 1)) type = cand;
+  }
+  if(!type) type = pick(types);
+  const ofType = fresh.filter(t => t.title === type);
+  // Stufe reihum (leicht/mittel/schwer gemischt), sonst irgendeine vorhandene
+  let lvl = null; const lvls = [...new Set(ofType.map(t => t.lvl))];
+  for(let guard = 0; guard < 6 && lvl === null; guard++){
+    if(!g.lvlQ.length) refill(g.lvlQ, [1,2,3], g.lastLvl);
+    const c = g.lvlQ.shift(); if(lvls.includes(c)) lvl = c;
+  }
+  if(lvl === null) lvl = pick(lvls);
+  // innerhalb von Art und Stufe: am seltensten gespielte Aufgaben zuerst
+  g.cnt = g.cnt || {};
+  const cands = ofType.filter(x => x.lvl === lvl), minC = Math.min(...cands.map(x => g.cnt[x.id] || 0));
+  const t = pick(cands.filter(x => (g.cnt[x.id] || 0) === minC));
+  g.cnt[t.id] = (g.cnt[t.id] || 0) + 1;
+  g.lastId = t.id; g.lastType = t.title; g.lastLvl = t.lvl; g.recent.push(t.id);
+  if(g.recent.length > 200) g.recent.shift();
+  return t.id;
+}
+function startGen(cat, open){
+  const g = {cat, open, recent:[], typeQ:[], lvlQ:[], lastId:null, lastType:null, lastLvl:null};
+  const first = pickNext(g);
+  if(first == null){ toast("Alle Aufgaben in diesem Bereich sind gelöst! 🎉"); return; }
+  go(playView, {ids:[first], i:0, name: open ? "Offene Aufgaben" : "Zufall", log:[], endless:true, gen:g});
+}
+function genInfo(sess){
+  const g = sess.gen; if(!g) return "";
+  if(g.open){ const n = genPool(g).length; return `${CATS[g.cat].name} · Aufgabe ${sess.i+1} · noch ${n} offen`; }
+  return `${CATS[g.cat].name} · Aufgabe ${sess.i+1}`;
+}
+function genDone(sess){
+  const ok = sess.log.filter(x=>x.ok).length, n = sess.log.length;
+  h(`<div class="stage" style="min-height:60vh">
+    <div style="font-size:64px">🏆</div>
+    <h2>Alle Aufgaben in „${esc(CATS[sess.gen.cat].name)}“ geschafft!</h2>
+    <div class="muted">In dieser Runde: ${ok} von ${n} richtig.</div>
+    <button class="btn primary" onclick="home()">Zur Startseite</button>
+    <button class="btn" onclick="startGen('${sess.gen.cat}',false)">🎲 Weiter mit Zufall endlos</button></div>`);
+}
+
 /* ---------- Aufgaben-Spieler ---------- */
 let SESSION = null, DONE = false;
 function playView(sess){
@@ -291,7 +360,7 @@ function playView(sess){
   const t = BY_ID[sess.ids[sess.i]];
   const pr = sess.endless ? "" : `<div class="progress"><div style="width:${sess.i/sess.ids.length*100}%"></div></div>`;
   h(`<div class="qhead"><button class="iconbtn" onclick="back()">✕</button>
-    <div class="grow"><div class="small muted">${esc(sess.name)} · ${sess.endless?("Aufgabe "+t.id):( (sess.i+1)+" / "+sess.ids.length)}</div>
+    <div class="grow"><div class="small muted">${sess.gen ? esc(sess.name)+" · "+genInfo(sess) : esc(sess.name)+" · "+(sess.endless?("Aufgabe "+t.id):( (sess.i+1)+" / "+sess.ids.length))}</div>
     <b>${esc(t.title)}</b> <span class="pill" style="background:var(--c-${t.cat});color:#fff">${LVL[t.lvl]}</span></div></div>
     ${pr}<div id="timer"></div><div id="body"></div><div id="res"></div>`);
   (PLAYERS[t.type] || PLAYERS.mc)(t, el("#body"));
@@ -315,6 +384,11 @@ function finish(t, ok, info){
   setTimeout(() => { const r = el("#res"); if(r) r.scrollIntoView({behavior:"smooth", block:"nearest"}); }, 50);
 }
 function nextTask(){
+  if(SESSION.gen){
+    const id = pickNext(SESSION.gen);
+    if(id == null){ T.clear(); return genDone(SESSION); }
+    SESSION.ids.push(id);
+  }
   SESSION.i++;
   if(SESSION.endless && SESSION.i >= SESSION.ids.length){ toast("Ende der Liste erreicht"); return back(); }
   NAV[NAV.length-1] = [playView,[SESSION]]; playView(SESSION);
