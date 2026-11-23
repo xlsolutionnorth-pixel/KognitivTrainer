@@ -267,8 +267,8 @@ function catView(cat, lvl, topic){
   ${topics.length?`<div class="topics">${["",...topics].map(x=>`<button class="${x===topic?"on":""}" onclick="${setT(x)}">${esc(x||"Alle Themen")}</button>`).join("")}</div>`:""}
   <div class="row" style="margin-bottom:6px">
     <button class="btn primary" onclick="startGen('${cat}',false)">🎲 Zufall endlos</button>
-    <button class="btn ok" onclick="startGen('${cat}',true)">🎯 Offene zufällig<br><span class="small">${n-s} von ${n} übrig</span></button></div>
-  <p class="muted small center" style="margin:4px 0 14px">Gemischte Arten und Stufen, nie dieselbe Aufgabe direkt hintereinander</p>
+    <button class="btn ok" onclick="startGen('${cat}',true)">🎯 Offene zufällig<br><span class="small">${openCount(cat)} von ${n} offen</span></button></div>
+  <p class="muted small center" style="margin:4px 0 14px">Gemischte Arten und Stufen, nie dieselbe Aufgabe direkt hintereinander.<br>Offen = noch nie gemacht oder zuletzt falsch.</p>
   <div class="tiles">${list.map(t => {
     const r = S.res[t.id]; const cls = r ? (r.last ? "ok" : (r.ok ? "ok" : "bad")) : "";
     return `<button class="tile ${cls}" onclick="playFrom('${cat}',${lvl},${t.id},'${topic}')"><i>${"•".repeat(t.lvl)}</i>${t.id}</button>`;
@@ -286,11 +286,15 @@ function playRandom(cat,lvl,topic){ go(playView,{ids: shuffle(catList(cat,lvl,to
 
 /* ---------- Zufallsreihen pro Kategorie ----------
    open=false: endlos zufällig aus allen Aufgaben der Kategorie
-   open=true : nur Aufgaben, die noch nie richtig gelöst wurden – bis alle geschafft sind
+   open=true : nur offene Aufgaben – noch nie gemacht ODER beim letzten Versuch falsch –
+               bis alle zuletzt richtig gelöst sind
    Beide wechseln reihum durch alle Aufgabenarten und Stufen und wiederholen keine
    Aufgabe direkt (und möglichst lange nicht). */
 function isSolved(id){ return !!(S.res[id] && S.res[id].ok > 0); }
-function genPool(g){ return TASKS.filter(t => t.cat === g.cat && (!g.open || !isSolved(t.id))); }
+// offen = noch nie gemacht oder zuletzt falsch beantwortet
+function isOpen(id){ const r = S.res[id]; return !r || r.last !== 1; }
+function openCount(cat){ return TASKS.filter(t => t.cat === cat && isOpen(t.id)).length; }
+function genPool(g){ return TASKS.filter(t => t.cat === g.cat && (!g.open || isOpen(t.id))); }
 function refill(q, items, avoidFirst){
   let a = shuffle(items);
   if(a.length > 1 && a[0] === avoidFirst){ const j = 1 + Math.floor(Math.random()*(a.length-1)); [a[0],a[j]] = [a[j],a[0]]; }
@@ -334,7 +338,7 @@ function pickNext(g){
 function startGen(cat, open){
   const g = {cat, open, recent:[], typeQ:[], lvlQ:[], lastId:null, lastType:null, lastLvl:null};
   const first = pickNext(g);
-  if(first == null){ toast("Alle Aufgaben in diesem Bereich sind gelöst! 🎉"); return; }
+  if(first == null){ toast("Keine offenen Aufgaben – alles zuletzt richtig gelöst! 🎉"); return; }
   go(playView, {ids:[first], i:0, name: open ? "Offene Aufgaben" : "Zufall", log:[], endless:true, gen:g});
 }
 function genInfo(sess){
