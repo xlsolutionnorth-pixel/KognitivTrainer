@@ -1,0 +1,61 @@
+# Code|Name|Hauptstadt|Region|Flaggen-Stufe|Karten-Stufe (0 = keine Kartenfrage)
+de|Deutschland|Berlin|Europa|1|1
+fr|Frankreich|Paris|Europa|1|1
+it|Italien|Rom|Europa|1|1
+es|Spanien|Madrid|Europa|1|1
+gb|Vereinigtes Königreich|London|Europa|1|1
+us|USA|Washington, D.C.|Amerika|1|1
+jp|Japan|Tokio|Asien|1|1
+ca|Kanada|Ottawa|Amerika|1|1
+br|Brasilien|Brasília|Amerika|1|1
+ch|Schweiz|Bern|Europa|1|0
+at|Österreich|Wien|Europa|1|2
+cn|China|Peking|Asien|1|1
+se|Schweden|Stockholm|Europa|1|2
+gr|Griechenland|Athen|Europa|1|2
+nl|Niederlande|Amsterdam|Europa|1|0
+tr|Türkei|Ankara|Asien|1|2
+au|Australien|Canberra|Ozeanien|2|1
+in|Indien|Neu-Delhi|Asien|2|1
+ru|Russland|Moskau|Europa|2|1
+eg|Ägypten|Kairo|Afrika|2|1
+mx|Mexiko|Mexiko-Stadt|Amerika|2|1
+pt|Portugal|Lissabon|Europa|2|2
+ie|Irland|Dublin|Europa|2|2
+no|Norwegen|Oslo|Europa|2|2
+fi|Finnland|Helsinki|Europa|2|2
+dk|Dänemark|Kopenhagen|Europa|2|0
+pl|Polen|Warschau|Europa|2|2
+be|Belgien|Brüssel|Europa|2|0
+ar|Argentinien|Buenos Aires|Amerika|2|2
+kr|Südkorea|Seoul|Asien|2|0
+za|Südafrika|Pretoria|Afrika|2|2
+ua|Ukraine|Kiew|Europa|2|2
+cz|Tschechien|Prag|Europa|2|3
+hr|Kroatien|Zagreb|Europa|2|0
+is|Island|Reykjavík|Europa|3|2
+nz|Neuseeland|Wellington|Ozeanien|3|3
+cl|Chile|Santiago de Chile|Amerika|3|3
+co|Kolumbien|Bogotá|Amerika|3|3
+pe|Peru|Lima|Amerika|3|3
+ng|Nigeria|Abuja|Afrika|3|3
+ke|Kenia|Nairobi|Afrika|3|3
+th|Thailand|Bangkok|Asien|3|3
+vn|Vietnam|Hanoi|Asien|3|3
+id|Indonesien|Jakarta|Asien|3|0
+il|Israel||Asien|3|0
+sa|Saudi-Arabien|Riad|Asien|3|3
+ir|Iran|Teheran|Asien|3|3
+ma|Marokko|Rabat|Afrika|3|3
+hu|Ungarn|Budapest|Europa|3|3
+ro|Rumänien|Bukarest|Europa|3|3
+jm|Jamaika|Kingston|Amerika|3|0
+ph|Philippinen|Manila|Asien|3|0
+mn|Mongolei|Ulaanbaatar|Asien|0|3
+kz|Kasachstan|Astana|Asien|0|3
+dz|Algerien|Algier|Afrika|0|0
+ly|Libyen|Tripolis|Afrika|0|0
+et|Äthiopien|Addis Abeba|Afrika|0|0
+bo|Bolivien|Sucre / La Paz|Amerika|0|0
+ve|Venezuela|Caracas|Amerika|0|0
+pk|Pakistan|Islamabad|Asien|0|0

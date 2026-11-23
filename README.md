@@ -1,6 +1,6 @@
 # KognitivTrainer
 
-Android-App mit **500 Aufgaben** zum Trainieren von Kopf und Reaktion – komplett offline, alle Ergebnisse bleiben auf dem Handy.
+Android-App mit **1000 Aufgaben** zum Trainieren von Kopf und Reaktion – komplett offline, alle Ergebnisse bleiben auf dem Handy.
 
 ## Download
 
@@ -18,6 +18,7 @@ Auf dem Handy öffnen, herunterladen und installieren (beim ersten Mal „Instal
 | 📐 Geometrie & Raum | 120 | Fläche & Umfang, Winkel, Pythagoras, Körper, mentale Rotation, Spiegelbilder, Koordinaten |
 | 🧠 Gedächtnis & Aufmerksamkeit | 120 | Zahlen merken (vor-/rückwärts), Farbfolgen, Wörter merken, Positionen merken, Stroop-Test, „Finde das Andere“, Symbole zählen |
 | ⚡ Reaktion & Tempo | 100 | Reaktionstest, Go/No-Go, Pfeil-Richtung (Flanker), schneller Vergleich, Schulte-Tabelle, Ziele treffen, Rechen-Sprint |
+| 🌍 Allgemeinwissen | 500 | Geografie, Geschichte, Naturwissenschaft, Biologie & Mensch, Astronomie, Kunst & Literatur, Musik, Sport, Sprache, Technik, Gesellschaft, Essen & Alltag, Flaggen, Landkarten |
 
 Jede Aufgabe hat eine Stufe (leicht / mittel / schwer) und eine Erklärung, die nach dem Lösen angezeigt wird.
 
@@ -31,7 +32,9 @@ Jede Aufgabe hat eine Stufe (leicht / mittel / schwer) und eine Erklärung, die 
 ## Technik
 
 - `www/index.html` – die ganze App (HTML/CSS/JavaScript)
-- `www/tasks.js` – die 500 Aufgaben, erzeugt von `tools/generate_tasks.py`
+- `www/tasks.js` – alle Aufgaben, erzeugt von `tools/generate_tasks.py`
+- `tools/wissen/*.txt` – die Allgemeinwissensfragen (eine Zeile pro Frage: Stufe|Thema|Frage|richtig|falsch|falsch|falsch|Erklärung)
+- `www/flags/`, `www/worldmap.js` – Flaggen (flag-icons, MIT) und Weltkarte (@svg-maps/world, CC BY 4.0)
 - Capacitor macht daraus eine Android-App; `.github/workflows/build-apk.yml` baut die APK und veröffentlicht sie als Release.
 
 Aufgaben ändern oder erweitern: `tools/generate_tasks.py` anpassen und hochladen – der Build erzeugt die Aufgaben neu.

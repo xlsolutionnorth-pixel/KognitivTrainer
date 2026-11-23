@@ -1,0 +1,116 @@
+# Format: Stufe|Thema|Frage|richtige Antwort|falsch 1|falsch 2|falsch 3|Erklärung
+1|Naturwissenschaft|Bei wie viel Grad Celsius kocht Wasser auf Meereshöhe?|100 °C|90 °C|80 °C|120 °C|Bei normalem Luftdruck (1013 hPa) siedet Wasser bei 100 °C; in den Bergen schon früher.
+1|Naturwissenschaft|Bei wie viel Grad Celsius gefriert Wasser?|0 °C|−10 °C|4 °C|−4 °C|Reines Wasser gefriert bei normalem Luftdruck bei 0 °C.
+1|Naturwissenschaft|Welches chemische Zeichen hat Wasser?|H₂O|CO₂|O₂|NaCl|Ein Wassermolekül besteht aus zwei Wasserstoffatomen und einem Sauerstoffatom.
+1|Naturwissenschaft|Welches Gas atmen Menschen zum Leben ein?|Sauerstoff|Stickstoff|Kohlendioxid|Helium|Unsere Zellen brauchen Sauerstoff, um Energie aus der Nahrung zu gewinnen.
+1|Naturwissenschaft|Welche Farbe entsteht, wenn man Blau und Gelb mischt (Malfarben)?|Grün|Lila|Orange|Braun|Beim Mischen von Farben (subtraktiv) ergeben Blau und Gelb Grün.
+1|Naturwissenschaft|Welches Metall ist bei Zimmertemperatur flüssig?|Quecksilber|Blei|Zinn|Aluminium|Quecksilber schmilzt schon bei −39 °C.
+1|Naturwissenschaft|Was zieht ein Magnet an?|Eisen|Holz|Kupfer|Glas|Eisen, Nickel und Kobalt sind magnetisch; Kupfer und Aluminium nicht.
+1|Naturwissenschaft|Wie heißt die Kraft, die Dinge auf den Boden fallen lässt?|Schwerkraft|Reibung|Magnetismus|Fliehkraft|Die Schwerkraft (Gravitation) zieht alle Massen zueinander.
+1|Naturwissenschaft|Wie viele Farben hat ein Regenbogen traditionell?|7|5|6|9|Rot, Orange, Gelb, Grün, Blau, Indigo, Violett – so zählte schon Isaac Newton.
+1|Naturwissenschaft|In welcher Einheit misst man elektrische Spannung?|Volt|Watt|Ampere|Ohm|Benannt nach Alessandro Volta, dem Erfinder der Batterie.
+1|Naturwissenschaft|Was ist schneller: Licht oder Schall?|Licht|Schall|Beide gleich schnell|Kommt auf das Wetter an|Deshalb sieht man den Blitz vor dem Donner.
+1|Naturwissenschaft|Welches Gas brauchen Pflanzen für die Fotosynthese aus der Luft?|Kohlendioxid|Sauerstoff|Stickstoff|Wasserstoff|Pflanzen bauen aus CO₂ und Wasser mithilfe von Licht Zucker und geben Sauerstoff ab.
+1|Naturwissenschaft|Woraus besteht Kochsalz chemisch?|Natriumchlorid|Kaliumnitrat|Calciumcarbonat|Natriumhydroxid|Die Formel ist NaCl.
+1|Naturwissenschaft|Was misst ein Thermometer?|Temperatur|Luftdruck|Luftfeuchtigkeit|Windgeschwindigkeit|Den Luftdruck misst ein Barometer, die Feuchte ein Hygrometer.
+1|Naturwissenschaft|Wie nennt man den Übergang von flüssig zu gasförmig?|Verdampfen|Schmelzen|Kondensieren|Erstarren|Kondensieren ist der umgekehrte Vorgang (gasförmig zu flüssig).
+2|Naturwissenschaft|Wie schnell ist das Licht im Vakuum ungefähr?|300.000 km/s|30.000 km/s|3.000 km/s|3 Millionen km/s|Genau sind es 299.792,458 km/s.
+2|Naturwissenschaft|Welches Element hat das chemische Symbol „Fe“?|Eisen|Fluor|Phosphor|Blei|„Fe“ kommt vom lateinischen „ferrum“.
+2|Naturwissenschaft|Welches Element hat das chemische Symbol „Au“?|Gold|Silber|Aluminium|Argon|„Au“ kommt vom lateinischen „aurum“.
+2|Naturwissenschaft|Welches ist das häufigste Gas in der Erdatmosphäre?|Stickstoff|Sauerstoff|Kohlendioxid|Argon|Die Luft besteht zu etwa 78 % aus Stickstoff und 21 % aus Sauerstoff.
+2|Naturwissenschaft|Wer formulierte die Relativitätstheorie?|Albert Einstein|Isaac Newton|Max Planck|Niels Bohr|Einstein veröffentlichte 1905 die spezielle und 1915 die allgemeine Relativitätstheorie.
+2|Naturwissenschaft|Wie heißt das leichteste chemische Element?|Wasserstoff|Helium|Lithium|Sauerstoff|Wasserstoff hat die Ordnungszahl 1.
+2|Naturwissenschaft|Welchen pH-Wert hat reines Wasser?|7|0|1|14|pH 7 ist neutral; darunter sauer, darüber basisch.
+2|Naturwissenschaft|In welcher Einheit misst man Leistung?|Watt|Joule|Newton|Pascal|1 Watt = 1 Joule pro Sekunde. Benannt nach James Watt.
+2|Naturwissenschaft|Wer gilt als Entdecker des Penicillins?|Alexander Fleming|Louis Pasteur|Robert Koch|Marie Curie|Fleming entdeckte 1928 zufällig die Wirkung eines Schimmelpilzes auf Bakterien.
+2|Naturwissenschaft|Wie nennt man die kleinsten Teilchen eines chemischen Elements?|Atome|Moleküle|Zellen|Kristalle|Moleküle bestehen aus mehreren miteinander verbundenen Atomen.
+2|Naturwissenschaft|Wie heißt das Phänomen, wenn ein Stab im Wasser geknickt aussieht?|Lichtbrechung|Reflexion|Beugung|Interferenz|Licht ändert beim Übergang von Wasser in Luft seine Richtung.
+2|Naturwissenschaft|Welche Wissenschaftlerin erhielt als erster Mensch zwei Nobelpreise?|Marie Curie|Lise Meitner|Rosalind Franklin|Ada Lovelace|Marie Curie erhielt den Nobelpreis für Physik (1903) und für Chemie (1911).
+2|Naturwissenschaft|Wie viele Elemente gibt es im Periodensystem (bekannt, Stand heute)?|118|92|108|150|Elemente bis Ordnungszahl 118 (Oganesson) sind nachgewiesen und benannt.
+2|Naturwissenschaft|Was ist ein Lichtjahr?|Eine Entfernung|Eine Zeitspanne|Eine Helligkeit|Eine Geschwindigkeit|Die Strecke, die Licht in einem Jahr zurücklegt – rund 9,46 Billionen km.
+2|Naturwissenschaft|Welches Element ist für die grüne Farbe von Pflanzen wichtig (im Chlorophyll-Zentrum)?|Magnesium|Eisen|Kupfer|Zink|Im Zentrum des Chlorophyll-Moleküls sitzt ein Magnesium-Atom.
+3|Naturwissenschaft|Wie lautet die berühmte Formel aus Einsteins Relativitätstheorie?|E = mc²|F = ma|E = hf|pV = nRT|Energie gleich Masse mal Lichtgeschwindigkeit zum Quadrat.
+3|Naturwissenschaft|Welches Element hat die Ordnungszahl 6?|Kohlenstoff|Stickstoff|Sauerstoff|Bor|Kohlenstoff ist die Grundlage aller bekannten Lebewesen.
+3|Naturwissenschaft|Was beschreibt die Einheit „Hertz“?|Frequenz|Lautstärke|Spannung|Strahlung|1 Hertz = eine Schwingung pro Sekunde.
+3|Naturwissenschaft|Bei welcher Temperatur liegt der absolute Nullpunkt?|−273,15 °C|−100 °C|−459,67 °C|−200 °C|0 Kelvin = −273,15 °C. Kälter geht es nicht.
+3|Naturwissenschaft|Welches ist das härteste natürliche Mineral?|Diamant|Quarz|Korund|Topas|Auf der Mohs-Skala hat Diamant die Härte 10.
+3|Naturwissenschaft|Was ist das chemische Symbol für Kalium?|K|Ka|Ca|Kl|„K“ kommt vom lateinischen „kalium“; Ca ist Calcium.
+3|Naturwissenschaft|Wer stellte das Periodensystem der Elemente 1869 auf?|Dmitri Mendelejew|Antoine Lavoisier|John Dalton|Robert Bunsen|Gleichzeitig arbeitete auch der Deutsche Lothar Meyer an einem ähnlichen System.
+3|Naturwissenschaft|Wie heißt das Teilchen ohne elektrische Ladung im Atomkern?|Neutron|Proton|Elektron|Photon|Protonen sind positiv, Elektronen (in der Hülle) negativ geladen.
+3|Naturwissenschaft|Welches Gesetz besagt: Spannung = Widerstand × Stromstärke?|Ohmsches Gesetz|Newtonsches Gesetz|Coulombsches Gesetz|Hookesches Gesetz|U = R · I, benannt nach Georg Simon Ohm.
+3|Naturwissenschaft|Welches Edelgas wird oft in Leuchtreklamen verwendet und leuchtet rot-orange?|Neon|Argon|Xenon|Radon|Daher der Name „Neonröhre“.
+3|Naturwissenschaft|Welcher Physiker entdeckte 1895 die nach ihm benannten Strahlen?|Wilhelm Conrad Röntgen|Heinrich Hertz|Max Planck|Ernst Abbe|Röntgen erhielt dafür 1901 den ersten Nobelpreis für Physik.
+3|Naturwissenschaft|Was ist die SI-Einheit der Kraft?|Newton|Joule|Pascal|Watt|1 Newton ist die Kraft, die 1 kg um 1 m/s² beschleunigt.
+3|Naturwissenschaft|Wie heißt die Verbindung, die als „Trockeneis“ bekannt ist?|Gefrorenes Kohlendioxid|Gefrorener Stickstoff|Gefrorenes Wasser mit Salz|Gefrorenes Ammoniak|Trockeneis geht bei −78,5 °C direkt vom festen in den gasförmigen Zustand über.
+3|Naturwissenschaft|Wie nennt man den direkten Übergang von fest zu gasförmig?|Sublimation|Kondensation|Verdunstung|Resublimation|Resublimation ist der umgekehrte Vorgang (z. B. Raureif).
+3|Naturwissenschaft|Welches Metall leitet Strom am besten?|Silber|Kupfer|Gold|Aluminium|Silber leitet am besten; Kupfer wird wegen des Preises für Kabel genutzt.
+1|Biologie & Mensch|Wie viele Beine hat eine Spinne?|8|6|10|12|Spinnen sind Spinnentiere mit 8 Beinen; Insekten haben 6.
+1|Biologie & Mensch|Welches ist das größte Tier der Erde?|Blauwal|Afrikanischer Elefant|Pottwal|Walhai|Ein Blauwal kann über 30 m lang und rund 150 Tonnen schwer werden.
+1|Biologie & Mensch|Wie viele Knochen hat ein erwachsener Mensch ungefähr?|206|150|306|412|Babys haben mehr Knochen, die im Laufe der Zeit zusammenwachsen.
+1|Biologie & Mensch|Welches Organ pumpt das Blut durch den Körper?|Herz|Lunge|Leber|Niere|Das Herz schlägt etwa 100.000-mal am Tag.
+1|Biologie & Mensch|Was frisst ein Pflanzenfresser?|Pflanzen|Fleisch|Insekten|Fische|Pflanzenfresser heißen auch Herbivoren.
+1|Biologie & Mensch|Welches Tier ist das schnellste Landtier?|Gepard|Löwe|Pferd|Antilope|Geparde erreichen kurzzeitig über 100 km/h.
+1|Biologie & Mensch|Wie heißt das größte Organ des Menschen?|Haut|Leber|Lunge|Darm|Die Haut eines Erwachsenen ist etwa 1,5–2 m² groß.
+1|Biologie & Mensch|Wie viele Zähne hat ein erwachsener Mensch normalerweise (inkl. Weisheitszähne)?|32|28|24|36|Ohne Weisheitszähne sind es 28.
+1|Biologie & Mensch|Welches Säugetier kann fliegen?|Fledermaus|Flughörnchen|Pinguin|Strauß|Fledermäuse sind die einzigen Säugetiere, die aktiv fliegen; Flughörnchen gleiten nur.
+1|Biologie & Mensch|Wie heißt die Zwischenstufe, in der sich eine Raupe zum Schmetterling verwandelt?|Puppe|Larve|Ei|Nymphe|Die Raupe verpuppt sich und verwandelt sich in der Puppe zum Schmetterling (Metamorphose).
+1|Biologie & Mensch|Welches Vitamin bildet der Körper mithilfe von Sonnenlicht?|Vitamin D|Vitamin C|Vitamin A|Vitamin B12|UV-Licht auf der Haut startet die Bildung von Vitamin D.
+1|Biologie & Mensch|Welche Blutgruppe gilt als Universalspender (bei Rhesus negativ)?|0|AB|A|B|0 negativ kann fast allen Menschen gespendet werden.
+1|Biologie & Mensch|Wie heißen die Jungen eines Pferdes?|Fohlen|Kalb|Lamm|Ferkel|Kalb ist das Junge der Kuh, Lamm das des Schafs.
+1|Biologie & Mensch|Welches Tier legt Eier, obwohl es ein Säugetier ist?|Schnabeltier|Delfin|Känguru|Biber|Schnabeltier und Ameisenigel sind eierlegende Säugetiere.
+1|Biologie & Mensch|Mit welchem Organ atmen Fische?|Kiemen|Lunge|Haut|Schwimmblase|Kiemen holen Sauerstoff aus dem Wasser.
+2|Biologie & Mensch|Wie viele Herzkammern (ohne Vorhöfe) hat das menschliche Herz?|2|1|3|4|Das Herz hat zwei Kammern und zwei Vorhöfe. Die linke Kammer pumpt Blut in den Körper, die rechte in die Lunge.
+2|Biologie & Mensch|Wie heißt der Träger der Erbinformation in Zellen?|DNA|ATP|RNA-Ribosom|Hämoglobin|Die DNA ist als Doppelhelix aufgebaut.
+2|Biologie & Mensch|Welcher ist der größte Knochen im menschlichen Körper?|Oberschenkelknochen|Schienbein|Oberarmknochen|Becken|Der Oberschenkelknochen (Femur) ist der längste und stärkste Knochen.
+2|Biologie & Mensch|Wie viele Chromosomen hat eine normale menschliche Körperzelle?|46|23|48|44|23 Paare – je ein Satz von Mutter und Vater.
+2|Biologie & Mensch|Welches Organ produziert Insulin?|Bauchspeicheldrüse|Leber|Milz|Schilddrüse|Insulin senkt den Blutzucker; bei Diabetes fehlt es oder wirkt schlechter.
+2|Biologie & Mensch|Wer begründete die Evolutionstheorie mit dem Werk „Über die Entstehung der Arten“?|Charles Darwin|Gregor Mendel|Alexander von Humboldt|Carl von Linné|Darwin veröffentlichte das Buch 1859.
+2|Biologie & Mensch|Wie heißen die „Kraftwerke“ der Zelle?|Mitochondrien|Ribosomen|Chloroplasten|Zellkerne|In den Mitochondrien wird Energie in Form von ATP gewonnen.
+2|Biologie & Mensch|Was transportiert Sauerstoff im Blut?|Rote Blutkörperchen|Weiße Blutkörperchen|Blutplättchen|Blutplasma allein|Das Eiweiß Hämoglobin in den roten Blutkörperchen bindet den Sauerstoff.
+2|Biologie & Mensch|Wie lange dauert eine menschliche Schwangerschaft durchschnittlich?|Etwa 40 Wochen|Etwa 30 Wochen|Etwa 52 Wochen|Etwa 34 Wochen|Gerechnet ab dem ersten Tag der letzten Regelblutung, also rund 9 Monate.
+2|Biologie & Mensch|Welches Tier hat den höchsten Blutdruck (wegen seines langen Halses)?|Giraffe|Elefant|Strauß|Pferd|Das Herz muss das Blut rund 2 m hoch bis zum Gehirn pumpen.
+2|Biologie & Mensch|Was sind Säugetiere, die im Wasser leben und mit Lungen atmen?|Wale|Haie|Rochen|Thunfische|Wale und Delfine müssen zum Atmen an die Oberfläche; Haie sind Fische.
+2|Biologie & Mensch|Wo im Körper befindet sich der Steigbügel, der kleinste Knochen?|Im Ohr|In der Nase|Im Fuß|In der Hand|Hammer, Amboss und Steigbügel übertragen den Schall im Mittelohr.
+2|Biologie & Mensch|Welcher Mönch gilt als Begründer der Vererbungslehre?|Gregor Mendel|Charles Darwin|Louis Pasteur|Robert Koch|Mendel experimentierte im 19. Jahrhundert mit Erbsen.
+2|Biologie & Mensch|Welches Tier ist kein Insekt?|Skorpion|Ameise|Libelle|Käfer|Skorpione gehören wie Spinnen zu den Spinnentieren.
+2|Biologie & Mensch|Wie nennt man Tiere, die sowohl Pflanzen als auch Fleisch fressen?|Allesfresser|Fleischfresser|Pflanzenfresser|Aasfresser|Beispiele sind Bären, Schweine und Menschen.
+3|Biologie & Mensch|Wie heißt der Botenstoff, der oft „Glückshormon“ genannt wird?|Serotonin|Adrenalin|Cortisol|Insulin|Auch Dopamin und Endorphine werden so bezeichnet; Adrenalin und Cortisol sind Stresshormone.
+3|Biologie & Mensch|Welche Blutgruppe ist in Deutschland am häufigsten?|A|0|B|AB|Etwa 43 % haben Blutgruppe A, rund 41 % Blutgruppe 0.
+3|Biologie & Mensch|Wer entdeckte den Tuberkulose-Erreger?|Robert Koch|Louis Pasteur|Rudolf Virchow|Paul Ehrlich|Robert Koch stellte seine Entdeckung 1882 vor.
+3|Biologie & Mensch|Wie viele Liter Blut hat ein erwachsener Mensch ungefähr?|5 bis 6 Liter|2 bis 3 Liter|8 bis 10 Liter|12 Liter|Das sind etwa 7–8 % des Körpergewichts.
+3|Biologie & Mensch|Welche Struktur der DNA beschrieben Watson und Crick 1953?|Doppelhelix|Einzelstrang|Dreifachhelix|Ringform|Wichtige Röntgenbilder dafür lieferte Rosalind Franklin.
+3|Biologie & Mensch|Welcher Teil des Gehirns ist vor allem für Gleichgewicht und Koordination zuständig?|Kleinhirn|Großhirn|Hirnstamm|Hypophyse|Das Kleinhirn (Cerebellum) liegt im Hinterkopf.
+3|Biologie & Mensch|Welches Produkt der Fotosynthese entsteht neben Sauerstoff?|Traubenzucker (Glukose)|Fett|Eiweiß|Kohlendioxid|Pflanzen bilden Glukose und speichern sie oft als Stärke.
+3|Biologie & Mensch|Wie heißt die Wissenschaft von den Pilzen?|Mykologie|Botanik|Ornithologie|Entomologie|Ornithologie = Vögel, Entomologie = Insekten.
+3|Biologie & Mensch|Welches Tier gilt als nächster lebender Verwandter des Menschen?|Schimpanse (und Bonobo)|Gorilla|Orang-Utan|Pavian|Mensch und Schimpanse teilen rund 98–99 % der DNA.
+3|Biologie & Mensch|Welches Organ filtert das Blut und bildet Urin?|Niere|Leber|Milz|Blase|Die Nieren filtern täglich rund 1800 Liter Blut.
+3|Biologie & Mensch|Wie heißt die Lehre von den Vögeln?|Ornithologie|Ichthyologie|Herpetologie|Mammalogie|Ichthyologie = Fische, Herpetologie = Reptilien und Amphibien.
+3|Biologie & Mensch|Welche Tiere haben drei Herzen?|Kraken|Haie|Schildkröten|Frösche|Zwei Kiemenherzen und ein Körperherz – außerdem ist ihr Blut blau.
+3|Biologie & Mensch|Wie viele Muskeln hat der menschliche Körper ungefähr?|Über 600|Etwa 200|Etwa 1000|Etwa 350|Meist werden 650 oder mehr Skelettmuskeln gezählt.
+3|Biologie & Mensch|Welches Vitamin fehlt bei Skorbut?|Vitamin C|Vitamin D|Vitamin B1|Vitamin K|Seefahrer erkrankten früher daran; Zitrusfrüchte halfen.
+3|Biologie & Mensch|Was ist ein Virus im Unterschied zu einem Bakterium?|Es hat keinen eigenen Stoffwechsel|Es ist größer|Es ist eine Pflanze|Es lässt sich mit Antibiotika abtöten|Viren vermehren sich nur in fremden Zellen; Antibiotika wirken gegen Bakterien, nicht gegen Viren.
+1|Astronomie|Welcher Planet ist der Sonne am nächsten?|Merkur|Venus|Mars|Erde|Merkur braucht nur 88 Tage für eine Umrundung der Sonne.
+1|Astronomie|Welcher ist der größte Planet unseres Sonnensystems?|Jupiter|Saturn|Erde|Neptun|In Jupiter würden über 1300 Erden passen.
+1|Astronomie|Wie heißt der natürliche Begleiter der Erde?|Mond|Mars|Phobos|Venus|Der Mond ist rund 384.400 km von der Erde entfernt.
+1|Astronomie|Welcher Planet wird „Roter Planet“ genannt?|Mars|Venus|Jupiter|Merkur|Eisenoxid (Rost) färbt seine Oberfläche rötlich.
+1|Astronomie|Wie viele Planeten hat unser Sonnensystem?|8|9|7|10|Seit 2006 zählt Pluto als Zwergplanet.
+1|Astronomie|Wie lange braucht die Erde für eine Umrundung der Sonne?|Etwa 365 Tage|Etwa 30 Tage|24 Stunden|Etwa 100 Tage|Genau sind es rund 365,25 Tage – daher alle 4 Jahre ein Schaltjahr.
+1|Astronomie|Welcher Planet ist für seine auffälligen Ringe bekannt?|Saturn|Mars|Venus|Merkur|Auch Jupiter, Uranus und Neptun haben Ringe, aber viel schwächere.
+1|Astronomie|Was ist die Sonne?|Ein Stern|Ein Planet|Ein Mond|Ein Komet|Die Sonne ist ein mittelgroßer Stern.
+2|Astronomie|Wie heißt unsere Galaxie?|Milchstraße|Andromeda|Sombrero|Großer Wagen|Die Milchstraße enthält vermutlich 100 bis 400 Milliarden Sterne.
+2|Astronomie|Wie lange braucht das Sonnenlicht bis zur Erde?|Etwa 8 Minuten|Etwa 8 Sekunden|Etwa 1 Stunde|Etwa 1 Tag|Das Licht legt rund 150 Millionen km zurück.
+2|Astronomie|Welcher Planet ist der heißeste im Sonnensystem?|Venus|Merkur|Mars|Jupiter|Die dichte CO₂-Atmosphäre der Venus heizt sie auf rund 465 °C auf.
+2|Astronomie|Welcher Himmelskörper wurde 2006 zum Zwergplaneten herabgestuft?|Pluto|Ceres|Eris|Neptun|Die Internationale Astronomische Union definierte damals den Begriff „Planet“ neu.
+2|Astronomie|Was verursacht Ebbe und Flut hauptsächlich?|Die Anziehung des Mondes|Der Wind|Die Erddrehung allein|Die Sonnenwärme|Auch die Sonne trägt bei, der Mond hat aber den größeren Einfluss.
+2|Astronomie|Wie heißt das Sternbild, das wie ein großer Wagen aussieht?|Großer Bär|Orion|Kassiopeia|Löwe|Der Große Wagen ist ein Teil des Sternbilds Großer Bär.
+2|Astronomie|Wie heißt der Stern, der fast genau über dem Nordpol steht?|Polarstern|Sirius|Wega|Beteigeuze|Er dient seit Jahrhunderten zur Orientierung.
+2|Astronomie|Wie heißt die internationale Raumstation?|ISS|Mir|Skylab|Tiangong-1|Die ISS umkreist die Erde etwa alle 90 Minuten.
+3|Astronomie|Welcher ist der hellste Stern am Nachthimmel?|Sirius|Polarstern|Wega|Beteigeuze|Sirius im Sternbild Großer Hund ist rund 8,6 Lichtjahre entfernt.
+3|Astronomie|Wie heißt der größte Mond des Saturns?|Titan|Ganymed|Europa|Io|Titan hat als einziger Mond eine dichte Atmosphäre. Ganymed (Jupiter) ist noch größer.
+3|Astronomie|Wie heißt der größte Mond im Sonnensystem?|Ganymed|Titan|Mond (Erde)|Kallisto|Der Jupitermond Ganymed ist sogar größer als der Planet Merkur.
+3|Astronomie|Welcher Planet dreht sich „liegend“ mit einer Achsneigung von rund 98°?|Uranus|Neptun|Saturn|Venus|Vermutlich hat ihn früher ein großer Einschlag umgekippt.
+3|Astronomie|Welches Teleskop startete 2021 als Nachfolger von Hubble?|James-Webb-Weltraumteleskop|Kepler-Teleskop|Spitzer-Teleskop|Chandra-Teleskop|Es beobachtet vor allem im Infrarotbereich.
+3|Astronomie|Wie heißt die Grenze um ein Schwarzes Loch, hinter der nichts mehr entkommt?|Ereignishorizont|Photonensphäre|Akkretionsscheibe|Singularität|Nicht einmal Licht kann den Ereignishorizont von innen verlassen.
+3|Astronomie|Wie heißt die nächstgelegene große Spiralgalaxie zur Milchstraße?|Andromeda-Galaxie|Große Magellansche Wolke|Dreiecksgalaxie|Sombrero-Galaxie|Sie ist rund 2,5 Millionen Lichtjahre entfernt.
+3|Astronomie|Wie viele Monde hat der Mars?|2|0|1|4|Sie heißen Phobos und Deimos.
+3|Astronomie|Welcher Komet ist etwa alle 76 Jahre von der Erde aus sichtbar?|Halleyscher Komet|Hale-Bopp|Shoemaker-Levy 9|Tschurjumow-Gerassimenko|Er war zuletzt 1986 zu sehen und kommt 2061 wieder.

@@ -1,0 +1,127 @@
+# Format: Stufe|Thema|Frage|richtige Antwort|falsch 1|falsch 2|falsch 3|Erklärung
+1|Kunst & Literatur|Wer malte die „Mona Lisa“?|Leonardo da Vinci|Michelangelo|Raffael|Vincent van Gogh|Das Gemälde hängt im Louvre in Paris.
+1|Kunst & Literatur|Wer schrieb „Romeo und Julia“?|William Shakespeare|Johann Wolfgang von Goethe|Friedrich Schiller|Charles Dickens|Die Tragödie entstand um 1595 und spielt in Verona.
+1|Kunst & Literatur|Wer schrieb den „Faust“?|Johann Wolfgang von Goethe|Friedrich Schiller|Heinrich Heine|Thomas Mann|Goethe arbeitete über 60 Jahre an seinem „Faust“.
+1|Kunst & Literatur|Welche Brüder sammelten Märchen wie „Hänsel und Gretel“?|Brüder Grimm|Brüder Lumière|Brüder Mann|Brüder Wright|Jacob und Wilhelm Grimm veröffentlichten ab 1812 ihre „Kinder- und Hausmärchen“.
+1|Kunst & Literatur|Welcher Maler schnitt sich einen Teil seines Ohres ab?|Vincent van Gogh|Pablo Picasso|Claude Monet|Salvador Dalí|Van Gogh tat dies 1888 in Arles nach einem Streit mit Paul Gauguin.
+1|Kunst & Literatur|In welchem Museum hängt die „Mona Lisa“?|Louvre|Prado|Uffizien|British Museum|Der Louvre in Paris ist eines der meistbesuchten Museen der Welt.
+1|Kunst & Literatur|Wer schrieb „Die unendliche Geschichte“?|Michael Ende|Erich Kästner|Cornelia Funke|Otfried Preußler|Auch „Momo“ und „Jim Knopf“ stammen von Michael Ende.
+1|Kunst & Literatur|Wer schrieb „Emil und die Detektive“?|Erich Kästner|Astrid Lindgren|Michael Ende|James Krüss|Das Buch erschien 1929 und spielt in Berlin.
+1|Kunst & Literatur|Von wem stammt die Figur „Pippi Langstrumpf“?|Astrid Lindgren|Selma Lagerlöf|Tove Jansson|Cornelia Funke|Die schwedische Autorin schuf auch „Michel aus Lönneberga“.
+1|Kunst & Literatur|Welcher Künstler malte die Decke der Sixtinischen Kapelle?|Michelangelo|Leonardo da Vinci|Raffael|Botticelli|Michelangelo arbeitete von 1508 bis 1512 daran.
+1|Kunst & Literatur|Wie heißt der Zauberschüler in der Buchreihe von J. K. Rowling?|Harry Potter|Percy Jackson|Frodo Beutlin|Bastian Bux|Der erste Band erschien 1997.
+1|Kunst & Literatur|Wer schrieb „Der kleine Prinz“?|Antoine de Saint-Exupéry|Jules Verne|Victor Hugo|Albert Camus|Der Autor war selbst Pilot.
+1|Kunst & Literatur|Wer schrieb „Die Räuber“ und „Wilhelm Tell“?|Friedrich Schiller|Johann Wolfgang von Goethe|Gotthold Ephraim Lessing|Heinrich von Kleist|Schiller war mit Goethe eng befreundet.
+2|Kunst & Literatur|Wer malte „Die Sternennacht“?|Vincent van Gogh|Claude Monet|Edvard Munch|Paul Cézanne|Van Gogh malte es 1889 in der Heilanstalt Saint-Rémy.
+2|Kunst & Literatur|Wer malte „Der Schrei“?|Edvard Munch|Gustav Klimt|Egon Schiele|Wassily Kandinsky|Der norwegische Maler schuf mehrere Versionen des Motivs.
+2|Kunst & Literatur|Welcher Kunststil ist mit Pablo Picasso besonders verbunden?|Kubismus|Impressionismus|Barock|Romantik|Picasso begründete den Kubismus zusammen mit Georges Braque.
+2|Kunst & Literatur|Wer schrieb „Die Verwandlung“, in der ein Mann als Käfer erwacht?|Franz Kafka|Thomas Mann|Hermann Hesse|Stefan Zweig|Gregor Samsa erwacht eines Morgens als „ungeheures Ungeziefer“.
+2|Kunst & Literatur|Wer schrieb „Die Buddenbrooks“?|Thomas Mann|Heinrich Mann|Theodor Fontane|Günter Grass|Thomas Mann erhielt dafür 1929 den Literaturnobelpreis.
+2|Kunst & Literatur|Wer malte „Das Mädchen mit dem Perlenohrring“?|Jan Vermeer|Rembrandt|Peter Paul Rubens|Frans Hals|Vermeer malte es um 1665 in Delft.
+2|Kunst & Literatur|Welcher Autor schrieb „1984“?|George Orwell|Aldous Huxley|Ray Bradbury|H. G. Wells|Darin stammt der Ausdruck „Big Brother is watching you“.
+2|Kunst & Literatur|Wer schrieb „Don Quijote“?|Miguel de Cervantes|Lope de Vega|Dante Alighieri|Gabriel García Márquez|Der Ritter kämpft darin gegen Windmühlen.
+2|Kunst & Literatur|Welcher Künstler ist für seine Gemälde mit Seerosen bekannt?|Claude Monet|Pierre-Auguste Renoir|Edgar Degas|Paul Gauguin|Monet malte die Seerosen in seinem Garten in Giverny.
+2|Kunst & Literatur|Wer schrieb „Die Blechtrommel“?|Günter Grass|Heinrich Böll|Siegfried Lenz|Martin Walser|Günter Grass erhielt 1999 den Literaturnobelpreis.
+2|Kunst & Literatur|Wer schrieb „Krieg und Frieden“?|Leo Tolstoi|Fjodor Dostojewski|Anton Tschechow|Alexander Puschkin|Der Roman spielt zur Zeit der Napoleonischen Kriege.
+2|Kunst & Literatur|Wer schrieb die „Odyssee“?|Homer|Sophokles|Vergil|Platon|Die Odyssee erzählt die Irrfahrten des Odysseus nach dem Trojanischen Krieg.
+2|Kunst & Literatur|Welcher deutsche Maler ist für „Der Wanderer über dem Nebelmeer“ bekannt?|Caspar David Friedrich|Albrecht Dürer|Franz Marc|Max Liebermann|Er ist der bekannteste Maler der deutschen Romantik.
+2|Kunst & Literatur|Wer schrieb „Der Steppenwolf“ und „Siddhartha“?|Hermann Hesse|Thomas Mann|Rainer Maria Rilke|Erich Maria Remarque|Hesse erhielt 1946 den Literaturnobelpreis.
+3|Kunst & Literatur|Wer schrieb „Im Westen nichts Neues“?|Erich Maria Remarque|Ernst Jünger|Kurt Tucholsky|Erich Kästner|Der Antikriegsroman über den Ersten Weltkrieg erschien 1929.
+3|Kunst & Literatur|Wer malte „Der Kuss“ mit viel Blattgold?|Gustav Klimt|Egon Schiele|Alfons Mucha|Franz von Stuck|Das Gemälde entstand 1908/09 in Wien.
+3|Kunst & Literatur|Welche Kunstschule gründete Walter Gropius 1919 in Weimar?|Bauhaus|Die Brücke|Der Blaue Reiter|Werkbund|Das Bauhaus prägte Architektur und Design weltweit.
+3|Kunst & Literatur|Wer schrieb die „Göttliche Komödie“?|Dante Alighieri|Francesco Petrarca|Giovanni Boccaccio|Niccolò Machiavelli|Sie beschreibt eine Reise durch Hölle, Fegefeuer und Paradies.
+3|Kunst & Literatur|Welcher Maler gehörte zum „Blauen Reiter“ und malte blaue Pferde?|Franz Marc|Ernst Ludwig Kirchner|Emil Nolde|Otto Dix|Gemeinsam mit Wassily Kandinsky gründete er den Blauen Reiter.
+3|Kunst & Literatur|Wer schrieb „Effi Briest“?|Theodor Fontane|Gottfried Keller|Theodor Storm|Wilhelm Raabe|Der Roman erschien 1895/96.
+3|Kunst & Literatur|Wer malte „Guernica“?|Pablo Picasso|Joan Miró|Salvador Dalí|Francisco de Goya|Das Bild verarbeitet die Bombardierung der baskischen Stadt Guernica 1937.
+3|Kunst & Literatur|Von wem stammt die Skulptur „Der Denker“?|Auguste Rodin|Michelangelo|Camille Claudel|Alberto Giacometti|Rodin schuf sie ursprünglich für sein „Höllentor“.
+3|Kunst & Literatur|Wer schrieb „Nathan der Weise“ mit der Ringparabel?|Gotthold Ephraim Lessing|Friedrich Schiller|Johann Wolfgang von Goethe|Friedrich Hölderlin|Das Drama ist ein Plädoyer für religiöse Toleranz.
+3|Kunst & Literatur|Welcher Maler ist für „Die Nachtwache“ berühmt?|Rembrandt|Vermeer|Rubens|van Eyck|Das Gemälde hängt im Rijksmuseum in Amsterdam.
+3|Kunst & Literatur|Wer schrieb „Hundert Jahre Einsamkeit“?|Gabriel García Márquez|Mario Vargas Llosa|Isabel Allende|Pablo Neruda|Der Roman ist ein Hauptwerk des „magischen Realismus“.
+3|Kunst & Literatur|Welcher Dichter schrieb die „Duineser Elegien“?|Rainer Maria Rilke|Hugo von Hofmannsthal|Stefan George|Georg Trakl|Rilke vollendete den Zyklus 1922.
+3|Kunst & Literatur|Wer schrieb „Der Prozess“?|Franz Kafka|Robert Musil|Joseph Roth|Arthur Schnitzler|Der Roman erschien 1925 nach Kafkas Tod.
+1|Musik|Wie viele Saiten hat eine normale Gitarre?|6|4|5|8|Ein E-Bass hat meist 4 Saiten.
+1|Musik|Welcher Komponist wurde in Salzburg geboren?|Wolfgang Amadeus Mozart|Ludwig van Beethoven|Johann Sebastian Bach|Joseph Haydn|Mozart wurde 1756 in Salzburg geboren.
+1|Musik|Welcher berühmte Komponist wurde später taub?|Ludwig van Beethoven|Wolfgang Amadeus Mozart|Johann Sebastian Bach|Frédéric Chopin|Trotz seiner Taubheit komponierte Beethoven weiter, u. a. die 9. Sinfonie.
+1|Musik|Aus welcher Stadt stammten die Beatles?|Liverpool|London|Manchester|Birmingham|Die Band wurde 1960 in Liverpool gegründet.
+1|Musik|Wie viele Tasten hat ein normales Klavier?|88|76|100|64|52 weiße und 36 schwarze Tasten.
+1|Musik|Welches Instrument hat schwarze und weiße Tasten?|Klavier|Geige|Trompete|Harfe|Auch Orgel und Keyboard haben Tasten.
+1|Musik|Welches Instrument gehört zu den Blechblasinstrumenten?|Trompete|Querflöte|Klarinette|Saxofon|Querflöte, Klarinette und Saxofon zählen zu den Holzblasinstrumenten – auch wenn sie aus Metall sein können.
+1|Musik|Wer wird als „King of Pop“ bezeichnet?|Michael Jackson|Elvis Presley|Prince|Freddie Mercury|Elvis Presley wird dagegen „King of Rock ’n’ Roll“ genannt.
+2|Musik|Welcher Komponist schrieb die „Ode an die Freude“, die heute Europahymne ist?|Ludwig van Beethoven|Johann Sebastian Bach|Georg Friedrich Händel|Franz Schubert|Sie stammt aus dem letzten Satz seiner 9. Sinfonie; der Text ist von Schiller.
+2|Musik|Wer komponierte „Die Zauberflöte“?|Wolfgang Amadeus Mozart|Richard Wagner|Giuseppe Verdi|Joseph Haydn|Die Oper wurde 1791 in Wien uraufgeführt.
+2|Musik|Wie heißt ein Musikstück für vier Instrumente?|Quartett|Trio|Quintett|Duett|Bekannt ist das Streichquartett aus zwei Geigen, Bratsche und Cello.
+2|Musik|Welcher Komponist schrieb „Die vier Jahreszeiten“?|Antonio Vivaldi|Johann Sebastian Bach|Georg Friedrich Händel|Arcangelo Corelli|Vivaldi lebte in Venedig und war auch Priester.
+2|Musik|Welche Band sang „Bohemian Rhapsody“?|Queen|The Beatles|The Rolling Stones|Pink Floyd|Sänger war Freddie Mercury.
+2|Musik|In welcher Stadt findet jährlich das Wagner-Festival statt?|Bayreuth|Salzburg|Wien|München|Die Bayreuther Festspiele gibt es seit 1876.
+2|Musik|Welches ist das tiefste Streichinstrument im Orchester?|Kontrabass|Cello|Bratsche|Geige|Der Kontrabass ist rund 1,80 m groß.
+2|Musik|Wie viele Linien hat ein Notensystem?|5|4|6|7|Die Noten stehen auf den Linien oder in den Zwischenräumen.
+2|Musik|Welche schwedische Band gewann 1974 den Eurovision Song Contest mit „Waterloo“?|ABBA|Roxette|Europe|Ace of Base|ABBA wurde danach eine der erfolgreichsten Bands der Welt.
+3|Musik|Wer komponierte den „Ring des Nibelungen“?|Richard Wagner|Richard Strauss|Carl Maria von Weber|Gustav Mahler|Der Zyklus besteht aus vier Opern und dauert rund 15 Stunden.
+3|Musik|In welcher Stadt wurde Johann Sebastian Bach geboren?|Eisenach|Leipzig|Weimar|Köthen|Bach wurde 1685 in Eisenach geboren und wirkte später lange in Leipzig.
+3|Musik|Welcher Komponist schrieb den „Bolero“?|Maurice Ravel|Claude Debussy|Erik Satie|Georges Bizet|Das Stück steigert sich über rund 15 Minuten mit demselben Rhythmus.
+3|Musik|Welche Tonart hat kein Vorzeichen?|C-Dur|G-Dur|F-Dur|D-Dur|Auch a-Moll hat keine Vorzeichen.
+3|Musik|Wer komponierte die Oper „Carmen“?|Georges Bizet|Giuseppe Verdi|Giacomo Puccini|Jacques Offenbach|Die Oper spielt in Sevilla und wurde 1875 uraufgeführt.
+3|Musik|Welcher Komponist schrieb „Eine kleine Nachtmusik“?|Wolfgang Amadeus Mozart|Joseph Haydn|Franz Schubert|Felix Mendelssohn Bartholdy|Mozart komponierte sie 1787.
+3|Musik|Wie nennt man die italienische Tempobezeichnung für „sehr langsam“?|Largo|Allegro|Presto|Vivace|Allegro = schnell, Presto = sehr schnell.
+3|Musik|Welcher Komponist schrieb den „Donauwalzer“?|Johann Strauss (Sohn)|Richard Strauss|Franz Lehár|Joseph Lanner|„An der schönen blauen Donau“ entstand 1867.
+3|Musik|Woher stammt der Tango ursprünglich?|Argentinien und Uruguay|Spanien|Brasilien|Kuba|Er entstand Ende des 19. Jahrhunderts am Río de la Plata.
+1|Sport|Wie viele Spieler einer Mannschaft stehen beim Fußball auf dem Feld?|11|10|9|12|Inklusive Torwart sind es 11 Spieler pro Team.
+1|Sport|Wie oft finden Olympische Sommerspiele normalerweise statt?|Alle 4 Jahre|Jedes Jahr|Alle 2 Jahre|Alle 5 Jahre|Sommer- und Winterspiele wechseln sich im Zwei-Jahres-Abstand ab.
+1|Sport|Wie viele Ringe hat das olympische Symbol?|5|4|6|7|Die Ringe stehen für die fünf Kontinente.
+1|Sport|Wie lang ist ein Marathon?|42,195 km|40 km|21,1 km|50 km|Ein Halbmarathon ist 21,0975 km lang.
+1|Sport|In welcher Sportart gibt es einen „Slam Dunk“?|Basketball|Volleyball|Handball|Tennis|Dabei wird der Ball von oben in den Korb gestopft.
+1|Sport|Wie viele Punkte zählt ein Touchdown im American Football?|6|3|7|1|Danach gibt es einen Extrapunkt-Versuch.
+1|Sport|Wie heißt das berühmteste Radrennen Frankreichs?|Tour de France|Giro d’Italia|Vuelta|Paris–Roubaix|Die Tour wird seit 1903 ausgetragen.
+1|Sport|Wie viele Spieler hat eine Volleyballmannschaft auf dem Feld?|6|5|7|11|Beim Beachvolleyball sind es nur 2.
+1|Sport|Wie lange dauert ein normales Fußballspiel (ohne Nachspielzeit)?|90 Minuten|80 Minuten|60 Minuten|100 Minuten|Zwei Halbzeiten zu je 45 Minuten.
+1|Sport|Welche Gürtelfarbe tragen Anfänger im Judo?|Weiß|Schwarz|Braun|Blau|Danach folgen die farbigen Schülergürtel bis zum schwarzen Meistergürtel.
+2|Sport|Auf welchem Belag wird das Tennisturnier in Wimbledon gespielt?|Rasen|Sand|Hartplatz|Teppich|Wimbledon ist das älteste Tennisturnier der Welt (seit 1877).
+2|Sport|Wie viele Spieler hat eine Handballmannschaft auf dem Feld?|7|6|8|11|Sechs Feldspieler und ein Torwart.
+2|Sport|In welcher Sportart gibt es die „Tour de Ski“?|Skilanglauf|Skispringen|Biathlon|Abfahrt|Sie findet jährlich um den Jahreswechsel statt.
+2|Sport|Wie heißt der Golf-Schlag mit einem Schlag ins Loch?|Hole-in-one|Birdie|Eagle|Bogey|Ein Birdie ist ein Schlag unter Par, ein Eagle zwei unter Par.
+2|Sport|Wo fanden 1896 die ersten Olympischen Spiele der Neuzeit statt?|Athen|Paris|London|Olympia|Pierre de Coubertin hatte die Spiele neu ins Leben gerufen.
+2|Sport|Wie viele Felder hat ein Schachbrett?|64|48|81|100|8 × 8 Felder.
+2|Sport|Welche Figur kann im Schach nur diagonal ziehen?|Läufer|Turm|Springer|König|Der Läufer bleibt immer auf Feldern derselben Farbe.
+2|Sport|Wie viele Punkte braucht man im Tischtennis normalerweise für einen Satzgewinn?|11|21|15|10|Seit 2001 wird bis 11 gespielt (vorher bis 21), mit 2 Punkten Vorsprung.
+2|Sport|Aus welchen Disziplinen besteht ein Triathlon?|Schwimmen, Radfahren, Laufen|Laufen, Springen, Werfen|Schwimmen, Rudern, Laufen|Radfahren, Schießen, Laufen|Die Reihenfolge ist immer Schwimmen – Rad – Laufen.
+2|Sport|Wie heißt die Kombination aus Skilanglauf und Schießen?|Biathlon|Nordische Kombination|Triathlon|Skeleton|Die Nordische Kombination verbindet Skispringen und Langlauf.
+3|Sport|Wie viele Spieler hat eine Rugby-Union-Mannschaft auf dem Feld?|15|11|13|12|Bei Rugby League sind es 13 Spieler.
+3|Sport|Wie hoch hängt ein Basketballkorb?|3,05 m|2,75 m|3,30 m|2,50 m|Das entspricht 10 Fuß.
+3|Sport|Wie heißt die höchstmögliche Punktzahl mit drei Darts?|180|150|170|200|Drei Würfe in die Triple-20.
+3|Sport|Wie viele Disziplinen umfasst der Zehnkampf?|10|7|8|12|Siebenkampf ist das Gegenstück der Frauen.
+3|Sport|In welcher Sportart gibt es einen „Axel“?|Eiskunstlauf|Skispringen|Turnen|Snowboard|Der Axel ist der einzige Sprung mit Absprung nach vorne – benannt nach Axel Paulsen.
+3|Sport|Wie lang ist eine Bahn in einem olympischen Schwimmbecken?|50 m|25 m|100 m|33 m|Kurzbahnwettkämpfe finden auf 25-m-Bahnen statt.
+3|Sport|Wie viele Punkte bringt die schwarze Kugel im Snooker?|7|5|6|10|Rot zählt 1, Gelb 2, Grün 3, Braun 4, Blau 5, Pink 6, Schwarz 7.
+3|Sport|Welches Land gilt als Ursprungsland des Judo?|Japan|China|Korea|Thailand|Jigoro Kano entwickelte Judo 1882 in Japan.
+3|Sport|Wie heißt das Spielgerät beim Badminton?|Federball|Puck|Shuttle-Disk|Ball|Im Englischen heißt er „Shuttlecock“.
+3|Sport|Wie viele Löcher hat ein normaler Golfplatz?|18|9|12|21|Es gibt auch Kurzplätze mit 9 Löchern.
+1|Sprache|Wie viele Buchstaben hat das deutsche Alphabet (ohne Umlaute und ß)?|26|24|28|30|Mit Ä, Ö, Ü und ß sind es 30.
+1|Sprache|Was ist das Gegenteil von „hell“?|dunkel|warm|laut|klar|Gegensatzwörter nennt man Antonyme.
+1|Sprache|Welche Sprache spricht man in Brasilien?|Portugiesisch|Spanisch|Brasilianisch|Englisch|Brasilien war bis 1822 eine portugiesische Kolonie.
+1|Sprache|Was ist ein Nomen?|Ein Namenwort|Ein Tuwort|Ein Wiewort|Ein Bindewort|Nomen (Substantive) werden im Deutschen großgeschrieben.
+1|Sprache|Wie heißt die Mehrzahl von „Baum“?|Bäume|Baume|Bäumer|Bäumen|Viele Wörter bekommen im Plural einen Umlaut.
+1|Sprache|Was bedeutet „Danke“ auf Englisch?|Thank you|Please|Sorry|Welcome|„Please“ heißt „bitte“.
+1|Sprache|Was bedeutet „Merci“?|Danke (Französisch)|Bitte (Spanisch)|Hallo (Italienisch)|Tschüss (Französisch)|Auf Französisch sagt man „Merci beaucoup“ für „Vielen Dank“.
+1|Sprache|Welches Wort ist ein Verb?|laufen|schnell|Haus|und|Verben (Tuwörter) beschreiben Tätigkeiten.
+1|Sprache|Wie sagt man „Hallo“ auf Italienisch (umgangssprachlich)?|Ciao|Hola|Salut|Hej|„Hola“ ist Spanisch, „Salut“ Französisch, „Hej“ Schwedisch.
+1|Sprache|Welche Sprache wird weltweit von den meisten Menschen als Muttersprache gesprochen?|Chinesisch (Mandarin)|Englisch|Spanisch|Hindi|Mandarin hat über 900 Millionen Muttersprachler.
+2|Sprache|Was ist ein Palindrom?|Ein Wort, das vorwärts und rückwärts gleich ist|Ein sehr langes Wort|Ein Wort mit zwei Bedeutungen|Ein Fremdwort aus dem Griechischen|Beispiele: „Anna“, „Otto“, „Reliefpfeiler“.
+2|Sprache|Was ist ein Synonym für „schnell“?|rasch|langsam|träge|leise|Synonyme sind Wörter mit gleicher oder ähnlicher Bedeutung.
+2|Sprache|Woher stammt das Wort „Kindergarten“, das auch im Englischen verwendet wird?|Aus dem Deutschen|Aus dem Niederländischen|Aus dem Französischen|Aus dem Lateinischen|Friedrich Fröbel prägte den Begriff 1840.
+2|Sprache|Welche Sprache war die Amtssprache des Römischen Reiches?|Latein|Griechisch|Italienisch|Aramäisch|Im Osten des Reiches war allerdings Griechisch weit verbreitet.
+2|Sprache|Was bedeutet „carpe diem“?|Nutze den Tag|Ich kam, sah und siegte|Im Wein liegt Wahrheit|Erkenne dich selbst|Das Zitat stammt vom römischen Dichter Horaz.
+2|Sprache|Was ist ein Anglizismus?|Ein Wort aus dem Englischen im Deutschen|Ein englischer Dialekt|Ein Rechtschreibfehler|Ein Wort aus dem Griechischen|Beispiele: „Meeting“, „downloaden“, „cool“.
+2|Sprache|Wie heißt die Schrift, mit der blinde Menschen lesen?|Brailleschrift|Morsecode|Kurzschrift|Keilschrift|Louis Braille entwickelte sie 1825 aus erhabenen Punkten.
+2|Sprache|Was bedeutet das Wort „Philosophie“ wörtlich?|Liebe zur Weisheit|Lehre vom Denken|Kunst des Redens|Wissen der Alten|Aus dem Griechischen: philos = Freund/Liebe, sophia = Weisheit.
+2|Sprache|Welche Sprache spricht man offiziell in Österreich?|Deutsch|Österreichisch|Deutsch und Ungarisch|Deutsch und Italienisch|Regional sind auch Kroatisch, Slowenisch und Ungarisch anerkannt.
+2|Sprache|Was ist das SOS-Signal im Morsecode?|··· – – – ···|– – – ··· – – –|·– ·– ·–|··· ··· ···|Drei kurz, drei lang, drei kurz.
+3|Sprache|Was bedeutet „veni, vidi, vici“?|Ich kam, sah und siegte|Ich lebe, liebe und lache|Ich ging, sprach und schwieg|Ich kam, sah und ging|Julius Caesar soll es nach einem schnellen Sieg 47 v. Chr. gesagt haben.
+3|Sprache|Welche Sprachfamilie umfasst Finnisch und Ungarisch?|Uralisch (finno-ugrisch)|Germanisch|Slawisch|Romanisch|Sie sind nicht mit den meisten anderen europäischen Sprachen verwandt.
+3|Sprache|Was ist eine Alliteration?|Mehrere Wörter mit gleichem Anfangslaut|Ein Reim am Versende|Eine Übertreibung|Ein Vergleich mit „wie“|Beispiel: „Milch macht müde Männer munter“.
+3|Sprache|Welche Schrift benutzten die alten Sumerer?|Keilschrift|Hieroglyphen|Runen|Kyrillisch|Die Zeichen wurden in Tontafeln gedrückt.
+3|Sprache|Was ist ein Oxymoron?|Eine Verbindung widersprüchlicher Begriffe|Ein Wort mit drei Silben|Ein lautmalerisches Wort|Eine Abkürzung|Beispiele: „bittersüß“, „alter Knabe“, „beredtes Schweigen“.
+3|Sprache|Woher stammt das Wort „Roboter“?|Aus dem Tschechischen|Aus dem Russischen|Aus dem Englischen|Aus dem Japanischen|Karel Čapek verwendete es 1920; „robota“ bedeutet Fronarbeit.
+3|Sprache|Wie viele offizielle Amtssprachen hat die Schweiz?|4|3|2|5|Deutsch, Französisch, Italienisch und Rätoromanisch.
+3|Sprache|Was bedeutet „Lapsus“?|Ein kleiner Fehler oder Ausrutscher|Eine große Pause|Ein Gedächtnistraining|Ein feierlicher Abschluss|Aus dem Lateinischen „lapsus“ = das Ausgleiten.
+3|Sprache|Welches Alphabet wird in Russland verwendet?|Kyrillisch|Lateinisch|Griechisch|Glagolitisch|Es geht auf die Schüler der Slawenapostel Kyrill und Method zurück.
+3|Sprache|Was ist eine Onomatopoesie?|Lautmalerei|Ein Gedicht ohne Reim|Ein Namensgedicht|Eine Wortneuschöpfung|Beispiele: „Kuckuck“, „zischen“, „Kikeriki“.

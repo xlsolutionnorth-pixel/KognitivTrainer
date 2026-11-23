@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Erzeugt www/tasks.js mit genau 500 Aufgaben für den KognitivTrainer.
+"""Erzeugt www/tasks.js mit genau 1000 Aufgaben (500 Training + 500 Allgemeinwissen) für den KognitivTrainer.
 
 Aufruf:  python3 tools/generate_tasks.py
 Der Zufall ist fest eingestellt (seed), daher entstehen bei jedem Aufruf dieselben Aufgaben.
@@ -68,7 +68,7 @@ def text_opts(correct, wrong):
 
 
 def add_mc(cat, lvl, title, q, opts, ans, expl, extra=None):
-    key = (cat, q)
+    key = (cat, q, json.dumps(extra, sort_keys=True) if extra and ("img" in extra or "map" in extra) else None)
     if key in SEEN:
         return False
     if len(set(opts)) != len(opts):
@@ -392,7 +392,7 @@ def logik(n=25):
             w = (tot + R.choice([-60, 60, -10, 10, -5, 5, 30, -30])) % 1440
             if w != tot:
                 wrong.add(f"{w//60}:{w%60:02d}")
-        return (1, q, r, f"{h}:{m:02d} + {dh} h = {h+dh}:{m:02d}, dann + {dm} min = {r} Uhr.", list(wrong))
+        return (1, q, r, f"{h}:{m:02d} + {dh} h = {h+dh}:{m:02d}, dann + {dm} min = {r} Uhr.", sorted(wrong))
 
     gens = [syllogismus, reihenfolge, alter, wochentag, uhrzeit]
     made = 0
@@ -841,18 +841,95 @@ def reaction_tasks():
                   "Automatisiertes Kopfrechnen entlastet das Arbeitsgedächtnis. Tempo kommt durch Wiederholung.")
 
 
+# ---------------------------------------------------------------------------
+# E. ALLGEMEINWISSEN (500): 430 Textfragen aus tools/wissen/*.txt + 70 Bildfragen
+# ---------------------------------------------------------------------------
+W = "wissen"
+WDIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "wissen")
+
+
+def wissen_tasks():
+    rw = random.Random(4711)          # eigener Zufall, damit die Aufgaben 1–500 unverändert bleiben
+    files = sorted(f for f in os.listdir(WDIR) if f[0].isdigit() and f.endswith(".txt"))
+    for fn in files:
+        for line in open(os.path.join(WDIR, fn), encoding="utf-8").read().split("\n"):
+            if not line.strip() or line.startswith("#"):
+                continue
+            parts = line.split("|")
+            assert len(parts) == 8, f"{fn}: {line}"
+            lvl, thema, q, right, f1, f2, f3, ex = parts
+            opts = [right, f1, f2, f3]
+            rw.shuffle(opts)
+            assert add_mc(W, int(lvl), thema, q, opts, opts.index(right), ex), f"doppelt: {q}"
+
+    # Länderdaten für Flaggen- und Kartenfragen
+    L = []
+    for line in open(os.path.join(WDIR, "laender.txt"), encoding="utf-8").read().split("\n"):
+        if line and not line.startswith("#"):
+            c, name, cap, reg, fl, ml = line.split("|")
+            L.append({"c": c, "name": name, "cap": cap, "reg": reg, "fl": int(fl), "ml": int(ml)})
+    by = {x["c"]: x for x in L}
+    flagdir = os.path.join(os.path.dirname(WDIR), "..", "www", "flags")
+
+    def info(x):
+        return f"{x['name']} liegt in {x['reg']}" + (f", Hauptstadt ist {x['cap']}." if x["cap"] else ".")
+
+    def distract(x, pool, n=3):
+        same = [y for y in pool if y["reg"] == x["reg"] and y["c"] != x["c"]]
+        other = [y for y in pool if y["reg"] != x["reg"]]
+        rw.shuffle(same); rw.shuffle(other)
+        return (same + other)[:n]
+
+    flags = [x for x in L if x["fl"]]
+    for x in flags:
+        assert os.path.exists(os.path.join(flagdir, x["c"] + ".svg")), "Flagge fehlt: " + x["c"]
+    # 20 x „Welches Land hat diese Flagge?“ und 20 x „Welche ist die Flagge von …?“
+    for kind in ("name", "flag"):
+        chosen = []
+        for lv in (1, 2, 3):
+            pool = [x for x in flags if x["fl"] == lv]
+            rw.shuffle(pool)
+            chosen += pool[: (7 if lv < 3 else 6)]
+        for x in chosen:
+            ds = distract(x, flags)
+            if kind == "name":
+                names = [x["name"]] + [d["name"] for d in ds]
+                rw.shuffle(names)
+                assert add_mc(W, x["fl"], "Flaggen", "Zu welchem Land gehört diese Flagge?", names, names.index(x["name"]),
+                              f"Das ist die Flagge von {info(x)}", {"img": "flags/" + x["c"] + ".svg"})
+            else:
+                codes = [x["c"]] + [d["c"] for d in ds]
+                rw.shuffle(codes)
+                TASKS.append({"cat": W, "type": "mc", "lvl": x["fl"], "title": "Flaggen",
+                              "q": f"Welche ist die Flagge von {x['name']}?", "opts": codes, "ans": codes.index(x["c"]),
+                              "optImg": True, "optNames": [by[c]["name"] for c in codes],
+                              "expl": f"{info(x)} Die anderen Flaggen: " + ", ".join(by[c]["name"] for c in codes if c != x["c"]) + "."})
+    # 30 Kartenfragen
+    maps = [x for x in L if x["ml"]]
+    mpool = L
+    for lv in (1, 2, 3):
+        pool = [x for x in maps if x["ml"] == lv]
+        rw.shuffle(pool)
+        for x in pool[:10]:
+            names = [x["name"]] + [d["name"] for d in distract(x, mpool)]
+            rw.shuffle(names)
+            assert add_mc(W, lv, "Landkarte", f"Welches Land ist auf der Karte rot markiert? ({x['reg']})", names, names.index(x["name"]),
+                          info(x), {"map": x["c"]})
+
+
 def main():
     kopfrechnen(); prozent(); brueche(); gleichungen(); zahlenreihen(); logik(); textaufgaben()
     flaechen(); winkel(); pythagoras(); koerper(); rotation_tasks(); spiegel_tasks(); koordinaten()
     memory_tasks()
     reaction_tasks()
+    wissen_tasks()
     cats = {}
     for t in TASKS:
         cats[t["cat"]] = cats.get(t["cat"], 0) + 1
     print("Kategorien:", cats, "gesamt:", len(TASKS))
-    assert cats == {"rechnen": 160, "geometrie": 120, "gedaechtnis": 120, "reaktion": 100}, cats
+    assert cats == {"rechnen": 160, "geometrie": 120, "gedaechtnis": 120, "reaktion": 100, "wissen": 500}, cats
     # innerhalb jeder Kategorie nach Stufe sortieren, dann durchnummerieren
-    order = ["rechnen", "geometrie", "gedaechtnis", "reaktion"]
+    order = ["rechnen", "geometrie", "gedaechtnis", "reaktion", "wissen"]
     TASKS.sort(key=lambda t: (order.index(t["cat"]), t["lvl"]))
     for i, t in enumerate(TASKS, 1):
         t["id"] = i

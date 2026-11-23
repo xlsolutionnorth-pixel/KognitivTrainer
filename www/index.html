@@ -9,7 +9,7 @@
 :root{
   --bg:#14162b; --card:#1f2240; --card2:#282c52; --text:#eef0ff; --muted:#9aa0c8; --line:#343869;
   --ok:#3ccf8e; --bad:#ff6b6b; --warn:#ffc04d;
-  --c-rechnen:#5b8cff; --c-geometrie:#b27cff; --c-gedaechtnis:#ff8a5b; --c-reaktion:#2fd3c7;
+  --c-rechnen:#5b8cff; --c-geometrie:#b27cff; --c-gedaechtnis:#ff8a5b; --c-reaktion:#2fd3c7; --c-wissen:#f2a93b;
   --r:18px;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -35,6 +35,14 @@ h1{font-size:26px;margin:4px 0 2px} h2{font-size:21px;margin:0 0 12px} h3{font-s
 .cat .bar{position:absolute;left:0;bottom:0;height:5px;background:rgba(255,255,255,.85)}
 .bg-rechnen{background:linear-gradient(140deg,#4a6cf0,#6d9bff)} .bg-geometrie{background:linear-gradient(140deg,#8b56e8,#c08cff)}
 .bg-gedaechtnis{background:linear-gradient(140deg,#f06a3c,#ffa36e)} .bg-reaktion{background:linear-gradient(140deg,#16a89f,#3fe0d3)}
+.bg-wissen{background:linear-gradient(140deg,#d9822b,#f5c04a)}
+.catgrid .cat:last-child:nth-child(odd){grid-column:span 2;min-height:104px}
+.flagimg{height:130px;max-width:100%;border-radius:8px;box-shadow:0 2px 12px #0008;display:block}
+.opt .flagimg{height:64px;margin:auto}
+.fig svg.mapbox{width:100%;max-width:420px;aspect-ratio:3/2;background:#2a5d8f;border-radius:14px;display:block}
+.topics{display:flex;gap:6px;overflow-x:auto;margin-bottom:12px;padding-bottom:4px}
+.topics button{flex:0 0 auto;border:0;border-radius:99px;padding:8px 12px;background:var(--card);color:var(--muted);font-size:14px;font-weight:600}
+.topics button.on{background:var(--c-wissen);color:#231400}
 .daily{background:linear-gradient(135deg,#2c2f6b,#3b2c6b);}
 .daily .big{font-size:34px;font-weight:800}
 .pill{display:inline-block;padding:4px 10px;border-radius:99px;background:var(--card2);font-size:13px;margin-right:6px}
@@ -108,6 +116,7 @@ h1{font-size:26px;margin:4px 0 2px} h2{font-size:21px;margin:0 0 12px} h3{font-s
 <body>
 <div id="app"></div>
 <script src="tasks.js"></script>
+<script src="worldmap.js"></script>
 <script>
 "use strict";
 /* =========================================================================
@@ -117,7 +126,8 @@ const CATS = {
   rechnen:     {name:"Rechnen & Logik",          ico:"🧮", desc:"Kopfrechnen, Zahlenreihen, Logikrätsel"},
   geometrie:   {name:"Geometrie & Raum",         ico:"📐", desc:"Flächen, Winkel, Rotation, Spiegelung"},
   gedaechtnis: {name:"Gedächtnis & Aufmerksamkeit", ico:"🧠", desc:"Merken, Stroop, Suchen, Zählen"},
-  reaktion:    {name:"Reaktion & Tempo",         ico:"⚡", desc:"Reaktionszeit, Impulskontrolle, Speed"}
+  reaktion:    {name:"Reaktion & Tempo",         ico:"⚡", desc:"Reaktionszeit, Impulskontrolle, Speed"},
+  wissen:      {name:"Allgemeinwissen",          ico:"🌍", desc:"Geschichte, Geografie, Natur, Kultur, Flaggen & Karten"}
 };
 const LVL = {1:"Leicht",2:"Mittel",3:"Schwer"};
 const TIME_LIMIT = {1:40, 2:60, 3:90};       // Sekunden für Wissens-Aufgaben
@@ -197,7 +207,7 @@ function dailyTasks(dateStr){
   // fester Zufall pro Tag: jeden Tag eine andere, aber stabile Auswahl
   let seed = 0; for(const c of dateStr) seed = (seed*31 + c.charCodeAt(0)) >>> 0;
   const rand = () => { seed = (seed*1664525 + 1013904223) >>> 0; return seed/4294967296; };
-  const plan = {rechnen:3, geometrie:2, gedaechtnis:3, reaktion:2};
+  const plan = {rechnen:2, geometrie:2, gedaechtnis:2, reaktion:2, wissen:2};
   const out = [];
   for(const cat in plan){
     let pool = TASKS.filter(t => t.cat === cat);
@@ -214,7 +224,7 @@ function homeView(){
   const total = solvedCount();
   const st = streak();
   h(`
-  <div class="top"><div class="grow"><h1>KognitivTrainer</h1><div class="muted small">500 Aufgaben für Kopf & Reaktion</div></div>
+  <div class="top"><div class="grow"><h1>KognitivTrainer</h1><div class="muted small">${TASKS.length} Aufgaben für Kopf, Reaktion & Wissen</div></div>
     <button class="iconbtn" onclick="go(statsView)">📊</button><button class="iconbtn" onclick="go(settingsView)">⚙️</button></div>
   <div class="card daily">
     <div class="row" style="align-items:center">
@@ -246,28 +256,32 @@ function startWeak(){
 }
 
 /* ---------- Kategorie ---------- */
-function catView(cat, lvl){
-  const list = TASKS.filter(t => t.cat === cat && (!lvl || t.lvl === lvl));
+function catView(cat, lvl, topic){
+  topic = topic || "";
+  const list = TASKS.filter(t => t.cat === cat && (!lvl || t.lvl === lvl) && (!topic || t.title === topic));
+  const topics = cat === "wissen" ? [...new Set(TASKS.filter(t=>t.cat===cat).map(t=>t.title))] : [];
+  const setT = x => `NAV[NAV.length-1][1][2]='${x}';catView('${cat}',${lvl},'${x}')`;
   const s = solvedCount(cat), n = TASKS.filter(t=>t.cat===cat).length;
   h(`${topbar(CATS[cat].ico+" "+CATS[cat].name, CATS[cat].desc+" · "+s+"/"+n+" gelöst")}
-  <div class="tabs">${[0,1,2,3].map(l => `<button class="${l===lvl?"on":""}" onclick="NAV[NAV.length-1][1][1]=${l};catView('${cat}',${l})">${l?LVL[l]:"Alle"}</button>`).join("")}</div>
+  <div class="tabs">${[0,1,2,3].map(l => `<button class="${l===lvl?"on":""}" onclick="NAV[NAV.length-1][1][1]=${l};catView('${cat}',${l},'${topic}')">${l?LVL[l]:"Alle"}</button>`).join("")}</div>
+  ${topics.length?`<div class="topics">${["",...topics].map(x=>`<button class="${x===topic?"on":""}" onclick="${setT(x)}">${esc(x||"Alle Themen")}</button>`).join("")}</div>`:""}
   <div class="row" style="margin-bottom:14px">
-    <button class="btn primary" onclick="playOpen('${cat}',${lvl})">▶ Nächste offene</button>
-    <button class="btn" onclick="playRandom('${cat}',${lvl})">🎲 10 zufällige</button></div>
+    <button class="btn primary" onclick="playOpen('${cat}',${lvl},'${topic}')">▶ Nächste offene</button>
+    <button class="btn" onclick="playRandom('${cat}',${lvl},'${topic}')">🎲 10 zufällige</button></div>
   <div class="tiles">${list.map(t => {
     const r = S.res[t.id]; const cls = r ? (r.last ? "ok" : (r.ok ? "ok" : "bad")) : "";
-    return `<button class="tile ${cls}" onclick="playFrom('${cat}',${lvl},${t.id})"><i>${"•".repeat(t.lvl)}</i>${t.id}</button>`;
+    return `<button class="tile ${cls}" onclick="playFrom('${cat}',${lvl},${t.id},'${topic}')"><i>${"•".repeat(t.lvl)}</i>${t.id}</button>`;
   }).join("")}</div>
   <p class="muted small center">Punkte oben rechts = Schwierigkeit · grün = gelöst · rot = zuletzt falsch</p>`);
 }
-function catList(cat,lvl){ return TASKS.filter(t => t.cat===cat && (!lvl || t.lvl===lvl)).map(t=>t.id); }
-function playFrom(cat,lvl,id){ const ids = catList(cat,lvl); go(playView,{ids, i:ids.indexOf(id), name:CATS[cat].name, log:[], endless:true}); }
-function playOpen(cat,lvl){
-  const ids = catList(cat,lvl); const i = ids.findIndex(id => !(S.res[id] && S.res[id].ok));
+function catList(cat,lvl,topic){ return TASKS.filter(t => t.cat===cat && (!lvl || t.lvl===lvl) && (!topic || t.title===topic)).map(t=>t.id); }
+function playFrom(cat,lvl,id,topic){ const ids = catList(cat,lvl,topic); go(playView,{ids, i:ids.indexOf(id), name:CATS[cat].name, log:[], endless:true}); }
+function playOpen(cat,lvl,topic){
+  const ids = catList(cat,lvl,topic); const i = ids.findIndex(id => !(S.res[id] && S.res[id].ok));
   if(i < 0){ toast("Alles gelöst! 🎉 Du kannst jede Aufgabe wiederholen."); return; }
   go(playView,{ids, i, name:CATS[cat].name, log:[], endless:true});
 }
-function playRandom(cat,lvl){ go(playView,{ids: shuffle(catList(cat,lvl)).slice(0,10), i:0, name:CATS[cat].name, log:[]}); }
+function playRandom(cat,lvl,topic){ go(playView,{ids: shuffle(catList(cat,lvl,topic)).slice(0,10), i:0, name:CATS[cat].name, log:[]}); }
 
 /* ---------- Aufgaben-Spieler ---------- */
 let SESSION = null, DONE = false;
@@ -350,6 +364,20 @@ function figSVG(f){
   else if(f.shape==="poly"){ let p=[]; for(let i=0;i<f.k;i++){ const a=(i/f.k*2*Math.PI)-Math.PI/2; p.push((130+Math.cos(a)*68).toFixed(1)+","+(85+Math.sin(a)*68).toFixed(1)); } s=`<polygon points="${p.join(" ")}" ${st}/>`;}
   return `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${s}</svg>`;
 }
+function mapSVG(code){
+  const P = (window.WORLD && WORLD.p) || {};
+  return `<svg class="mapbox" viewBox="${WORLD.vb}" preserveAspectRatio="xMidYMid meet">${Object.keys(P).map(k =>
+    `<path d="${P[k]}" fill="${k===code?"#ff4d5e":"#e8e2cf"}" stroke="${k===code?"#ffffff":"#8a8572"}" stroke-width="${k===code?0.8:0.3}" ${k===code?'id="maptarget"':""}/>`).join("")}</svg>`;
+}
+function fitMap(svg){
+  // Ausschnitt um das markierte Land legen, mit genug Umgebung zur Orientierung
+  const p = svg.querySelector("#maptarget"); if(!p) return;
+  const b = p.getBBox(), cx = b.x + b.width/2, cy = b.y + b.height/2;
+  const w = Math.max(b.width*3.2, b.height*3.2*1.5, 150), hh = w/1.5;
+  svg.setAttribute("viewBox", `${cx-w/2} ${cy-hh/2} ${w} ${hh}`);
+  svg.appendChild(p);  // markiertes Land nach oben legen
+  if(b.width < 12 && b.height < 12) svg.insertAdjacentHTML("beforeend", `<circle cx="${cx}" cy="${cy}" r="${w/22}" fill="none" stroke="#ff4d5e" stroke-width="${w/160}"/>`);
+}
 function polySVG(cells, size, color){
   const mx=Math.max(...cells.map(c=>c[0]))+1, my=Math.max(...cells.map(c=>c[1]))+1, n=Math.max(mx,my), u=size/(n+1);
   const ox=(size-mx*u)/2, oy=(size-my*u)/2;
@@ -361,12 +389,15 @@ const COLORS = [["Rot","#ff4d5e"],["Blau","#4d7cff"],["Grün","#2bc96f"],["Gelb"
 const PLAYERS = {
   /* Multiple Choice */
   mc(t, body){
-    const long = t.opts.some(o => String(o).length > 14);
-    body.innerHTML = `${t.fig?`<div class="fig">${figSVG(t.fig)}</div>`:""}<div class="question">${esc(t.q)}</div>
-      <div class="opts ${long?"":"grid2"}">${t.opts.map((o,i)=>`<button class="opt" data-i="${i}">${esc(o)}</button>`).join("")}</div>`;
+    const long = !t.optImg && t.opts.some(o => String(o).length > 14);
+    const label = i => t.optNames ? t.optNames[i] : t.opts[i];
+    const optHTML = (o,i) => t.optImg ? `<img class="flagimg" src="flags/${o}.svg" alt="">` : esc(o);
+    body.innerHTML = `${t.fig?`<div class="fig">${figSVG(t.fig)}</div>`:""}${t.img?`<div class="fig"><img class="flagimg" src="${t.img}" alt=""></div>`:""}${t.map?`<div class="fig">${mapSVG(t.map)}</div>`:""}<div class="question">${esc(t.q)}</div>
+      <div class="opts ${long?"":"grid2"}">${t.opts.map((o,i)=>`<button class="opt" data-i="${i}">${optHTML(o,i)}</button>`).join("")}</div>`;
+    if(t.map) fitMap(body.querySelector(".mapbox"));
     const reveal = (chosen) => { els(".opt").forEach(b => { const i=+b.dataset.i; b.disabled=true; if(i===t.ans) b.classList.add("right"); else if(i===chosen) b.classList.add("wrong"); }); };
-    els(".opt").forEach(b => b.onclick = () => { const i=+b.dataset.i; reveal(i); finish(t, i===t.ans, {msg: i===t.ans?"":"Richtig wäre: "+t.opts[t.ans]}); });
-    startTimer(t, () => { reveal(-1); finish(t, false, {timeout:true, msg:"Richtig wäre: "+t.opts[t.ans]}); });
+    els(".opt").forEach(b => b.onclick = () => { const i=+b.dataset.i; reveal(i); finish(t, i===t.ans, {msg: i===t.ans?"":"Richtig wäre: "+label(t.ans)}); });
+    startTimer(t, () => { reveal(-1); finish(t, false, {timeout:true, msg:"Richtig wäre: "+label(t.ans)}); });
   },
   /* Rotation / Spiegelbild */
   shape(t, body){
@@ -712,7 +743,8 @@ function settingsView(){
   </div>
   <div class="card"><h3>Daten</h3><p class="muted small">Alle Ergebnisse werden nur auf diesem Gerät gespeichert.</p>
     <button class="btn ghost" style="color:var(--bad)" onclick="resetAll()">Fortschritt zurücksetzen</button></div>
-  <div class="card"><h3>Über die App</h3><p class="muted small">500 Aufgaben in 4 Bereichen. Kognitives Training kann Arbeitsgedächtnis, Tempo und Aufmerksamkeit bei den geübten Aufgaben verbessern – am meisten bringt es regelmäßig, ein paar Minuten am Tag, zusammen mit Schlaf, Bewegung und Neuem lernen.</p></div>`);
+  <div class="card"><h3>Über die App</h3><p class="muted small">${TASKS.length} Aufgaben in 5 Bereichen. Kognitives Training kann Arbeitsgedächtnis, Tempo und Aufmerksamkeit bei den geübten Aufgaben verbessern – am meisten bringt es regelmäßig, ein paar Minuten am Tag, zusammen mit Schlaf, Bewegung und Neuem lernen.</p></div>
+  <div class="card"><h3>Quellen</h3><p class="muted small">Flaggen: „flag-icons“ von Lipis (MIT-Lizenz).<br>Weltkarte: „@svg-maps/world“ von Victor Cazanave, CC BY 4.0 (creativecommons.org/licenses/by/4.0).</p></div>`);
   els("input[data-k]").forEach(i => i.onchange = () => { S.set[i.dataset.k] = i.checked; save(); });
 }
 function resetAll(){ if(confirm("Wirklich alle Ergebnisse löschen?")){ S = {}; load(); save(); toast("Zurückgesetzt"); home(); } }

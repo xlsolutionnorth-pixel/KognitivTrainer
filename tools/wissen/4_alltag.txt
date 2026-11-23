@@ -1,0 +1,84 @@
+# Format: Stufe|Thema|Frage|richtige Antwort|falsch 1|falsch 2|falsch 3|Erklärung
+1|Technik|Wer gilt als Erfinder der Glühbirne, die sich durchsetzte?|Thomas Edison|Nikola Tesla|Alexander Graham Bell|Werner von Siemens|Edison entwickelte 1879 eine langlebige Kohlefaden-Glühlampe; es gab aber Vorgänger.
+1|Technik|Wofür steht die Abkürzung „WWW“?|World Wide Web|Wide World Window|World Web Wire|Web Without Wires|Tim Berners-Lee erfand das WWW 1989 am CERN.
+1|Technik|Wer baute das erste Automobil mit Benzinmotor (1886)?|Carl Benz|Henry Ford|Gottlieb Daimler|Rudolf Diesel|Der „Benz Patent-Motorwagen Nummer 1“ gilt als erstes Automobil.
+1|Technik|Wie heißen die Brüder, die 1903 den ersten Motorflug schafften?|Brüder Wright|Brüder Grimm|Brüder Montgolfier|Brüder Lilienthal|Orville und Wilbur Wright flogen in Kitty Hawk (USA).
+1|Technik|Was ist ein „Akku“?|Ein wiederaufladbarer Energiespeicher|Ein Lautsprecher|Ein Computerprogramm|Ein Kabeltyp|Kurz für Akkumulator.
+1|Technik|Wofür steht „USB“?|Universal Serial Bus|United System Board|Universal Speed Battery|User Security Box|USB wurde Mitte der 1990er-Jahre eingeführt.
+1|Technik|Wer erfand das Telefon (Patent 1876)?|Alexander Graham Bell|Thomas Edison|Guglielmo Marconi|Samuel Morse|Schon vorher hatte der Deutsche Philipp Reis einen Vorläufer gebaut.
+1|Technik|Wie nennt man ein Programm, das Computer schädigt?|Virus (Schadsoftware)|Browser|Treiber|Update|Oberbegriff ist „Malware“.
+1|Technik|Welche Energiequelle nutzt ein Windrad?|Wind|Sonne|Wasser|Erdwärme|Der Wind dreht die Rotorblätter, ein Generator erzeugt Strom.
+1|Technik|Was ist die Aufgabe einer Firewall?|Unerlaubte Netzwerkzugriffe blockieren|Den Computer kühlen|Strom sparen|Feuer melden|Sie kontrolliert den Datenverkehr zwischen Netzwerken.
+2|Technik|Wer gilt als Erfinder des Dieselmotors?|Rudolf Diesel|Nikolaus Otto|Carl Benz|Wilhelm Maybach|Rudolf Diesel meldete seinen Motor 1892 zum Patent an.
+2|Technik|Welcher Deutsche baute 1941 den ersten funktionsfähigen programmierbaren Computer?|Konrad Zuse|Heinz Nixdorf|Werner von Siemens|Karl Steinbuch|Der Z3 wurde in Berlin vorgestellt.
+2|Technik|Was bedeutet „GPS“?|Global Positioning System|General Power Supply|Global Phone Service|Ground Position Sensor|Satelliten senden Zeitsignale, aus denen der Empfänger seine Position berechnet.
+2|Technik|Was ist ein Byte?|8 Bit|10 Bit|16 Bit|4 Bit|Ein Bit ist die kleinste Informationseinheit: 0 oder 1.
+2|Technik|Wie viele Kilobyte hat ein Megabyte (Binär-Definition)?|1024|1000|512|2048|Im Dezimalsystem sind es 1000 – genau dafür gibt es die Einheit „Mebibyte“.
+2|Technik|Welche Firma brachte 2007 das erste iPhone heraus?|Apple|Nokia|Samsung|Microsoft|Steve Jobs stellte es im Januar 2007 vor.
+2|Technik|Was erfand Johannes Gutenberg?|Buchdruck mit beweglichen Lettern|Das Papier|Die Schreibmaschine|Die Brille|Papier wurde in China erfunden.
+2|Technik|Welcher Physiker gilt als Pionier des Wechselstroms?|Nikola Tesla|Thomas Edison|Georg Ohm|André-Marie Ampère|Edison setzte dagegen auf Gleichstrom („Stromkrieg“).
+2|Technik|Was ist ein „Bug“ in der Informatik?|Ein Programmfehler|Ein Bauteil|Ein Virus|Ein Speicher|Der Begriff wurde durch eine Motte in einem Relais-Computer bekannt.
+2|Technik|In welchem Land wurde das Papier erfunden?|China|Ägypten|Indien|Griechenland|Um 105 n. Chr. wird Cai Lun als Erfinder genannt.
+3|Technik|Wer gilt als erste Programmiererin der Geschichte?|Ada Lovelace|Grace Hopper|Marie Curie|Hedy Lamarr|Sie schrieb um 1843 einen Algorithmus für Babbages „Analytical Engine“.
+3|Technik|Was bedeutet „HTTP“?|Hypertext Transfer Protocol|High Tech Transfer Process|Home Text Transmission Program|Hyperlink Tool Text Page|Das Protokoll überträgt Webseiten vom Server zum Browser.
+3|Technik|Wer erfand den Otto-Motor (Viertaktmotor, 1876)?|Nikolaus August Otto|Rudolf Diesel|Felix Wankel|Gottlieb Daimler|Der Viertakt-Ottomotor treibt bis heute viele Autos an.
+3|Technik|Was beschreibt das „Mooresche Gesetz“?|Die Zahl der Transistoren auf Chips verdoppelt sich regelmäßig|Daten werden immer langsamer|Computer werden immer größer|Strompreise steigen jedes Jahr|Gordon Moore formulierte es 1965; heute verlangsamt sich der Trend.
+3|Technik|Wofür steht „LED“?|Light Emitting Diode|Low Energy Device|Light Electric Display|Laser Energy Diode|Leuchtdioden sind sehr energieeffizient.
+3|Technik|Was ist ein Halbleiter, der in fast allen Computerchips steckt?|Silizium|Kupfer|Gold|Graphit|Daher stammt auch der Name „Silicon Valley“.
+3|Technik|Wer erfand die Dampfmaschine entscheidend weiter (1769)?|James Watt|Thomas Newcomen|George Stephenson|Robert Fulton|Watts Verbesserungen machten die Dampfmaschine zum Motor der Industrialisierung.
+3|Technik|Wonach ist die Programmiersprache Python benannt?|Nach der Komikergruppe Monty Python|Nach der Würgeschlange|Nach einem griechischen Gott|Nach ihrem Erfinder|Guido van Rossum war Fan von „Monty Python’s Flying Circus“.
+3|Technik|Was erfand Guglielmo Marconi wesentlich mit?|Die drahtlose Telegrafie (Funk)|Das Fernsehen|Die Glühbirne|Den Plattenspieler|Er erhielt dafür 1909 den Physik-Nobelpreis.
+3|Technik|In welchem Jahr ging das World Wide Web öffentlich online?|1991|1985|1995|1999|Im August 1991 wurde es außerhalb des CERN zugänglich.
+1|Gesellschaft|Wie viele Sterne hat die Flagge der Europäischen Union?|12|15|27|10|Die Zahl 12 steht für Vollkommenheit, nicht für die Anzahl der Mitglieder.
+1|Gesellschaft|Wo hat die UNO ihren Hauptsitz?|New York|Genf|Brüssel|Paris|Weitere wichtige Sitze sind Genf, Wien und Nairobi.
+1|Gesellschaft|Wie heißt das deutsche Parlament?|Bundestag|Bundesrat|Landtag|Reichstag|Er tagt im Reichstagsgebäude in Berlin.
+1|Gesellschaft|Ab welchem Alter darf man bei der Bundestagswahl wählen?|18|16|21|14|Bei manchen Landtags- und Kommunalwahlen sowie bei der Europawahl schon ab 16.
+1|Gesellschaft|Welche Währung hat Deutschland seit 2002 als Bargeld?|Euro|D-Mark|Ecu|Franken|Seit 1999 war der Euro Buchgeld, 2002 kamen Scheine und Münzen.
+1|Gesellschaft|Welche Farben hat die deutsche Flagge (von oben nach unten)?|Schwarz-Rot-Gold|Rot-Schwarz-Gold|Schwarz-Gold-Rot|Gold-Rot-Schwarz|Die Farben gehen auf die Freiheitsbewegungen des 19. Jahrhunderts zurück.
+1|Gesellschaft|Was ist der Tag der Deutschen Einheit?|3. Oktober|9. November|1. Mai|17. Juni|An diesem Tag 1990 wurde Deutschland wiedervereinigt.
+2|Gesellschaft|Wie heißt das Staatsoberhaupt Deutschlands?|Bundespräsident|Bundeskanzler|Bundestagspräsident|Ministerpräsident|Der Bundeskanzler leitet die Regierung; der Bundespräsident ist Staatsoberhaupt.
+2|Gesellschaft|Wo hat das Bundesverfassungsgericht seinen Sitz?|Karlsruhe|Berlin|Leipzig|Bonn|Es wacht seit 1951 über die Einhaltung des Grundgesetzes.
+2|Gesellschaft|Wie lange dauert eine Wahlperiode des Bundestags normalerweise?|4 Jahre|5 Jahre|3 Jahre|6 Jahre|In vielen Bundesländern sind es 5 Jahre.
+2|Gesellschaft|In welcher Stadt sitzt die Europäische Zentralbank?|Frankfurt am Main|Brüssel|Luxemburg|Straßburg|Die EZB ist für die Geldpolitik im Euroraum zuständig.
+2|Gesellschaft|Wie lautet Artikel 1 des Grundgesetzes (Anfang)?|Die Würde des Menschen ist unantastbar|Alle Menschen sind vor dem Gesetz gleich|Die Freiheit der Person ist unverletzlich|Alle Staatsgewalt geht vom Volke aus|Dieser Satz steht ganz am Anfang des Grundgesetzes.
+2|Gesellschaft|Wer wählt den Bundeskanzler?|Der Bundestag|Das Volk direkt|Der Bundesrat|Der Bundespräsident|Der Bundespräsident schlägt vor, der Bundestag wählt.
+2|Gesellschaft|In welcher Stadt hat das Europäische Parlament seinen offiziellen Sitz?|Straßburg|Brüssel|Luxemburg|Den Haag|Ausschüsse tagen meist in Brüssel, das Sekretariat sitzt in Luxemburg.
+3|Gesellschaft|Wer wählt den Bundespräsidenten?|Die Bundesversammlung|Der Bundestag|Das Volk direkt|Der Bundesrat|Sie besteht aus den Bundestagsabgeordneten und gleich vielen Vertretern der Länder.
+3|Gesellschaft|Welche Organisation verleiht den Friedensnobelpreis?|Das norwegische Nobelkomitee|Die Schwedische Akademie|Die UNO|Das Europäische Parlament|Alle anderen Nobelpreise werden in Stockholm vergeben, der Friedensnobelpreis in Oslo.
+3|Gesellschaft|Wie viele ständige Mitglieder hat der UN-Sicherheitsrat?|5|10|15|7|USA, Russland, China, Großbritannien und Frankreich – jedes kann Beschlüsse per Veto blockieren.
+3|Gesellschaft|Was bedeutet „Gewaltenteilung“?|Trennung von Gesetzgebung, Regierung und Rechtsprechung|Aufteilung der Polizei|Teilung zwischen Bund und Gemeinden|Aufteilung der Steuern|Montesquieu beschrieb das Prinzip im 18. Jahrhundert.
+3|Gesellschaft|Was ist die „Fünf-Prozent-Hürde“?|Mindestanteil an Stimmen für den Einzug ins Parlament|Höchste Mehrwertsteuer|Maximale Inflation|Mindestwahlbeteiligung|Sie soll eine Zersplitterung des Parlaments verhindern.
+3|Gesellschaft|Wie viele Mitgliedstaaten hat die NATO-Gründung 1949 gehabt?|12|5|16|28|Die Bundesrepublik trat 1955 bei.
+3|Gesellschaft|Welche Stadt war Gründungsort der Vereinten Nationen (Charta 1945)?|San Francisco|New York|Genf|London|Die UN-Charta wurde am 26. Juni 1945 in San Francisco unterzeichnet.
+3|Gesellschaft|Wie heißt die Länderkammer in Deutschland?|Bundesrat|Bundestag|Bundesversammlung|Länderrat|Über den Bundesrat wirken die Länder an der Gesetzgebung mit.
+1|Essen & Alltag|Aus welchem Land stammt die Pizza?|Italien|Griechenland|Spanien|Frankreich|Die Pizza Margherita stammt aus Neapel.
+1|Essen & Alltag|Woraus wird Butter hergestellt?|Aus Sahne (Rahm)|Aus Pflanzenöl|Aus Käse|Aus Eiern|Beim Schlagen von Sahne trennt sich das Fett als Butter ab.
+1|Essen & Alltag|Aus welcher Pflanze wird Schokolade gemacht?|Kakao|Kaffee|Vanille|Zuckerrohr|Die Kakaobohnen wachsen in Früchten des Kakaobaums.
+1|Essen & Alltag|Wie viele Minuten hat eine Stunde?|60|100|30|50|Und eine Minute hat 60 Sekunden.
+1|Essen & Alltag|Wie viele Tage hat ein Schaltjahr?|366|365|364|367|Der Februar hat dann 29 Tage.
+1|Essen & Alltag|Aus welchem Land stammt Sushi?|Japan|China|Thailand|Korea|Ursprünglich diente der Reis zum Konservieren von Fisch.
+1|Essen & Alltag|Welches Gemüse macht Pommes frites?|Kartoffel|Süßkartoffel|Karotte|Zucchini|Belgien und Frankreich streiten, wer sie erfunden hat.
+1|Essen & Alltag|Wie viele Gramm hat ein Kilogramm?|1000|100|10.000|500|„Kilo“ bedeutet tausend.
+1|Essen & Alltag|Welche Frucht ist gelb und krumm?|Banane|Zitrone|Ananas|Mango|Bananen wachsen an Stauden, nicht an Bäumen.
+1|Essen & Alltag|Welches Getränk wird aus Hopfen und Malz gebraut?|Bier|Wein|Apfelsaft|Sekt|Das deutsche Reinheitsgebot stammt von 1516.
+1|Essen & Alltag|Wie viele Tage hat eine Woche?|7|5|6|8|Die Sieben-Tage-Woche stammt aus dem alten Orient.
+2|Essen & Alltag|Aus welchem Land stammt das Gericht „Paella“?|Spanien|Italien|Portugal|Mexiko|Die Paella stammt aus der Region Valencia.
+2|Essen & Alltag|Welches Gewürz ist das teuerste der Welt?|Safran|Vanille|Zimt|Pfeffer|Für 1 kg Safran braucht man die Fäden von über 100.000 Krokusblüten.
+2|Essen & Alltag|Aus welchem Land stammt der Käse „Gouda“?|Niederlande|Schweiz|Frankreich|Dänemark|Benannt nach der Stadt Gouda in Südholland.
+2|Essen & Alltag|Was ist „Wasabi“?|Scharfe japanische Meerrettich-Paste|Japanische Algen|Fermentierter Fisch|Süßer Reiswein|Oft ist im Handel gefärbter Meerrettich statt echtem Wasabi.
+2|Essen & Alltag|Aus welcher Stadt stammt die „Sachertorte“?|Wien|Salzburg|München|Prag|Franz Sacher erfand sie 1832.
+2|Essen & Alltag|Was ist Tofu?|Geronnene Sojamilch|Fermentierter Reis|Weizeneiweiß|Getrockneter Fisch|Weizeneiweiß ist Seitan.
+2|Essen & Alltag|Welche Nuss steckt in echtem Marzipan?|Mandel|Haselnuss|Walnuss|Erdnuss|Lübeck und Königsberg sind für ihr Marzipan bekannt.
+2|Essen & Alltag|Woraus wird Tequila hergestellt?|Agave|Kaktus|Zuckerrohr|Mais|Die Blaue Agave wächst vor allem im mexikanischen Bundesstaat Jalisco.
+2|Essen & Alltag|Wie heißt die Hauptzutat von Guacamole?|Avocado|Tomate|Paprika|Kichererbse|Kichererbsen sind die Basis von Hummus.
+2|Essen & Alltag|Welches Land produziert den meisten Kaffee der Welt?|Brasilien|Kolumbien|Äthiopien|Vietnam|Brasilien liefert seit über 150 Jahren den meisten Kaffee.
+3|Essen & Alltag|Aus welchem Land stammt das Gericht „Borschtsch“?|Ukraine|Ungarn|Polen|Griechenland|Die Rote-Bete-Suppe ist in ganz Osteuropa verbreitet; ihr Ursprung gilt als ukrainisch.
+3|Essen & Alltag|Was ist „Umami“?|Eine Geschmacksrichtung (herzhaft)|Ein japanisches Messer|Ein Reisgericht|Eine Teesorte|Neben süß, sauer, salzig und bitter die fünfte Grundgeschmacksrichtung.
+3|Essen & Alltag|Aus welchem Getreide wird klassischer japanischer Sake gemacht?|Reis|Gerste|Weizen|Hirse|Sake wird oft als „Reiswein“ bezeichnet, wird aber eher wie Bier gebraut.
+3|Essen & Alltag|Welches Land ist der größte Kakaoproduzent der Welt?|Elfenbeinküste|Ghana|Brasilien|Indonesien|Die Elfenbeinküste liefert rund 40 % des weltweiten Kakaos.
+3|Essen & Alltag|Aus welchem Land stammt der Käse „Roquefort“?|Frankreich|Italien|Schweiz|Spanien|Er reift in den Kalksteinhöhlen von Roquefort-sur-Soulzon.
+3|Essen & Alltag|Was ist „Kimchi“?|Fermentiertes Gemüse aus Korea|Japanische Nudelsuppe|Chinesisches Gebäck|Thailändische Currypaste|Meist wird Chinakohl mit Chili fermentiert.
+3|Gesellschaft|Welches Land hat die meisten Einwohner in der EU?|Deutschland|Frankreich|Italien|Spanien|Deutschland hat rund 84 Millionen Einwohner.
+3|Essen & Alltag|Welche Kalorienangabe hat 1 Gramm Fett ungefähr?|9 kcal|4 kcal|7 kcal|2 kcal|Kohlenhydrate und Eiweiß liefern je etwa 4 kcal, Alkohol 7 kcal.
+3|Essen & Alltag|Aus welchem Fleisch besteht ein echtes „Wiener Schnitzel“?|Kalbfleisch|Schweinefleisch|Putenfleisch|Rindfleisch|Aus Schweinefleisch heißt es „Schnitzel Wiener Art“.
+3|Essen & Alltag|Welche Pflanze liefert Tapioka?|Maniok|Kartoffel|Reis|Mais|Tapioka-Perlen sind z. B. im Bubble Tea.

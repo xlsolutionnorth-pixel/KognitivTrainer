@@ -1,0 +1,107 @@
+# Format: Stufe|Thema|Frage|richtige Antwort|falsch 1|falsch 2|falsch 3|Erklärung
+1|Geografie|Was ist die Hauptstadt von Frankreich?|Paris|Lyon|Marseille|Nizza|Paris ist seit dem Mittelalter Hauptstadt Frankreichs und liegt an der Seine.
+1|Geografie|Was ist die Hauptstadt von Italien?|Rom|Mailand|Neapel|Florenz|Rom ist Hauptstadt Italiens; mitten in Rom liegt der Vatikanstaat.
+1|Geografie|Was ist die Hauptstadt von Spanien?|Madrid|Barcelona|Sevilla|Valencia|Madrid liegt fast genau in der Mitte der Iberischen Halbinsel.
+1|Geografie|Was ist die Hauptstadt von Österreich?|Wien|Salzburg|Graz|Innsbruck|Wien liegt an der Donau und ist die größte Stadt Österreichs.
+1|Geografie|Welcher ist der längste Fluss Deutschlands (Strecke in Deutschland)?|Rhein|Elbe|Donau|Main|Der Rhein fließt rund 865 km durch Deutschland – mehr als jeder andere Fluss.
+1|Geografie|Welcher ist der höchste Berg Deutschlands?|Zugspitze|Watzmann|Brocken|Feldberg|Die Zugspitze ist 2962 m hoch und liegt an der Grenze zu Österreich.
+1|Geografie|Auf welchem Kontinent liegt Ägypten?|Afrika|Asien|Europa|Australien|Ägypten liegt im Nordosten Afrikas; nur die Sinai-Halbinsel gehört geografisch zu Asien.
+1|Geografie|Welcher ist der größte Ozean der Erde?|Pazifik|Atlantik|Indischer Ozean|Arktischer Ozean|Der Pazifik bedeckt etwa ein Drittel der Erdoberfläche.
+1|Geografie|Wie viele Bundesländer hat Deutschland?|16|12|14|18|Deutschland besteht aus 16 Bundesländern, darunter die drei Stadtstaaten Berlin, Hamburg und Bremen.
+1|Geografie|Welches ist das flächenmäßig größte Land der Erde?|Russland|Kanada|China|USA|Russland ist mit rund 17 Millionen km² fast doppelt so groß wie Kanada.
+1|Geografie|In welcher Stadt steht der Eiffelturm?|Paris|London|Brüssel|Rom|Der Eiffelturm wurde 1889 zur Weltausstellung in Paris gebaut.
+1|Geografie|Welcher Kontinent ist der größte?|Asien|Afrika|Nordamerika|Europa|Asien umfasst rund 30 % der Landfläche der Erde.
+1|Geografie|Was ist die Hauptstadt von Japan?|Tokio|Osaka|Kyoto|Peking|Tokio ist seit 1868 Hauptstadt Japans; davor war es Kyoto.
+1|Geografie|An welches Meer grenzt Deutschland im Norden (neben der Ostsee)?|Nordsee|Mittelmeer|Schwarzes Meer|Irische See|Deutschland hat Küsten an Nordsee und Ostsee.
+1|Geografie|Welche Stadt ist die größte Stadt Deutschlands?|Berlin|Hamburg|München|Köln|Berlin hat rund 3,7 Millionen Einwohner.
+1|Geografie|Welche Wüste ist die größte heiße Wüste der Erde?|Sahara|Gobi|Kalahari|Atacama|Die Sahara in Nordafrika ist etwa so groß wie die USA.
+1|Geografie|Was ist die Hauptstadt der Schweiz (Bundesstadt)?|Bern|Zürich|Genf|Basel|Bern ist Sitz von Regierung und Parlament; offiziell heißt es „Bundesstadt“.
+1|Geografie|Wie heißt der längste Fluss Afrikas?|Nil|Kongo|Niger|Sambesi|Der Nil ist rund 6650 km lang und fließt ins Mittelmeer.
+2|Geografie|Was ist die Hauptstadt von Australien?|Canberra|Sydney|Melbourne|Perth|Canberra wurde als Kompromiss zwischen den rivalisierenden Städten Sydney und Melbourne gegründet.
+2|Geografie|Was ist die Hauptstadt von Kanada?|Ottawa|Toronto|Montreal|Vancouver|Ottawa liegt in der Provinz Ontario an der Grenze zu Québec.
+2|Geografie|Welcher ist der höchste Berg der Erde?|Mount Everest|K2|Kangchendzönga|Mont Blanc|Der Mount Everest im Himalaya ist rund 8849 m hoch.
+2|Geografie|Durch wie viele Länder fließt die Donau?|10|5|7|12|Die Donau fließt durch 10 Länder – mehr als jeder andere Fluss der Welt.
+2|Geografie|Was ist die Hauptstadt von Brasilien?|Brasília|Rio de Janeiro|São Paulo|Salvador|Brasília wurde in den 1950er-Jahren als neue Hauptstadt im Landesinneren geplant und gebaut.
+2|Geografie|Welcher See ist der größte in Deutschland, der ganz in Deutschland liegt?|Müritz|Bodensee|Chiemsee|Starnberger See|Die Müritz in Mecklenburg ist rund 113 km² groß; der Bodensee ist größer, aber mit Österreich und der Schweiz geteilt.
+2|Geografie|Welches Land hat die meisten Einwohner in Afrika?|Nigeria|Ägypten|Äthiopien|Südafrika|Nigeria hat über 200 Millionen Einwohner.
+2|Geografie|Welche Meerenge trennt Europa und Afrika?|Straße von Gibraltar|Bosporus|Ärmelkanal|Straße von Messina|An der engsten Stelle sind die Kontinente nur etwa 14 km voneinander entfernt.
+2|Geografie|Was ist die Hauptstadt der Türkei?|Ankara|Istanbul|Izmir|Antalya|Atatürk machte 1923 Ankara zur Hauptstadt; Istanbul ist aber die größte Stadt.
+2|Geografie|In welchem Land liegt die Stadt Marrakesch?|Marokko|Tunesien|Algerien|Ägypten|Marrakesch ist eine der vier Königsstädte Marokkos.
+2|Geografie|Welcher Fluss fließt durch Paris?|Seine|Loire|Rhône|Garonne|Die Seine mündet bei Le Havre in den Ärmelkanal.
+2|Geografie|Was ist die Hauptstadt von Norwegen?|Oslo|Bergen|Stockholm|Trondheim|Oslo liegt am Ende des Oslofjords.
+2|Geografie|Welche Inselgruppe gehört zu Spanien?|Kanarische Inseln|Azoren|Kykladen|Färöer|Die Kanaren liegen vor der Westküste Afrikas, gehören aber zu Spanien. Die Azoren gehören zu Portugal.
+2|Geografie|Welches Gebirge trennt Europa von Asien (im Osten Russlands)?|Ural|Kaukasus|Karpaten|Altai|Der Ural gilt als klassische Grenze zwischen Europa und Asien.
+2|Geografie|Wie heißt die Hauptstadt von Ägypten?|Kairo|Alexandria|Luxor|Gizeh|Kairo liegt am Nil, in der Nähe der Pyramiden von Gizeh.
+2|Geografie|Welcher ist der längste Fluss Südamerikas?|Amazonas|Orinoco|Paraná|Rio Grande|Der Amazonas führt mehr Wasser als jeder andere Fluss der Erde.
+2|Geografie|Welches Land besteht aus über 17.000 Inseln?|Indonesien|Japan|Philippinen|Griechenland|Indonesien ist der größte Inselstaat der Welt.
+2|Geografie|In welchem Bundesland liegt die Stadt Dresden?|Sachsen|Thüringen|Brandenburg|Sachsen-Anhalt|Dresden ist die Landeshauptstadt von Sachsen.
+2|Geografie|Was ist die Landeshauptstadt von Nordrhein-Westfalen?|Düsseldorf|Köln|Dortmund|Bonn|Köln ist die größte Stadt in NRW, Hauptstadt ist aber Düsseldorf.
+3|Geografie|Was ist die Hauptstadt von Neuseeland?|Wellington|Auckland|Christchurch|Queenstown|Wellington liegt an der Südspitze der Nordinsel.
+3|Geografie|Welcher ist der tiefste See der Erde?|Baikalsee|Tanganjikasee|Kaspisches Meer|Lago Maggiore|Der Baikalsee in Sibirien ist bis zu 1642 m tief und enthält rund 20 % des flüssigen Süßwassers der Erde.
+3|Geografie|Welche Stadt liegt auf zwei Kontinenten?|Istanbul|Kairo|Moskau|Athen|Istanbul liegt beiderseits des Bosporus – in Europa und in Asien.
+3|Geografie|Was ist die Hauptstadt von Kasachstan?|Astana|Almaty|Taschkent|Bischkek|Astana ist seit 1997 Hauptstadt; davor war es Almaty.
+3|Geografie|Welches Land hat die meisten Zeitzonen (inkl. Überseegebiete)?|Frankreich|Russland|USA|China|Dank seiner Überseegebiete hat Frankreich 12 Zeitzonen, mehr als jedes andere Land.
+3|Geografie|Welche ist die trockenste nicht-polare Wüste der Erde?|Atacama|Sahara|Namib|Gobi|In Teilen der Atacama in Chile wurde jahrelang kein Regen gemessen.
+3|Geografie|Was ist die Hauptstadt von Bolivien (Regierungssitz)?|La Paz|Sucre|Lima|Quito|La Paz ist Regierungssitz und liegt auf rund 3600 m; Sucre ist die verfassungsmäßige Hauptstadt.
+3|Geografie|Welches Land ist flächenmäßig das zweitgrößte der Erde?|Kanada|USA|China|Brasilien|Kanada ist rund 10 Millionen km² groß und liegt damit hinter Russland auf Platz 2.
+3|Geografie|Wie heißt der höchste Berg Afrikas?|Kilimandscharo|Mount Kenia|Atlas|Ruwenzori|Der Kilimandscharo in Tansania ist rund 5895 m hoch.
+3|Geografie|Welcher Fluss ist der längste in Europa?|Wolga|Donau|Rhein|Dnepr|Die Wolga ist rund 3530 km lang und mündet ins Kaspische Meer.
+3|Geografie|Was ist die Hauptstadt von Vietnam?|Hanoi|Ho-Chi-Minh-Stadt|Da Nang|Hue|Hanoi liegt im Norden; Ho-Chi-Minh-Stadt (früher Saigon) ist die größte Stadt.
+3|Geografie|Welches Land ist ein Binnenstaat (ohne Meerzugang)?|Paraguay|Uruguay|Ecuador|Kolumbien|Paraguay und Bolivien sind die beiden Binnenstaaten Südamerikas.
+3|Geografie|Welche ist die flächenmäßig größte Insel der Erde (ohne Kontinente)?|Grönland|Neuguinea|Borneo|Madagaskar|Grönland ist mit rund 2,2 Millionen km² die größte Insel.
+3|Geografie|Was ist die Hauptstadt von Myanmar?|Naypyidaw|Rangun|Mandalay|Bangkok|Seit 2005/2006 ist Naypyidaw Hauptstadt; davor war es Rangun (Yangon).
+3|Geografie|In welchem Land liegt der Titicacasee zusammen mit Bolivien?|Peru|Chile|Argentinien|Ecuador|Der Titicacasee liegt auf rund 3800 m Höhe zwischen Peru und Bolivien.
+3|Geografie|Welcher Staat ist der kleinste der Welt?|Vatikanstadt|Monaco|San Marino|Liechtenstein|Die Vatikanstadt ist nur etwa 0,44 km² groß.
+1|Geschichte|In welchem Jahr fiel die Berliner Mauer?|1989|1990|1987|1991|Am 9. November 1989 wurde die Grenze geöffnet.
+1|Geschichte|Wer war der erste Bundeskanzler der Bundesrepublik Deutschland?|Konrad Adenauer|Willy Brandt|Ludwig Erhard|Helmut Schmidt|Konrad Adenauer war von 1949 bis 1963 Bundeskanzler.
+1|Geschichte|In welchem Jahr endete der Zweite Weltkrieg in Europa?|1945|1944|1946|1939|Die Kapitulation der Wehrmacht trat am 8. Mai 1945 in Kraft.
+1|Geschichte|Wer entdeckte 1492 Amerika für Europa?|Christoph Kolumbus|Vasco da Gama|Ferdinand Magellan|Amerigo Vespucci|Kolumbus landete am 12. Oktober 1492 auf einer Insel der Bahamas.
+1|Geschichte|In welchem Land stehen die berühmten Pyramiden von Gizeh?|Ägypten|Mexiko|Sudan|Irak|Die Cheops-Pyramide ist das einzige erhaltene der sieben antiken Weltwunder.
+1|Geschichte|In welchem Jahr wurde Deutschland wiedervereinigt?|1990|1989|1991|1992|Der Tag der Deutschen Einheit ist der 3. Oktober 1990.
+1|Geschichte|Wer war der erste Mensch auf dem Mond?|Neil Armstrong|Buzz Aldrin|Juri Gagarin|Michael Collins|Neil Armstrong betrat am 21. Juli 1969 (MEZ) als Erster den Mond.
+1|Geschichte|Welches Schiff sank 1912 nach einer Kollision mit einem Eisberg?|Titanic|Lusitania|Bismarck|Queen Mary|Die Titanic sank auf ihrer Jungfernfahrt im Nordatlantik.
+1|Geschichte|In welchem Jahr begann der Erste Weltkrieg?|1914|1918|1912|1939|Der Erste Weltkrieg dauerte von 1914 bis 1918.
+1|Geschichte|Wie hieß der erste Präsident der USA?|George Washington|Abraham Lincoln|Thomas Jefferson|John Adams|George Washington war von 1789 bis 1797 Präsident.
+1|Geschichte|Welche Stadt wurde durch einen Vulkanausbruch des Vesuvs im Jahr 79 verschüttet?|Pompeji|Rom|Athen|Karthago|Die Asche konservierte die Stadt so gut, dass Ausgrabungen heute den Alltag der Römer zeigen.
+1|Geschichte|Wer schlug 1517 seine Thesen an – der Beginn der Reformation?|Martin Luther|Johannes Calvin|Erasmus von Rotterdam|Thomas Müntzer|Luthers 95 Thesen gegen den Ablasshandel gelten als Beginn der Reformation.
+1|Geschichte|Welches Volk baute die Chinesische Mauer?|Die Chinesen|Die Mongolen|Die Japaner|Die Römer|Die Mauer sollte China vor Angriffen nördlicher Steppenvölker wie den Mongolen schützen.
+1|Geschichte|Wie hieß der berühmte römische Feldherr, der 44 v. Chr. ermordet wurde?|Julius Caesar|Augustus|Nero|Marc Anton|Caesar wurde an den Iden des März (15. März) im Senat erstochen.
+1|Geschichte|In welchem Jahr begann der Zweite Weltkrieg?|1939|1938|1941|1933|Mit dem deutschen Überfall auf Polen am 1. September 1939 begann der Krieg.
+1|Geschichte|Welche Stadt war bis 1990 Hauptstadt der Bundesrepublik Deutschland?|Bonn|Frankfurt|Köln|Berlin|Bonn war ab 1949 Regierungssitz; 1991 beschloss der Bundestag den Umzug nach Berlin.
+1|Geschichte|Wer erfand den Buchdruck mit beweglichen Lettern in Europa?|Johannes Gutenberg|Leonardo da Vinci|Martin Luther|Albrecht Dürer|Gutenberg druckte um 1455 in Mainz die berühmte Gutenberg-Bibel.
+1|Geschichte|Wie hieß der französische Kaiser, der 1815 bei Waterloo besiegt wurde?|Napoleon Bonaparte|Ludwig XIV.|Karl der Große|Ludwig XVI.|Nach Waterloo wurde Napoleon auf die Insel St. Helena verbannt.
+2|Geschichte|In welchem Jahr begann die Französische Revolution?|1789|1776|1815|1848|Mit dem Sturm auf die Bastille am 14. Juli 1789 – heute Nationalfeiertag in Frankreich.
+2|Geschichte|In welchem Jahr wurde die Unabhängigkeitserklärung der USA unterzeichnet?|1776|1789|1812|1492|Sie wurde am 4. Juli 1776 verabschiedet – deshalb ist der 4. Juli Nationalfeiertag.
+2|Geschichte|Wer wurde im Jahr 800 in Rom zum Kaiser gekrönt?|Karl der Große|Otto der Große|Barbarossa|Konstantin|Papst Leo III. krönte Karl den Großen am Weihnachtstag 800.
+2|Geschichte|Wann wurde das Grundgesetz der Bundesrepublik verkündet?|1949|1945|1955|1961|Das Grundgesetz wurde am 23. Mai 1949 verkündet.
+2|Geschichte|In welchem Jahr wurde die Berliner Mauer gebaut?|1961|1949|1953|1968|Der Bau begann am 13. August 1961.
+2|Geschichte|Welcher Seefahrer leitete die erste Weltumsegelung (1519–1522)?|Ferdinand Magellan|James Cook|Francis Drake|Vasco da Gama|Magellan starb unterwegs auf den Philippinen; Juan Sebastián Elcano vollendete die Fahrt.
+2|Geschichte|Wer war der erste Mensch im Weltall?|Juri Gagarin|Neil Armstrong|Alan Shepard|Walentina Tereschkowa|Gagarin umrundete am 12. April 1961 die Erde.
+2|Geschichte|Welches Reich wurde von Dschingis Khan gegründet?|Mongolisches Reich|Osmanisches Reich|Perserreich|Chinesisches Kaiserreich|Das Mongolische Reich wurde zum größten zusammenhängenden Landreich der Geschichte.
+2|Geschichte|In welcher Stadt wurde 1919 die erste deutsche demokratische Verfassung beschlossen?|Weimar|Berlin|Frankfurt|Bonn|Daher der Name „Weimarer Republik“.
+2|Geschichte|Wie hieß die Pest-Pandemie, die Europa ab 1347 heimsuchte?|Schwarzer Tod|Spanische Grippe|Roter Tod|Große Seuche|Der Schwarze Tod tötete schätzungsweise ein Drittel der Bevölkerung Europas.
+2|Geschichte|Welcher Pharao wurde durch sein 1922 entdecktes, fast unberührtes Grab berühmt?|Tutanchamun|Ramses II.|Cheops|Echnaton|Howard Carter entdeckte das Grab im Tal der Könige.
+2|Geschichte|Welche Stadt war Hauptstadt des Byzantinischen Reiches?|Konstantinopel|Rom|Athen|Alexandria|Konstantinopel, das heutige Istanbul, fiel 1453 an die Osmanen.
+2|Geschichte|Wer war Kanzler bei der deutschen Wiedervereinigung?|Helmut Kohl|Helmut Schmidt|Gerhard Schröder|Willy Brandt|Helmut Kohl war von 1982 bis 1998 Bundeskanzler.
+2|Geschichte|Welcher Bundeskanzler kniete 1970 in Warschau vor dem Ghetto-Mahnmal nieder?|Willy Brandt|Konrad Adenauer|Helmut Schmidt|Helmut Kohl|Der „Kniefall von Warschau“ wurde zum Symbol der Versöhnungspolitik mit Osteuropa.
+2|Geschichte|Welche Seuche wurde 1980 von der WHO als weltweit ausgerottet erklärt?|Pocken|Polio|Masern|Pest|Die Pocken sind bis heute die einzige beim Menschen ausgerottete Infektionskrankheit.
+2|Geschichte|Welcher Vertrag beendete 1648 den Dreißigjährigen Krieg?|Westfälischer Friede|Versailler Vertrag|Wiener Kongress|Augsburger Religionsfrieden|Die Verträge wurden in Münster und Osnabrück geschlossen.
+2|Geschichte|In welchem Jahr eroberten die Osmanen Konstantinopel?|1453|1492|1389|1517|Mit dem Fall Konstantinopels endete das Byzantinische Reich.
+3|Geschichte|In welchem Jahr wurde die Magna Carta in England besiegelt?|1215|1066|1314|1492|König Johann Ohneland musste sie 1215 akzeptieren; sie begrenzte die Macht des Königs.
+3|Geschichte|Welche Schlacht im Jahr 9 n. Chr. stoppte die römische Expansion in Germanien?|Varusschlacht|Schlacht bei Alesia|Schlacht bei Cannae|Schlacht auf dem Lechfeld|Arminius besiegte im Teutoburger Wald drei römische Legionen unter Varus.
+3|Geschichte|Wer war die erste Bundeskanzlerin Deutschlands?|Angela Merkel|Annegret Kramp-Karrenbauer|Ursula von der Leyen|Heide Simonis|Angela Merkel war von 2005 bis 2021 Bundeskanzlerin.
+3|Geschichte|Wie hieß das Abkommen von 1938, mit dem das Sudetenland an Deutschland fiel?|Münchner Abkommen|Hitler-Stalin-Pakt|Anschluss-Vertrag|Locarno-Vertrag|Großbritannien, Frankreich und Italien stimmten in München zu – ohne die Tschechoslowakei.
+3|Geschichte|Welcher König ließ das Schloss Neuschwanstein bauen?|Ludwig II. von Bayern|Maximilian II.|Friedrich der Große|Wilhelm II.|Ludwig II. ließ es ab 1869 bauen; er erlebte die Fertigstellung nicht mehr.
+3|Geschichte|In welchem Jahr wurde das Deutsche Kaiserreich gegründet?|1871|1848|1866|1888|Wilhelm I. wurde am 18. Januar 1871 in Versailles zum Kaiser ausgerufen.
+3|Geschichte|Welche Hochkultur gründete die Stadt Tenochtitlan, auf deren Ruinen Mexiko-Stadt steht?|Azteken|Maya|Inka|Olmeken|Tenochtitlan lag auf einer Insel im Texcoco-See.
+3|Geschichte|Welche Revolution begann 1917 in Russland?|Oktoberrevolution|Februarrevolution 1905|Dekabristenaufstand|Perestroika|Die Bolschewiki unter Lenin übernahmen im Oktober (nach altem Kalender) die Macht.
+3|Geschichte|Wer war der letzte Kaiser des Deutschen Kaiserreichs?|Wilhelm II.|Wilhelm I.|Friedrich III.|Franz Joseph I.|Wilhelm II. dankte 1918 ab und ging ins Exil in die Niederlande.
+3|Geschichte|In welchem Jahr fand der Volksaufstand in der DDR statt?|1953|1961|1968|1956|Am 17. Juni 1953 protestierten Hunderttausende; sowjetische Panzer schlugen den Aufstand nieder.
+3|Geschichte|Wie hieß der Plan der USA zum Wiederaufbau Europas nach 1945?|Marshallplan|Morgenthau-Plan|Truman-Plan|Monroe-Plan|Der Marshallplan (ERP) half ab 1948 beim Wiederaufbau Westeuropas.
+3|Geschichte|Welche Stadt war Hauptstadt des Inka-Reiches?|Cusco|Machu Picchu|Lima|Quito|Cusco liegt in den Anden im heutigen Peru.
+3|Geschichte|In welchem Jahr wurden die Römischen Verträge unterzeichnet, die Grundlage der heutigen EU?|1957|1951|1967|1992|Sie gründeten 1957 die Europäische Wirtschaftsgemeinschaft (EWG).
+3|Geschichte|Welche Dynastie regierte Österreich über 600 Jahre?|Habsburger|Hohenzollern|Wittelsbacher|Romanows|Die Habsburger herrschten von 1282 bis 1918.
+3|Geschichte|Welcher griechische Staatsmann prägte das „Goldene Zeitalter“ Athens im 5. Jh. v. Chr.?|Perikles|Solon|Alexander der Große|Leonidas|Unter Perikles entstand unter anderem der Parthenon auf der Akropolis.
+3|Geschichte|Wie hieß die Handelsstraße, die China mit dem Mittelmeerraum verband?|Seidenstraße|Bernsteinstraße|Gewürzweg|Salzstraße|Auf der Seidenstraße wurden neben Seide auch Ideen, Religionen und Krankheiten verbreitet.
+3|Geschichte|Wer verfasste 1848 zusammen mit Friedrich Engels das „Kommunistische Manifest“?|Karl Marx|Wladimir Lenin|Ferdinand Lassalle|Rosa Luxemburg|Karl Marx stammte aus Trier.
+3|Geschichte|In welchem Jahr fand die Mondlandung von Apollo 11 statt?|1969|1967|1971|1965|Apollo 11 landete im Juli 1969 im „Meer der Ruhe“.
